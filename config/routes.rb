@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+
+  resources :subcategories, only: [:index, :show] do
+    resources :questions, only: [:show]
+  end
+
   devise_for :users
+
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
