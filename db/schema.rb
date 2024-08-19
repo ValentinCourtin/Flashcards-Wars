@@ -10,9 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_19_134830) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_19_141947) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "possibilities", force: :cascade do |t|
+    t.text "content"
+    t.boolean "correct"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_possibilities_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.text "content"
+    t.text "explication"
+    t.bigint "subcategory_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subcategory_id"], name: "index_questions_on_subcategory_id"
+  end
+
+  create_table "subcategories", force: :cascade do |t|
+    t.text "content"
+    t.string "name"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_subcategories_on_category_id"
+  end
+
+  create_table "training_answers", force: :cascade do |t|
+    t.integer "count_try"
+    t.boolean "solved"
+    t.bigint "training_id", null: false
+    t.bigint "question_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_training_answers_on_question_id"
+    t.index ["training_id"], name: "index_training_answers_on_training_id"
+  end
+
+  create_table "trainings", force: :cascade do |t|
+    t.date "unlock_date"
+    t.boolean "finished"
+    t.bigint "user_id", null: false
+    t.bigint "subcategory_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subcategory_id"], name: "index_trainings_on_subcategory_id"
+    t.index ["user_id"], name: "index_trainings_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +81,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_19_134830) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "possibilities", "questions"
+  add_foreign_key "questions", "subcategories"
+  add_foreign_key "subcategories", "categories"
+  add_foreign_key "training_answers", "questions"
+  add_foreign_key "training_answers", "trainings"
+  add_foreign_key "trainings", "subcategories"
+  add_foreign_key "trainings", "users"
 end
