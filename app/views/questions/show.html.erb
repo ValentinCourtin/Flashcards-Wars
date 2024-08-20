@@ -1,5 +1,9 @@
 <div><h1>Training</h1></div>
 
+<%= turbo_frame_tag :question_answers do %>
 
-<%= render "question" %>
+  <%= render "question" %>
+
+<% end %>
+
 <%= render "resolved_question", question: @question%>
