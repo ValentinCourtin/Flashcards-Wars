@@ -2,5 +2,5 @@
 
 <h3> Ruby 1/4</h3>
 <% @subcategories.each do |subcategory| %>
-  <li>> <%= subcategory.name %></li>
+  <%= link_to subcategory.name, subcategory %>
 <% end %>
