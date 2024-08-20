@@ -4,6 +4,11 @@ Rails.application.routes.draw do
     resources :questions, only: [:show]
   end
 
+  resources :trainings, only: [] do
+    get 'play' => 'trainings#play'
+    get 'finished' => 'trainings#finished'
+  end
+
   devise_for :users
 
   root to: "pages#home"
