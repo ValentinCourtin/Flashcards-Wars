@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <h2> > QUESTIONS <%= @question.id %></h2>
+    <p> > <%= @question.content %></p>
+  </div>
+
+  <div>
+    <% @possibilities.each do |possibility| %>
+    <div><%= possibility.content %></div>
+    <% end %>
+
+  </div>
+</div>
