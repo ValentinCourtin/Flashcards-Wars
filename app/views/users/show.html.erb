@@ -1,0 +1,44 @@
+<h1>Users#show  as: HOME</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+
+<%= "lvl :" %> <%= @level %>
+<br>
+
+
+
+
+<%= "rank :" %>
+<%= "N°" %>
+  <% @users_ordered.each_with_index do |user, index| %>
+    <% if user == current_user %>
+        <%= "#{(index + 1)}" %>
+    <% end %>
+  <% end %>
+  
+<br>
+<%= "username" %> <%=  @username  %>
+<br>
+<%= "gold_count" %> <%= @user.gold_count %>
+<br>
+<%= "experience" %> <%= @user.experience %>
+<br>
+<br>
+<%= "first_name :" %> <%= @user.first_name %>
+<br>
+<%= "last_name" %> <%= @user.last_name %>
+
+<br>
+
+
+
+
+<%= link_to 'TRAININGS', home_path %>
+<br>
+<%= link_to 'DUEL', home_path %>
+<br>
+
+<%= link_to 'HOME', home_path %>
+<%= link_to 'SHOP', home_path %>
+<%= link_to 'RANK', users_rank_path(@user) %>
+<%= link_to 'PROFIL', home_path %>

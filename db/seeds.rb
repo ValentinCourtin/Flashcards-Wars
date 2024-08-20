@@ -1,3 +1,4 @@
+
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -8,24 +9,67 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-puts "destroying ALL"
+require 'faker'
+
+puts "destroying ALL 💀"
+User.destroy_all
 Possibility.destroy_all
 Question.destroy_all
 Subcategory.destroy_all
 Category.destroy_all
 
-puts "Creating categories"
+
+p "Creating users... 🔄"
+
+10.times do
+  user = User.create!(
+        email: Faker::Internet.email,
+        password: Faker::Number.number(digits: 6), #=> 196835
+        first_name: Faker::JapaneseMedia::OnePiece.character,
+        last_name: Faker::JapaneseMedia::OnePiece.sea,
+        gold_count: Faker::Number.number(digits: 2), #=> 19
+        experience: Faker::Number.number(digits: 3) #=> 196
+      )
+end
+
+usertest = User.create!(
+  email: "test@test.com",
+  password: "123456",
+  first_name: "Toto",
+  last_name: "Lezozo",
+  gold_count: 10,
+  experience: 50
+)
+usertest2 = User.create!(
+  email: "lynn@telia.com",
+  password: "123456",
+  first_name: "Lynn",
+  last_name: "Telia",
+  gold_count: 100,
+  experience: 999
+)
+
+usertest3 = User.create!(
+  email: "chloe@test.com",
+  password: "123456",
+  first_name: "Chloe",
+  last_name: "Bourgeois",
+  gold_count: 50,
+  experience: 500
+)
+
+puts "Creating categories 🔄"
 cat_ruby = Category.create(name:"Ruby")
 cat_rails = Category.create(name: "Rails")
 
 
-puts "Creating subcategories"
+puts "Creating subcategories 🔄"
 sub_ruby = Subcategory.create(name: "Basics ruby", content:"blablab blablabl", category: cat_ruby)
 sub_ruby2 = Subcategory.create(name: "Méthodes ruby", content:"tototototot", category: cat_ruby)
 sub_rails = Subcategory.create(name: "Basics rails", content:"hohohoho", category: cat_rails)
 sub_rails2 = Subcategory.create(name: "Methodes rails", content:"huhuhuhuh", category: cat_rails )
 
-puts "Creating questions"
+puts "Creating questions 🔄"
 quest_1 = Question.create(content:"question1", explication:"explication de la question 1", subcategory: sub_ruby )
 quest_2 = Question.create(content:"question2", explication:"explication de la question 2", subcategory: sub_ruby )
 quest_3 = Question.create(content:"question3?", explication:"explication de la question 3", subcategory: sub_ruby2 )
@@ -35,7 +79,7 @@ quest_6 = Question.create(content:"question6?", explication:"explication de la q
 quest_7 = Question.create(content:"question7?", explication:"explication de la question 7", subcategory: sub_rails2)
 quest_8 = Question.create(content:"question8?", explication:"explication de la question 8", subcategory: sub_rails2)
 
-puts "Creating answers"
+puts "Creating answers 🔄"
 3.times do
   Possibility.create(content:"réponse fausse", correct:false, question: quest_1 )
 end
@@ -76,4 +120,4 @@ Possibility.create(content:"réponse vraie", correct: true, question: quest_7 )
 end
 Possibility.create(content:"réponse vraie", correct: true, question: quest_8 )
 
-puts "END OF THE GAME"
+puts "FINISHED 👏"

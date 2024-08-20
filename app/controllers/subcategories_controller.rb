@@ -6,7 +6,9 @@ class SubcategoriesController < ApplicationController
 
   def show
     @subcategory = Subcategory.find(params[:id])
-    @question = @subcategory.questions.first
+
+    @questions = @subcategory.questions
+    @question = @questions.first
   end
 
 end

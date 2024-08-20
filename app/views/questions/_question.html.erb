@@ -1,13 +1,15 @@
-<div>
+<%= turbo_frame_tag :question_answers do %>
   <div>
     <h2> > QUESTIONS <%= @question.id %></h2>
     <p> > <%= @question.content %></p>
   </div>
 
   <div>
-    <% @possibilities.each do |possibility| %>
-    <div><%= possibility.content %></div>
-    <% end %>
+    <ul>
+      <% @possibilities.each do |possibility| %>
+      <li><%= possibility.content %></li>
+      <% end %>
+    </ul>
   </div>
 
 
@@ -17,6 +19,4 @@
     <p>No more questions available in this subcategory</p>
   <% end %>
 
-
-
-</div>
+<%= end %>
