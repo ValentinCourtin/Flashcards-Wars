@@ -1,13 +1,12 @@
 class SubcategoriesController < ApplicationController
+
   def index
     @subcategories = Subcategory.all
   end
 
   def show
     @subcategory = Subcategory.find(params[:id])
-    @question = Question.find(@subcategory.id)
+    @question = @subcategory.questions.first
   end
-
-private
 
 end
