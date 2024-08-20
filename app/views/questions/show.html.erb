@@ -1,4 +1,3 @@
 <div><h1>Training</h1></div>
-<p>Find me in app/views/questions/show.html.erb</p>
-
-<% render "resolved_question" %>
+<%= render "question" %>
+<%= render "resolved_question", question: @question%>
