@@ -15,10 +15,11 @@ Possibility.destroy_all
 Question.destroy_all
 Subcategory.destroy_all
 Category.destroy_all
+Item.destroy_all
+Inventory.destroy_all
 
 
 p "Creating 2 new users... 🔄"
-
 usertest = User.create!(
   email: "test@test.com",
   password: "123456",
@@ -35,7 +36,6 @@ usertest2 = User.create!(
   gold_count: 100,
   experience: 500
 )
-
 
 puts "Creating categories 🔄"
 cat_ruby = Category.create(name:"Ruby")
@@ -99,5 +99,14 @@ Possibility.create(content:"réponse vraie", correct: true, question: quest_7 )
 end
 Possibility.create(content:"réponse vraie", correct: true, question: quest_8 )
 
-puts "FINISHED 👏"
 
+puts "Creating items 🔄"
+item1 = Item.create!(name:"Super croissant", description:"The player selected has to bring croissant for next breakfast!", probability:"1")
+item2 = Item.create!(name:"Butler", description:"The player selected his your butler for one Day!", probability:"1")
+
+puts "Creating inventories 🔄"
+inventory1 = Inventory.create!(user: usertest, item: item1)
+inventory2 = Inventory.create!(user: usertest, item: item2)
+inventory3 = Inventory.create!(user: usertest2, item: item2)
+
+puts "FINISHED 👏"

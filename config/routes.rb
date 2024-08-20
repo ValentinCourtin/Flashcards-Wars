@@ -11,9 +11,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :inventories, only: [:edit, :update, :delete] do
+    collection do
+      get :myitems
+    end
+  end
+
   # resources :users
-
-
 
   # creation de routes pour USERS/RANK
   get 'users/rank', to: "users#rank"
@@ -22,8 +26,6 @@ Rails.application.routes.draw do
   # creation de routes pour USERS/show
   get "home", to: "users#show"
   root to: "users#show"
-
-
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
