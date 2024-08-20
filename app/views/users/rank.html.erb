@@ -1,0 +1,11 @@
+<h1>Users#rank</h1>
+<p>Find me in app/views/users/rank.html.erb</p>
+
+
+  <% @users_ordered.each do |user| %>
+  <%=   %>
+    <%= "#{user.first_name.capitalize} #{user.last_name[0].upcase}." %>
+    <%= "#{ user.experience } XP" %>
+    <br>
+    <%=  %>
+  <% end %>

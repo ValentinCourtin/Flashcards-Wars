@@ -6,7 +6,20 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root to: "pages#home"
+  # resources :users
+
+
+
+  # creation de routes pour USERS/RANK
+  get 'users/rank', to: "users#rank"
+  # get 'rank', to: "users#rank"
+
+  # creation de routes pour USERS/show
+  get "home", to: "users#show"
+  root to: "users#show"
+
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

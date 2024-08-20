@@ -1,9 +1,45 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+
+# require 'faker'
+
+p "Destroying users... 💀"
+User.destroy_all
+
+
+p "Creating 2 new users... 🔄"
+
+usertest = User.create!(
+  email: "test@test.com",
+  password: "123456",
+  first_name: "Toto",
+  last_name: "Lezozo",
+  gold_count: 10,
+  experience: 50
+)
+usertest2 = User.create!(
+  email: "lynn@telia.com",
+  password: "123456",
+  first_name: "Lynn",
+  last_name: "Telia",
+  gold_count: 100,
+  experience: 500
+)
+
+
+# p "Creating 10 new ???... 🔄"
+
+# 10.times do
+#   ??? = ???.new(
+#     name: Faker::JapaneseMedia::OnePiece.character,
+#     description: Faker::Lorem.paragraph,
+#     price: Faker::Commerce.price,
+#     user: usertest
+#   )
+
+#   file = URI.open(Faker::LoremFlickr.image)
+#   ???.categories << Category.all.sample
+#   ???.picture.attach(io: file, filename: "nes.png", content_type: "image/png")
+#   ???.save!
+# end
+
+
+p "Finished! 👏"
