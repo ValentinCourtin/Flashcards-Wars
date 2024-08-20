@@ -1,3 +1,4 @@
 class Item < ApplicationRecord
-  has_many :items
+  has_many :inventories
+  has_many :users, through: :inventories
 end

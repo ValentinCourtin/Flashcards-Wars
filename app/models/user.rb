@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :trainings
+  has_many :inventories
+  has_many :items, through: :inventories
 
 
   def level
@@ -23,8 +25,4 @@ class User < ApplicationRecord
       5 + ((experience - 1099) / 500)
     end
   end
-
-
-
-
 end

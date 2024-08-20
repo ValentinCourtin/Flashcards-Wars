@@ -17,10 +17,12 @@ Possibility.destroy_all
 Question.destroy_all
 Subcategory.destroy_all
 Category.destroy_all
+Item.destroy_all
+Inventory.destroy_all
+
 
 
 p "Creating users... 🔄"
-
 10.times do
   user = User.create!(
         email: Faker::Internet.email,
@@ -119,5 +121,14 @@ Possibility.create(content:"réponse vraie", correct: true, question: quest_7 )
   Possibility.create(content:"réponse fausse", correct:false, question: quest_8 )
 end
 Possibility.create(content:"réponse vraie", correct: true, question: quest_8 )
+
+puts "Creating items 🔄"
+item1 = Item.create!(name:"Super croissant", description:"The player selected has to bring croissant for next breakfast!", probability:"1")
+item2 = Item.create!(name:"Butler", description:"The player selected his your butler for one Day!", probability:"1")
+
+puts "Creating inventories 🔄"
+inventory1 = Inventory.create!(user: usertest, item: item1)
+inventory2 = Inventory.create!(user: usertest, item: item2)
+inventory3 = Inventory.create!(user: usertest2, item: item2)
 
 puts "FINISHED 👏"
