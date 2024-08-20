@@ -9,6 +9,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+require 'faker'
+
 puts "destroying ALL 💀"
 User.destroy_all
 Possibility.destroy_all
@@ -17,7 +19,18 @@ Subcategory.destroy_all
 Category.destroy_all
 
 
-p "Creating 2 new users... 🔄"
+p "Creating users... 🔄"
+
+10.times do
+  user = User.create!(
+        email: Faker::Internet.email,
+        password: Faker::Number.number(digits: 6), #=> 196835
+        first_name: Faker::JapaneseMedia::OnePiece.character,
+        last_name: Faker::JapaneseMedia::OnePiece.sea,
+        gold_count: Faker::Number.number(digits: 2), #=> 19
+        experience: Faker::Number.number(digits: 3) #=> 196
+      )
+end
 
 usertest = User.create!(
   email: "test@test.com",
@@ -33,9 +46,17 @@ usertest2 = User.create!(
   first_name: "Lynn",
   last_name: "Telia",
   gold_count: 100,
-  experience: 500
+  experience: 999
 )
 
+usertest3 = User.create!(
+  email: "chloe@test.com",
+  password: "123456",
+  first_name: "Chloe",
+  last_name: "Bourgeois",
+  gold_count: 50,
+  experience: 500
+)
 
 puts "Creating categories 🔄"
 cat_ruby = Category.create(name:"Ruby")
@@ -100,4 +121,3 @@ end
 Possibility.create(content:"réponse vraie", correct: true, question: quest_8 )
 
 puts "FINISHED 👏"
-

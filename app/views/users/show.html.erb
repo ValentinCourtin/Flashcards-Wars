@@ -2,21 +2,33 @@
 <p>Find me in app/views/users/show.html.erb</p>
 
 
-<%= "lvl :" %> <%= "???" %>
-<br>
-<%= "rank :" %> <%= "N° ???" %>
+<%= "lvl :" %> <%= @level %>
 <br>
 
-<%= "first_name :" %> <%= @user.first_name %>
+
+
+
+<%= "rank :" %>
+<%= "N°" %>
+  <% @users_ordered.each_with_index do |user, index| %>
+    <% if user == current_user %>
+        <%= "#{(index + 1)}" %>
+    <% end %>
+  <% end %>
+  
 <br>
-<%= "last_name" %> <%= @user.last_name %>
+<%= "username" %> <%=  @username  %>
 <br>
 <%= "gold_count" %> <%= @user.gold_count %>
 <br>
 <%= "experience" %> <%= @user.experience %>
 <br>
+<br>
+<%= "first_name :" %> <%= @user.first_name %>
+<br>
+<%= "last_name" %> <%= @user.last_name %>
 
-
+<br>
 
 
 
