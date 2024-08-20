@@ -2,4 +2,4 @@
 <%= link_to "Back to home", subcategories_path %>
 <p>Lesson 1</p>
 <p><%= @subcategory.content %></p>
-<%= link_to "Get it" %>
+<%= link_to "Get it", subcategory_question_path(subcategory_id: @subcategory.id, id: @question.id) %>
