@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   end
 
   resources :trainings, only: [] do
-    get 'play' => 'trainings#play'
     get 'finished' => 'trainings#finished'
   end
 

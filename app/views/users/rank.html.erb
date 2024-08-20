@@ -1,11 +1,25 @@
 <h1>Users#rank</h1>
 <p>Find me in app/views/users/rank.html.erb</p>
 
+<p>RANKING</p>
 
-  <% @users_ordered.each do |user| %>
-  <%=   %>
-    <%= "#{user.first_name.capitalize} #{user.last_name[0].upcase}." %>
-    <%= "#{ user.experience } XP" %>
-    <br>
-    <%=  %>
+<ol>
+  <% @users_ordered.each_with_index do |user, index| %>
+    <% if index < 8 %>
+        <%= "#{(index + 1)} - #{user.first_name.capitalize} #{user.last_name[0].upcase}." %>
+        <%= "#{user.experience} XP" %>
+        <br>
+    <% end %>
   <% end %>
+
+<br>
+
+  <% if !@users_ordered.first(8).include?(@current_user) %>
+      <%= "#{(@users_ordered.index(@current_user) + 1)} - #{@current_user.first_name.capitalize} #{@current_user.last_name[0].upcase}." %>
+      <%= "#{@current_user.experience} XP" %>
+      <br>
+  <% end %>
+</ol>
+<br>
+
+

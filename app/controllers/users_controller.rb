@@ -5,13 +5,18 @@ class UsersController < ApplicationController
   # GET /show/1
   def show
     @user = current_user
-  end
+    @level = @user.level
+    @username = " #{@user.first_name.capitalize} #{@user.last_name[0].upcase }."
 
-  def rank
-    # @user = current_user
     @users = User.all
     @users_ordered = @users.order(experience: :desc)
 
+  end
+
+  def rank
+    @user = current_user
+    @users = User.all
+    @users_ordered = @users.order(experience: :desc)
   end
 
 

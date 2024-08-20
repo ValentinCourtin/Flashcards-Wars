@@ -1,13 +1,22 @@
-<div>
+<%= turbo_frame_tag :question_answers do %>
   <div>
     <h2> > QUESTIONS <%= @question.id %></h2>
     <p> > <%= @question.content %></p>
   </div>
 
   <div>
-    <% @possibilities.each do |possibility| %>
-    <div><%= possibility.content %></div>
-    <% end %>
-
+    <ul>
+      <% @possibilities.each do |possibility| %>
+      <li><%= possibility.content %></li>
+      <% end %>
+    </ul>
   </div>
-</div>
+
+
+  <% if @next_question %>
+    <%= link_to 'Next Question', subcategory_question_path(subcategory_id: @subcategory.id, id: @next_question.id) %>
+  <% else %>
+    <p>No more questions available in this subcategory</p>
+  <% end %>
+
+<%= end %>
