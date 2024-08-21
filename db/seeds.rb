@@ -96,4 +96,14 @@ usertest3 = User.create!(
   experience: 500
 )
 
+puts "Creating items... 🔄"
+item1 = Item.create!(name:"Super croissant", description:"The player selected has to bring croissant for next breakfast!", probability:"1")
+item2 = Item.create!(name:"Butler", description:"The player selected his your butler for one Day!", probability:"1")
+
+puts "Creating inventories... 🔄"
+inventory1 = Inventory.create!(user: usertest, item: item1)
+inventory2 = Inventory.create!(user: usertest, item: item2)
+inventory3 = Inventory.create!(user: usertest2, item: item2)
+
+
 puts "FINISHED 👏"
