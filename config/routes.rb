@@ -4,16 +4,23 @@ Rails.application.routes.draw do
     resources :questions, only: [:show]
   end
 
+
   resources :trainings, only: [:index, :show] do
     get 'play' => 'trainings#play'
     get 'finished' => 'trainings#finished'
   end
+  
+  resources :shop, only: [:index]
 
   devise_for :users
 
+  resources :inventories, only: [:edit, :update, :delete] do
+    collection do
+      get :myitems
+    end
+  end
+
   # resources :users
-
-
 
   # creation de routes pour USERS/RANK
   get 'users/rank', to: "users#rank"
@@ -22,8 +29,6 @@ Rails.application.routes.draw do
   # creation de routes pour USERS/show
   get "home", to: "users#show"
   root to: "users#show"
-
-
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

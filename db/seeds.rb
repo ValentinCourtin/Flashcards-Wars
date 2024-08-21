@@ -19,6 +19,8 @@ Possibility.destroy_all
 Question.destroy_all
 Subcategory.destroy_all
 Category.destroy_all
+Item.destroy_all
+Inventory.destroy_all
 
 
 puts "Creating categories 🔄"
@@ -55,6 +57,8 @@ end
 
 p "Creating users... 🔄"
 
+
+p "Creating users... 🔄"
 10.times do
   user = User.create!(
         email: Faker::Internet.email,
