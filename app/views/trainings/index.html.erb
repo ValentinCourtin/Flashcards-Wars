@@ -3,6 +3,6 @@
 
 <% @trainings.each do |training| %>
   <div>
-    <%= training.subcategory.category.name %> - <%= link_to training.subcategory.name  %>
+    <%= training.subcategory.category.name %> - <%= link_to training.subcategory.name, training  %>
   </div>
 <% end %>
