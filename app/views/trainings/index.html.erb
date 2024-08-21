@@ -3,8 +3,9 @@
 
 <% @trainings.each_with_index do |training, index| %>
   <div>
+
     <h2>> MISSION <%= index + 1 %></h2>
-    <p>> <%= link_to training.subcategory.category.name + ' - ' + training.subcategory.name  %></p>
+    <p>> <%= link_to training.subcategory.category.name + ' - ' + training.subcategory.name, training  %></p>
   </div>
 <% end %>
 
@@ -12,5 +13,6 @@
   <div>
     <h2>> MISSION LOCKED</h2>
     <p>> LOCKED</p>
+
   </div>
 <% end %>
