@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :questions, only: [:show]
   end
 
+  resources :shop, only: [:index]
+
   resources :trainings, only: [] do
     get 'finished' => 'trainings#finished'
   end
