@@ -9,6 +9,8 @@ class SubcategoriesController < ApplicationController
 
     @questions = @subcategory.questions
     @question = @questions.first
+    # Create new trainings
+    # Creer un trainsg answer par question
   end
 
 end

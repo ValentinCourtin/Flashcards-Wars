@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     @user = current_user
 
     @level = @user.level
+
     @username = " #{@user.first_name.capitalize} #{@user.last_name[0].upcase}."
+
 
     @users = User.all
     @users_ordered = @users.order(experience: :desc)
