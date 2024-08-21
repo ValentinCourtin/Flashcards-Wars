@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :items, through: :inventories
 
 
-  after_save :create_first_training
+  after_create :create_first_training
 
   def level
     case experience
@@ -30,7 +30,7 @@ class User < ApplicationRecord
       5 + ((experience - 1099) / 500)
     end
   end
-  
+
 
   private
   # create first training
