@@ -1,0 +1,8 @@
+<%= turbo_frame_tag :question_answers do %>
+  <h1>Reso</h1>
+  <p><%= @question.explication %></p>
+  <p><%= @question.solution.content %></p>
+  <p>Try : <%= @try %></p>
+  <p>Tu as <%= @correct ? 'bon' : 'faux' %></p>
+  <%= link_to "next", training_next_path(@training_answer.training.id) %>
+<% end %>
