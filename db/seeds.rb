@@ -54,11 +54,7 @@ Question.all.each do |question|
 end
 
 
-
-p "Creating users... 🔄"
-
-
-p "Creating users... 🔄"
+puts "Creating users... 🔄"
 10.times do
   user = User.create!(
         email: Faker::Internet.email,
@@ -101,7 +97,7 @@ item1 = Item.create!(name:"Super croissant", description:"The player selected ha
 item2 = Item.create!(name:"Butler", description:"The player selected his your butler for one Day!", probability:"1")
 
 puts "Creating inventories... 🔄"
-inventory1 = Inventory.create!(user: usertest, item: item1)
+inventory1 = Inventory.create!(user: usertest2, item: item1)
 inventory2 = Inventory.create!(user: usertest, item: item2)
 inventory3 = Inventory.create!(user: usertest2, item: item2)
 

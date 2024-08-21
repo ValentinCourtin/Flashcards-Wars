@@ -53,6 +53,7 @@ gem "sassc-rails"
 
 
 gem 'faker'
+# gem 'swiper-rails'
 
 
 group :development, :test do

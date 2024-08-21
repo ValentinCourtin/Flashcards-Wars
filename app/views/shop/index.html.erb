@@ -1,9 +1,26 @@
-<h1>Shop</h1>
-<ul>
-  <% @items.each do |item| %>
-    <li>
-      <strong><%= item.name %></strong>
-      <p><%= item.description %></p>
-    </li>
-  <% end %>
-</ul>
+<h1>SHOP</h1>
+
+<p>You have <%= @user.gold_count %> G</p>
+
+
+<div class="swiper" data-controller="carousel">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+  <!-- Slides -->
+    <% @items.each do |item| %>
+      <div class="swiper-slide">
+        <strong><%= item.name %></strong>
+        <p><%= item.description %></p>
+      </div>
+    <% end %>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <%# <!-- If we need scrollbar -->
+  <div class="swiper-scrollbar"></div> %>
+</div>
