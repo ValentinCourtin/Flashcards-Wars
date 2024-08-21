@@ -23,10 +23,10 @@ class UsersController < ApplicationController
     @users_ordered = @users.order(experience: :desc)
   end
 
-  def create
-    super
-    current_user.first_name
-  end
+  # def create
+  #   super
+  #   current_user.first_name
+  # end
 
 
   private
