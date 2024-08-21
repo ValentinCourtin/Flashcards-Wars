@@ -1,33 +1,16 @@
 <h1>Users#show  as: HOME</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
-
-<%= "lvl :" %> <%= @level %>
+<p>lvl : <%= @level %></p>
 <br>
 
+<p> rank : N° <%=@rank %> </p>
+<p>username: <%=  @username  %> </p>
 
-
-
-<%= "rank :" %>
-<%= "N°" %>
-  <% @users_ordered.each_with_index do |user, index| %>
-    <% if user == current_user %>
-        <%= "#{(index + 1)}" %>
-    <% end %>
-  <% end %>
-
-<br>
-<%= "username" %> <%=  @username  %>
-<br>
-<%= "gold_count" %> <%= @user.gold_count %>
-<br>
-<%= "experience" %> <%= @user.experience %>
-<br>
-<br>
-<%= "first_name :" %> <%= @user.first_name %>
-<br>
-<%= "last_name" %> <%= @user.last_name %>
-
+<p>gold_count : <%= @user.gold_count %></p>
+<p>experience : <%= @user.experience %> </p>
+<p>first_name : <%= @user.first_name %></p>
+<p>last_name <%= @user.last_name %></p>
 <br>
 
 
@@ -37,7 +20,7 @@
 <br>
 <%= link_to 'DUEL', home_path %>
 <br>
-
+<br>
 <%= link_to 'HOME', home_path %>
 <%= link_to 'SHOP', shop_index_path %>
 <%= link_to 'RANK', users_rank_path(@user) %>

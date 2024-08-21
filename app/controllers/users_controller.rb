@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
     @users = User.all
     @users_ordered = @users.order(experience: :desc)
-
+    @rank = @users_ordered.index(current_user) + 1
   end
 
   def rank
