@@ -1,8 +1,18 @@
-<h1>Liste des trainings</h1>
+<h1>Trainings</h1>
 
 
-<% @trainings.each do |training| %>
+<% @trainings.each_with_index do |training, index| %>
   <div>
-    <%= training.subcategory.category.name %> - <%= link_to training.subcategory.name, training  %>
+
+    <h2>> MISSION <%= index + 1 %></h2>
+    <p>> <%= link_to training.subcategory.category.name + ' - ' + training.subcategory.name, training  %></p>
+  </div>
+<% end %>
+
+<% @Locked_missions_count.times do %>
+  <div>
+    <h2>> MISSION LOCKED</h2>
+    <p>> LOCKED</p>
+
   </div>
 <% end %>
