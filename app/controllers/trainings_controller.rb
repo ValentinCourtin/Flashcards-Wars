@@ -71,8 +71,21 @@ class TrainingsController < ApplicationController
     @training_answer.update(solved: true) if @correct
   end
 
-    def finished
-    @training = Training.all
+  def finished
+    @training = Training.find(params[:training_id])
+    @gold_exp_winned = 0
+    @first_attempt = 0
+    @total_questions = 0
+    @all = @training.training_answers
+    @all.each do |ta|
+      if ta.count_try == 1
+        @gold_exp_winned = @gold_exp_winned < 100 ? @gold_exp_winned + 5 : 100
+        @first_attempt += 1
+      end
+      @total_questions += 1
+    end
+    @training.user.gold_count += (100 + @gold_exp_winned)
+    @training.user.experience += (100 + @gold_exp_winned)
   end
 
 end
