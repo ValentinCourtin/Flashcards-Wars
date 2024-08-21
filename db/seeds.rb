@@ -56,9 +56,6 @@ end
 
 
 p "Creating users... 🔄"
-
-
-p "Creating users... 🔄"
 10.times do
   user = User.create!(
         email: Faker::Internet.email,
