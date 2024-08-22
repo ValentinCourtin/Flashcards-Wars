@@ -8,8 +8,6 @@ puts "Destroying trainings... 💀"
 Training.destroy_all
 puts "Destroying trainingsAnswers... 💀"
 TrainingAnswer.destroy_all
-puts "Destroying users... 💀"
-User.destroy_all
 puts "Destroying possibilities... 💀"
 Possibility.destroy_all
 puts "Destroying questions... 💀"
@@ -18,11 +16,11 @@ puts "Destroying subcategories... 💀"
 Subcategory.destroy_all
 puts "Destroying categories... 💀"
 Category.destroy_all
-puts "Destroying items...💀"
-Item.destroy_all
 puts "Destroying inventories... 💀"
 Inventory.destroy_all
+puts "Destroying items...💀"
 Item.destroy_all
+puts "Destroying users... 💀"
 User.destroy_all
 
 puts ""
@@ -37,6 +35,9 @@ puts "Creating categories... 🌱"
 cat_ruby = Category.create(name:"Ruby")
 cat_oop = Category.create(name: "OOP")
 cat_db = Category.create(name: "DB")
+cat_front = Category.create(name: "Front")
+cat_rails = Category.create(name: "Rails")
+cat_project = Category.create(name: "Project")
 
 puts "Creating subcategories... 🌱"
 sub_ruby = Subcategory.create(name: "Programming Basics", content:"Play with IRB and launch a Ruby script from the terminal. Learn about variables, methods and built-in classes.", category: cat_ruby)
@@ -49,23 +50,6 @@ sub_db = Subcategory.create(name: "DB & SQL", content:"Time to learn about relat
 sub_db2 = Subcategory.create(name: "Active Record Basics", content:"Active Record is a powerful Ruby library to connect your object to a database. Active Record is one of the core library in Rails. Discover how an Active Record model is magically linked to a table thanks to a simple naming convention. That’s Active Record magic!", category: cat_db)
 sub_db3 = Subcategory.create(name: "Associations & Validations", content:"Time to go deeper into Active Record and learn about validations and associations.", category: cat_db)
 
-puts "Creating questions... 🌱"
-quest_1 = Question.create(content:"question1", explication:"explication de la question 1", subcategory: sub_ruby )
-quest_2 = Question.create(content:"question2", explication:"explication de la question 2", subcategory: sub_ruby )
-quest_3 = Question.create(content:"question3?", explication:"explication de la question 3", subcategory: sub_ruby2 )
-quest_4 = Question.create(content:"question4?", explication:"explication de la question 4", subcategory: sub_ruby2 )
-quest_5 = Question.create(content:"question5?", explication:"explication de la question 5", subcategory: sub_oop)
-quest_6 = Question.create(content:"question6?", explication:"explication de la question 6", subcategory: sub_oop)
-quest_7 = Question.create(content:"question7?", explication:"explication de la question 7", subcategory: sub_oop2)
-quest_8 = Question.create(content:"question8?", explication:"explication de la question 8", subcategory: sub_oop2)
-
-puts "Creating answers... 🌱"
-Question.all.each do |question|
-  3.times do
-    Possibility.create(content:"réponse fausse", correct:false, question: question )
-  end
-  Possibility.create(content:"réponse vraie", correct: true, question: question )
-end
 
 puts "Creating users... 🌱"
 10.times do
@@ -110,7 +94,7 @@ puts "Finished! 🌱"
 puts ""
 
 puts ""
-puts "------ STEP 3 : CREATING ITEMS 🌱 ------"
+puts "---- STEP 3 : CREATING ITEMS & INVENTORIES 🌱 ----"
 puts ""
 
 puts "Creating items... 🌱"
@@ -250,5 +234,1484 @@ puts "Finished! 🌱"
 puts ""
 
 puts ""
+puts "---- STEP 4 : CREATING QUESTIONS & POSSIBILITIES 🌱 ----"
+puts ""
+
+puts "Creating questions & possibilities... 🌱"
+puts ""
+
+questions = [
+  {
+    content: "Comment démarrez-vous une session IRB dans le terminal ?",
+    explication: "irb est la commande utilisée pour lancer l'environnement interactif de Ruby dans le terminal.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "start irb",
+        correct: false
+      },
+      {
+        content: "ruby irb",
+        correct: false
+      },
+      {
+        content: "irb",
+        correct: true
+      },
+      {
+        content: "run irb",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle commande utilisez-vous pour exécuter un script Ruby appelé app.rb ?",
+    explication: "ruby app.rb est la commande standard pour exécuter un script Ruby.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "ruby app.rb",
+        correct: true
+      },
+      {
+        content: "run app.rb",
+        correct: false
+      },
+      {
+        content: "execute app.rb",
+        correct: false
+      },
+      {
+        content: "ruby -run app.rb",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment définissez-vous une variable en Ruby ?",
+    explication: "En Ruby, les variables sont définies simplement en assignant une valeur avec = sans déclaration préalable du type.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "let x = 10",
+        correct: false
+      },
+      {
+        content: "x = 10",
+        correct: true
+      },
+      {
+        content: "define x = 10",
+        correct: false
+      },
+      {
+        content: "var x = 10",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle syntaxe est utilisée pour définir une méthode en Ruby ?",
+    explication: "En Ruby, les méthodes sont définies avec def suivi du nom de la méthode et de end pour clôturer la définition.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "def method_name; ...; end",
+        correct: true
+      },
+      {
+        content: "function method_name() {...}",
+        correct: false
+      },
+      {
+        content: "def method_name(...) { ... }",
+        correct: false
+      },
+      {
+        content: "def method_name(...) end",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle classe Ruby est utilisée pour manipuler des chaînes de caractères ?",
+    explication: "La classe String en Ruby est utilisée pour manipuler des chaînes de caractères.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "Array",
+        correct: false
+      },
+      {
+        content: "String",
+        correct: true
+      },
+      {
+        content: "Hash",
+        correct: false
+      },
+      {
+        content: "Symbol",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle est la sortie de l'expression puts \"Hello, \#\{name\}\" si name = \"Alice\" ?",
+    explication: "L'interpolation de chaîne avec \#\{...\} permet d'insérer la valeur d'une variable dans une chaîne de caractères.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "Hello, Alice",
+        correct: true
+      },
+      {
+        content: "Hello, \#\{name\}",
+        correct: false
+      },
+      {
+        content: "Hello, name",
+        correct: false
+      },
+      {
+        content: "Hello, nil",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode de la classe String renvoie la longueur de la chaîne ?",
+    explication: "length est une méthode de la classe String qui retourne le nombre de caractères dans la chaîne.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "size",
+        correct: false
+      },
+      {
+        content: "length",
+        correct: true
+      },
+      {
+        content: "count",
+        correct: false
+      },
+      {
+        content: "chars",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment stockez-vous une valeur numérique dans une variable ?",
+    explication: "En Ruby, les variables sont déclarées en assignant directement une valeur sans spécifier de type.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "var num = 10",
+        correct: false
+      },
+      {
+        content: "num = 10",
+        correct: true
+      },
+      {
+        content: "let num = 10",
+        correct: false
+      },
+      {
+        content: "int num = 10",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quel mot-clé utilisez-vous pour créer un bloc de code réutilisable en Ruby ?",
+    explication: "def est le mot-clé utilisé en Ruby pour définir une méthode, qui est un bloc de code réutilisable.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "def",
+        correct: true
+      },
+      {
+        content: "function",
+        correct: false
+      },
+      {
+        content: "method",
+        correct: false
+      },
+      {
+        content: "block",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment imprimez-vous la chaîne \"Bonjour, monde !\" dans Ruby ?",
+    explication: "puts est utilisé pour afficher une chaîne de caractères avec une nouvelle ligne à la fin.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "print \"Bonjour, monde !\"",
+        correct: false
+      },
+      {
+        content: "puts \"Bonjour, monde !\"",
+        correct: true
+      },
+      {
+        content: "echo \"Bonjour, monde !\"",
+        correct: false
+      },
+      {
+        content: "printf \"Bonjour, monde !\"",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que se passe-t-il si vous essayez d'accéder à une variable non définie en Ruby ?",
+    explication: "En Ruby, accéder à une variable non définie provoque une erreur NameError.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "0 est retourné",
+        correct: false
+      },
+      {
+        content: "nil est retourné",
+        correct: false
+      },
+      {
+        content: "Une erreur est levée",
+        correct: true
+      },
+      {
+        content: "La variable est automatiquement définie sur nil",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment appelez-vous une méthode greet définie comme def greet(name) en Ruby ?",
+    explication: "Les méthodes en Ruby sont appelées en utilisant leur nom suivi de parenthèses contenant les arguments, si nécessaire.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "greet[name]",
+        correct: false
+      },
+      {
+        content: "greet.name",
+        correct: false
+      },
+      {
+        content: "greet(\"Alice\")",
+        correct: true
+      },
+      {
+        content: "call greet(\"Alice\")",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode de String convertit tous les caractères en majuscules ?",
+    explication: "La méthode upcase convertit tous les caractères d'une chaîne en majuscules.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "upcase",
+        correct: true
+      },
+      {
+        content: "capitalize",
+        correct: false
+      },
+      {
+        content: "uppercase",
+        correct: false
+      },
+      {
+        content: "to_upper",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quel est le résultat de 5 + \"10\" en Ruby ?",
+    explication: "Ruby ne permet pas d'additionner un nombre avec une chaîne de caractères, ce qui lève une TypeError.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "15",
+        correct: false
+      },
+      {
+        content: "510",
+        correct: false
+      },
+      {
+        content: "Une erreur",
+        correct: true
+      },
+      {
+        content: "5",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment arrêtez-vous une session IRB ?",
+    explication: "Vous pouvez quitter IRB en tapant exit, quit ou en utilisant Ctrl + D.",
+    subcategory: "Programming Basics",
+    possibilities: [
+      {
+        content: "exit",
+        correct: true
+      },
+      {
+        content: "quit",
+        correct: true
+      },
+      {
+        content: "Ctrl + D",
+        correct: true
+      }
+    ]
+  },
+  {
+    content: "Quelle structure utilisez-vous pour exécuter du code uniquement si une condition est vraie ?",
+    explication: "La structure if est utilisée pour exécuter du code seulement si une condition donnée est vraie.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "if",
+        correct: true
+      },
+      {
+        content: "while",
+        correct: false
+      },
+      {
+        content: "for",
+        correct: false
+      },
+      {
+        content: "loop",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quel mot-clé Ruby permet de tester une condition après l'exécution d'un bloc de code, c'est-à-dire exécuter le bloc tant que la condition est fausse ?",
+    explication: "until exécute un bloc de code tant que la condition spécifiée est fausse.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "while",
+        correct: false
+      },
+      {
+        content: "until",
+        correct: true
+      },
+      {
+        content: "for",
+        correct: false
+      },
+      {
+        content: "if",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle est la valeur de arr = [1, 2, 3]; arr[2] ?",
+    explication: "Les indices des tableaux en Ruby commencent à 0, donc arr[2] renvoie le troisième élément du tableau, soit 3.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "1",
+        correct: false
+      },
+      {
+        content: "2",
+        correct: false
+      },
+      {
+        content: "3",
+        correct: true
+      },
+      {
+        content: "nil",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quel mot-clé est utilisé pour sortir prématurément d'une boucle ?",
+    explication: "break est utilisé pour sortir immédiatement d'une boucle, quelles que soient les conditions restantes.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "exit",
+        correct: false
+      },
+      {
+        content: "stop",
+        correct: false
+      },
+      {
+        content: "break",
+        correct: true
+      },
+      {
+        content: "end",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode permet d'ajouter un élément à la fin d'un tableau ?",
+    explication: "La méthode push ajoute un nouvel élément à la fin d'un tableau.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "push",
+        correct: true
+      },
+      {
+        content: "pop",
+        correct: false
+      },
+      {
+        content: "shift",
+        correct: false
+      },
+      {
+        content: "unshift",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment appelez-vous un bloc de code qui se répète tant qu'une condition reste vraie ?",
+    explication: "La boucle while continue de s'exécuter tant que la condition spécifiée reste vraie.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "for",
+        correct: false
+      },
+      {
+        content: "while",
+        correct: true
+      },
+      {
+        content: "if",
+        correct: false
+      },
+      {
+        content: "case",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle est la sortie de l'expression suivante : arr = [1, 2, 3]; arr.pop ?",
+    explication: "La méthode pop supprime et retourne le dernier élément du tableau, ici 3.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "1",
+        correct: false
+      },
+      {
+        content: "2",
+        correct: false
+      },
+      {
+        content: "3",
+        correct: true
+      },
+      {
+        content: "nil",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle structure est utilisée pour itérer sur chaque élément d'un tableau ?",
+    explication: "each est couramment utilisée pour parcourir chaque élément d'un tableau.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "for",
+        correct: false
+      },
+      {
+        content: "while",
+        correct: false
+      },
+      {
+        content: "loop",
+        correct: false
+      },
+      {
+        content: "each",
+        correct: true
+      }
+    ]
+  },
+  {
+    content: "Quel mot-clé utilisez-vous pour gérer plusieurs conditions en Ruby ?",
+    explication: "Le mot-clé case en Ruby est utilisé pour évaluer une variable contre plusieurs valeurs.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "switch",
+        correct: false
+      },
+      {
+        content: "case",
+        correct: true
+      },
+      {
+        content: "if",
+        correct: false
+      },
+      {
+        content: "elsif",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle boucle est la mieux adaptée pour exécuter un bloc de code un nombre spécifique de fois ?",
+    explication: "La boucle for est idéale pour exécuter un bloc de code un nombre spécifique de fois, généralement sur une plage ou une collection.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "for",
+        correct: true
+      },
+      {
+        content: "while",
+        correct: false
+      },
+      {
+        content: "until",
+        correct: false
+      },
+      {
+        content: "loop",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment accédez-vous au premier élément d'un tableau appelé arr ?",
+    explication: "Le premier élément d'un tableau est accessible via l'indice 0, donc arr[0].",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "arr[1]",
+        correct: false
+      },
+      {
+        content: "arr.first",
+        correct: false
+      },
+      {
+        content: "arr.last",
+        correct: false
+      },
+      {
+        content: "arr[0]",
+        correct: true
+      }
+    ]
+  },
+  {
+    content: "Quelle structure de contrôle exécute un bloc de code si une condition est fausse ?",
+    explication: "unless exécute un bloc de code uniquement si la condition spécifiée est fausse.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "unless",
+        correct: true
+      },
+      {
+        content: "if",
+        correct: false
+      },
+      {
+        content: "case",
+        correct: false
+      },
+      {
+        content: "while",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle est la différence entre while et until ?",
+    explication: "while exécute un bloc tant qu'une condition est vraie, tandis que until exécute un bloc tant qu'une condition est fausse.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "while vérifie si une condition est vraie, until vérifie si elle est fausse.",
+        correct: true
+      },
+      {
+        content: "while est utilisé pour des boucles infinies, until ne l'est pas.",
+        correct: false
+      },
+      {
+        content: "until vérifie si une condition est vraie, while vérifie si elle est fausse.",
+        correct: false
+      },
+      {
+        content: "Il n'y a aucune différence.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment remplacez-vous un élément dans un tableau en Ruby ?",
+    explication: "Vous pouvez remplacer un élément dans un tableau en assignant une nouvelle valeur à un indice spécifique, comme array[index] = value.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "array.set(index, value)",
+        correct: false
+      },
+      {
+        content: "array[index] = value",
+        correct: true
+      },
+      {
+        content: "array.replace(index, value)",
+        correct: false
+      },
+      {
+        content: "array.change(index, value)",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode retourne et retire le premier élément d'un tableau ?",
+    explication: "La méthode shift retire et retourne le premier élément d'un tableau.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "pop",
+        correct: false
+      },
+      {
+        content: "shift",
+        correct: true
+      },
+      {
+        content: "unshift",
+        correct: false
+      },
+      {
+        content: "delete",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment ajouter un élément au début d'un tableau ?",
+    explication: "unshift ajoute un élément au début d'un tableau.",
+    subcategory: "Flow, Conditionals & Arrays",
+    possibilities: [
+      {
+        content: "push",
+        correct: false
+      },
+      {
+        content: "shift",
+        correct: false
+      },
+      {
+        content: "unshift",
+        correct: true
+      },
+      {
+        content: "prepend",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode est utilisée pour itérer sur chaque élément d'un tableau en Ruby ?",
+    explication: "each est l'itérateur le plus courant en Ruby pour parcourir chaque élément d'un tableau ou d'une collection.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "map",
+        correct: false
+      },
+      {
+        content: "each",
+        correct: true
+      },
+      {
+        content: "select",
+        correct: false
+      },
+      {
+        content: "yield",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que fait la méthode map lorsqu'elle est utilisée sur un tableau ?",
+    explication: "map applique le bloc de code à chaque élément et retourne un nouveau tableau avec les résultats.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "Elle retourne un tableau avec les mêmes éléments.",
+        correct: false
+      },
+      {
+        content: "Elle modifie chaque élément du tableau en place.",
+        correct: false
+      },
+      {
+        content: "Elle retourne un nouveau tableau avec les résultats du bloc de code appliqué à chaque élément.",
+        correct: true
+      },
+      {
+        content: "Elle ne fait rien.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment passez-vous un bloc de code à une méthode en Ruby ?",
+    explication: "Les blocs de code en Ruby sont passés à une méthode avec {} pour des blocs courts ou do...end pour des blocs plus longs.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "Utilisez yield.",
+        correct: false
+      },
+      {
+        content: "Passez-le entre parenthèses.",
+        correct: false
+      },
+      {
+        content: "Utilisez les accolades {} ou do...end.",
+        correct: true
+      },
+      {
+        content: "Utilisez le mot-clé block.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que fait le mot-clé yield dans une méthode ?",
+    explication: "yield exécute le bloc de code passé à la méthode, permettant d'insérer du code externe dans le corps de la méthode.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "Il arrête l'exécution de la méthode.",
+        correct: false
+      },
+      {
+        content: "Il exécute le bloc de code passé à la méthode.",
+        correct: true
+      },
+      {
+        content: "Il lève une exception.",
+        correct: false
+      },
+      {
+        content: "Il retourne une valeur par défaut.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que renvoie la méthode select lorsqu'elle est utilisée sur un tableau ?",
+    explication: "select retourne un nouveau tableau contenant uniquement les éléments pour lesquels le bloc de code a retourné true.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "Les éléments pour lesquels le bloc retourne false.",
+        correct: false
+      },
+      {
+        content: "Les éléments pour lesquels le bloc retourne true.",
+        correct: true
+      },
+      {
+        content: "Un tableau inversé.",
+        correct: false
+      },
+      {
+        content: "Le tableau original sans modifications.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle est la différence entre map et each ?",
+    explication: "map transforme chaque élément et retourne un nouveau tableau, tandis que each itère simplement sans retourner un nouveau tableau.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "each modifie les éléments du tableau en place, map les laisse intacts.",
+        correct: false
+      },
+      {
+        content: "map retourne un nouveau tableau, each ne retourne rien.",
+        correct: true
+      },
+      {
+        content: "map ne fonctionne qu'avec des chaînes de caractères.",
+        correct: false
+      },
+      {
+        content: "Il n'y a aucune différence.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode retourne un tableau avec les éléments qui ne satisfont pas la condition du bloc de code ?",
+    explication: "reject fait l'inverse de select, il retourne les éléments pour lesquels la condition est fausse.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "reject",
+        correct: true
+      },
+      {
+        content: "select",
+        correct: false
+      },
+      {
+        content: "filter",
+        correct: false
+      },
+      {
+        content: "map",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment spécifiez-vous les paramètres d'un bloc en Ruby ?",
+    explication: "Les paramètres d'un bloc sont placés entre | | et représentent les éléments passés au bloc par l'itérateur.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "En utilisant yield.",
+        correct: false
+      },
+      {
+        content: "En les passant directement après do.",
+        correct: false
+      },
+      {
+        content: "En les plaçant entre | | dans le bloc.",
+        correct: true
+      },
+      {
+        content: "En les déclarant dans la méthode.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle est la sortie du code suivant ? [1, 2, 3].map { |n| n * 2 }",
+    explication: "Le code applique n * 2 à chaque élément du tableau et retourne [2, 4, 6].",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "[1, 2, 3]",
+        correct: false
+      },
+      {
+        content: "[2, 4, 6]",
+        correct: true
+      },
+      {
+        content: "[2, 3, 4]",
+        correct: false
+      },
+      {
+        content: "nil",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode permet de s'assurer qu'un bloc est présent avant d'utiliser yield ?",
+    explication: "block_given? vérifie si un bloc a été passé à la méthode avant d'utiliser yield.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "block_given?",
+        correct: true
+      },
+      {
+        content: "block_exists?",
+        correct: false
+      },
+      {
+        content: "block?",
+        correct: false
+      },
+      {
+        content: "has_block?",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quel est le résultat du code suivant ? 3.times { |i| puts i }",
+    explication: "times itère 3 fois en passant à chaque fois l'index actuel au bloc, ici 0, 1 et 2.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "012",
+        correct: true
+      },
+      {
+        content: "0 1 2",
+        correct: false
+      },
+      {
+        content: "1 2 3",
+        correct: false
+      },
+      {
+        content: "2 1 0",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que retourne la méthode find ?",
+    explication: "find retourne le premier élément correspondant ou nil s'il n'y a aucun élément qui satisfait la condition.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "Un tableau avec tous les éléments correspondants.",
+        correct: false
+      },
+      {
+        content: "Le premier élément qui satisfait la condition.",
+        correct: true
+      },
+      {
+        content: "nil si aucun élément ne correspond.",
+        correct: true
+      },
+      {
+        content: "Les deux réponses B et C.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle est la sortie de ce code ? result = [10, 20, 30].select { |n| n > 15 } puts result",
+    explication: "select filtre les éléments du tableau, ne gardant que ceux qui sont supérieurs à 15, donc [20, 30].",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "[10]",
+        correct: false
+      },
+      {
+        content: "[10, 20]",
+        correct: false
+      },
+      {
+        content: "[20, 30]",
+        correct: true
+      },
+      {
+        content: "nil",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment écrivez-vous un bloc qui prend deux paramètres ?",
+    explication: "Un bloc en Ruby prenant deux paramètres est écrit comme { |param1, param2| ... } ou do |param1, param2| ... end.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "|param1 param2|",
+        correct: false
+      },
+      {
+        content: "param1, param2 ->",
+        correct: false
+      },
+      {
+        content: "{ |param1, param2| ... }",
+        correct: true
+      },
+      {
+        content: "do param1, param2",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que se passe-t-il si vous essayez d'utiliser yield sans passer de bloc ?",
+    explication: "Appeler yield sans qu'un bloc ait été passé lève une exception LocalJumpError.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "La méthode continue sans exécuter yield.",
+        correct: false
+      },
+      {
+        content: "Une erreur est levée.",
+        correct: true
+      },
+      {
+        content: "yield retourne nil.",
+        correct: false
+      },
+      {
+        content: "Le programme s'arrête.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode est la plus adaptée pour transformer tous les éléments d'un tableau en appliquant une opération sur chacun d'eux ?",
+    explication: "map est conçue pour transformer chaque élément d'un tableau en appliquant une opération et en retournant un nouveau tableau.",
+    subcategory: "Iterators & Blocks",
+    possibilities: [
+      {
+        content: "each",
+        correct: false
+      },
+      {
+        content: "map",
+        correct: true
+      },
+      {
+        content: "select",
+        correct: false
+      },
+      {
+        content: "reject",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode est utilisée pour itérer sur chaque élément d'un tableau en Ruby ?",
+    explication: "each est l'itérateur le plus courant en Ruby pour parcourir chaque élément d'un tableau ou d'une collection.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "map",
+        correct: false
+      },
+      {
+        content: "each",
+        correct: true
+      },
+      {
+        content: "select",
+        correct: false
+      },
+      {
+        content: "yield",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que fait la méthode map lorsqu'elle est utilisée sur un tableau ?",
+    explication: "map applique le bloc de code à chaque élément et retourne un nouveau tableau avec les résultats.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "Elle retourne un tableau avec les mêmes éléments.",
+        correct: false
+      },
+      {
+        content: "Elle modifie chaque élément du tableau en place.",
+        correct: false
+      },
+      {
+        content: "Elle retourne un nouveau tableau avec les résultats du bloc de code appliqué à chaque élément.",
+        correct: true
+      },
+      {
+        content: "Elle ne fait rien.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment passez-vous un bloc de code à une méthode en Ruby ?",
+    explication: "Les blocs de code en Ruby sont passés à une méthode avec {} pour des blocs courts ou do...end pour des blocs plus longs.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "Utilisez yield.",
+        correct: false
+      },
+      {
+        content: "Passez-le entre parenthèses.",
+        correct: false
+      },
+      {
+        content: "Utilisez les accolades {} ou do...end.",
+        correct: true
+      },
+      {
+        content: "Utilisez le mot-clé block.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que fait le mot-clé yield dans une méthode ?",
+    explication: "yield exécute le bloc de code passé à la méthode, permettant d'insérer du code externe dans le corps de la méthode.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "Il arrête l'exécution de la méthode.",
+        correct: false
+      },
+      {
+        content: "Il exécute le bloc de code passé à la méthode.",
+        correct: true
+      },
+      {
+        content: "Il lève une exception.",
+        correct: false
+      },
+      {
+        content: "Il retourne une valeur par défaut.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que renvoie la méthode select lorsqu'elle est utilisée sur un tableau ?",
+    explication: "select retourne un nouveau tableau contenant uniquement les éléments pour lesquels le bloc de code a retourné true.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "Les éléments pour lesquels le bloc retourne false.",
+        correct: false
+      },
+      {
+        content: "Les éléments pour lesquels le bloc retourne true.",
+        correct: true
+      },
+      {
+        content: "Un tableau inversé.",
+        correct: false
+      },
+      {
+        content: "Le tableau original sans modifications.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle est la différence entre map et each ?",
+    explication: "map transforme chaque élément et retourne un nouveau tableau, tandis que each itère simplement sans retourner un nouveau tableau.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "each modifie les éléments du tableau en place, map les laisse intacts.",
+        correct: false
+      },
+      {
+        content: "map retourne un nouveau tableau, each ne retourne rien.",
+        correct: true
+      },
+      {
+        content: "map ne fonctionne qu'avec des chaînes de caractères.",
+        correct: false
+      },
+      {
+        content: "Il n'y a aucune différence.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode retourne un tableau avec les éléments qui ne satisfont pas la condition du bloc de code ?",
+    explication: "reject fait l'inverse de select, il retourne les éléments pour lesquels la condition est fausse.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "reject",
+        correct: true
+      },
+      {
+        content: "select",
+        correct: false
+      },
+      {
+        content: "filter",
+        correct: false
+      },
+      {
+        content: "map",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment spécifiez-vous les paramètres d'un bloc en Ruby ?",
+    explication: "Les paramètres d'un bloc sont placés entre | | et représentent les éléments passés au bloc par l'itérateur.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "En utilisant yield.",
+        correct: false
+      },
+      {
+        content: "En les passant directement après do.",
+        correct: false
+      },
+      {
+        content: "En les plaçant entre | | dans le bloc.",
+        correct: true
+      },
+      {
+        content: "En les déclarant dans la méthode.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle est la sortie du code suivant ? [1, 2, 3].map { |n| n * 2 }",
+    explication: "Le code applique n * 2 à chaque élément du tableau et retourne [2, 4, 6].",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "[1, 2, 3]",
+        correct: false
+      },
+      {
+        content: "[2, 4, 6]",
+        correct: true
+      },
+      {
+        content: "[2, 3, 4]",
+        correct: false
+      },
+      {
+        content: "nil",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode permet de s'assurer qu'un bloc est présent avant d'utiliser yield ?",
+    explication: "block_given? vérifie si un bloc a été passé à la méthode avant d'utiliser yield.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "block_given?",
+        correct: true
+      },
+      {
+        content: "block_exists?",
+        correct: false
+      },
+      {
+        content: "block?",
+        correct: false
+      },
+      {
+        content: "has_block?",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quel est le résultat du code suivant ? 3.times { |i| puts i }",
+    explication: "times itère 3 fois en passant à chaque fois l'index actuel au bloc, ici 0, 1 et 2.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "012",
+        correct: true
+      },
+      {
+        content: "0 1 2",
+        correct: false
+      },
+      {
+        content: "1 2 3",
+        correct: false
+      },
+      {
+        content: "2 1 0",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que retourne la méthode find ?",
+    explication: "find retourne le premier élément correspondant ou nil s'il n'y a aucun élément qui satisfait la condition.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "Un tableau avec tous les éléments correspondants.",
+        correct: false
+      },
+      {
+        content: "Le premier élément qui satisfait la condition.",
+        correct: true
+      },
+      {
+        content: "nil si aucun élément ne correspond.",
+        correct: true
+      },
+      {
+        content: "Les deux réponses B et C.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle est la sortie de ce code ? result = [10, 20, 30].select { |n| n > 15 } puts result",
+    explication: "select filtre les éléments du tableau, ne gardant que ceux qui sont supérieurs à 15, donc [20, 30].",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "[10]",
+        correct: false
+      },
+      {
+        content: "[10, 20]",
+        correct: false
+      },
+      {
+        content: "[20, 30]",
+        correct: true
+      },
+      {
+        content: "nil",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Comment écrivez-vous un bloc qui prend deux paramètres ?",
+    explication: "Un bloc en Ruby prenant deux paramètres est écrit comme { |param1, param2| ... } ou do |param1, param2| ... end.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "|param1 param2|",
+        correct: false
+      },
+      {
+        content: "param1, param2 ->",
+        correct: false
+      },
+      {
+        content: "{ |param1, param2| ... }",
+        correct: true
+      },
+      {
+        content: "do param1, param2",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Que se passe-t-il si vous essayez d'utiliser yield sans passer de bloc ?",
+    explication: "Appeler yield sans qu'un bloc ait été passé lève une exception LocalJumpError.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "La méthode continue sans exécuter yield.",
+        correct: false
+      },
+      {
+        content: "Une erreur est levée.",
+        correct: true
+      },
+      {
+        content: "yield retourne nil.",
+        correct: false
+      },
+      {
+        content: "Le programme s'arrête.",
+        correct: false
+      }
+    ]
+  },
+  {
+    content: "Quelle méthode est la plus adaptée pour transformer tous les éléments d'un tableau en appliquant une opération sur chacun d'eux ?",
+    explication: "map est conçue pour transformer chaque élément d'un tableau en appliquant une opération et en retournant un nouveau tableau.",
+    subcategory: "Hash & Symbols",
+    possibilities: [
+      {
+        content: "each",
+        correct: false
+      },
+      {
+        content: "map",
+        correct: true
+      },
+      {
+        content: "select",
+        correct: false
+      },
+      {
+        content: "reject",
+        correct: false
+      }
+    ]
+  }
+]
+
+questions.each_with_index do |question, index|
+  puts "[#{index+1}/#{questions.size}] Creating question: #{question[:content]}... 🌱"
+  subcategory = Subcategory.find_by(name: question[:subcategory])
+  question_i = Question.create!(
+    content: question[:content],
+    explication: question[:explication],
+    subcategory: subcategory
+  )
+
+  question[:possibilities].each do |possibility|
+    puts " - Creating possibilities: #{possibility[:content]}..."
+    Possibility.create!(
+      content: possibility[:content],
+      correct: possibility[:correct],
+      question: question_i
+    )
+  end
+end
+
+puts ""
+puts "Finished! 🌱"
+puts ""
+
+puts ""
 puts "-------- SEEDS CREATED : GG! 🥳 --------"
+puts ""
 puts ""
