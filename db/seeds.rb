@@ -12,6 +12,8 @@ puts "Destroying possibilities... 💀"
 Possibility.destroy_all
 puts "Destroying questions... 💀"
 Question.destroy_all
+puts "Destroying lessons... 💀"
+Lesson.destroy_all
 puts "Destroying subcategories... 💀"
 Subcategory.destroy_all
 puts "Destroying categories... 💀"
@@ -209,13 +211,13 @@ items = [
 items.each_with_index do |item_attributes, index|
   puts "[#{index+1}/#{items.size}] Creating item : #{item_attributes[:name]} 🌱"
   item = Item.create!(name: item_attributes[:name], description: item_attributes[:description], probability: item_attributes[:probability])
-  if item_attributes[:image_name].present?
-    puts "Upload image for item : #{item_attributes[:name]} 📸"
-    image_path = Rails.root.join('db', 'images', item_attributes[:image_name])
-    image_file = File.open(image_path)
-    item.photo.attach(io: image_file, filename: item_attributes[:image_name], content_type: 'image/png')
-    image_file.close
-  end
+    if item_attributes[:image_name].present?
+      puts "Upload image for item : #{item_attributes[:name]} 📸"
+      image_path = Rails.root.join('db', 'images', item_attributes[:image_name])
+      image_file = File.open(image_path)
+      item.photo.attach(io: image_file, filename: item_attributes[:image_name], content_type: 'image/png')
+      image_file.close
+    end
 end
 
 # item1 = Item.create!(name:"Super croissant", description:"The player selected has to bring croissant for next breakfast!", probability:"1")
@@ -1705,6 +1707,191 @@ questions.each_with_index do |question, index|
       question: question_i
     )
   end
+end
+
+puts ""
+puts "Finished! 🌱"
+puts ""
+
+puts ""
+puts "---- STEP 4 : CREATING LESSONS 🌱 ----"
+puts ""
+
+lessons = [
+  {
+    content: 'Rappel du cours :
+    Dans cette sous-catégorie, vous apprendrez à utiliser IRB (Interactive Ruby), un shell pour interagir directement avec Ruby. Vous apprendrez également à lancer un script Ruby à partir du terminal. Voici les concepts essentiels à retenir :',
+    subcategory: sub_ruby
+  },
+  {
+    content: 'Variables:
+        Une variable est un moyen de stocker une valeur pour une utilisation ultérieure.
+        En Ruby, les variables sont dynamiquement typées (vous n\'avez pas besoin de déclarer le type).
+        Exemple : name = "Alice" assigne la valeur "Alice" à la variable name.',
+    subcategory: sub_ruby
+  },
+  {
+    content: 'Méthodes:
+        Les méthodes sont des blocs de code que vous pouvez appeler à tout moment pour effectuer une tâche spécifique.
+        Définition : def method_name(arguments) ... end
+        Exemple :
+        ruby
+          def greet(name)
+            "Hello, #{name}!"
+          end',
+    subcategory: sub_ruby
+  },
+  {
+    content: 'Classes intégrées :
+    Ruby fournit plusieurs classes intégrées comme String, Array, Hash, etc.
+    Ces classes offrent de nombreuses méthodes utiles pour manipuler des données.
+',
+    subcategory: sub_ruby
+  },
+  {
+    content: 'Exécution d\'un script Ruby :
+    Pour exécuter un script Ruby, créez un fichier avec l\'extension .rb, par exemple script.rb.
+    Lancer le script dans le terminal avec la commande : ruby script.rb.',
+    subcategory: sub_ruby
+  },
+  {
+    content: 'Sous-catégorie 2 de Ruby : Flow, Conditionals & Arrays
+Rappel du cours :
+Dans cette sous-catégorie, nous allons aborder les structures de contrôle du flux, telles que les instructions conditionnelles et les boucles, qui modifient le déroulement de vos programmes. Vous découvrirez également les tableaux (arrays) et comment les manipuler.',
+    subcategory: sub_ruby2
+  },
+  {
+    content: 'Les instructions conditionnelles :
+      Elles permettent d\'exécuter du code en fonction de certaines conditions.
+      if, elsif, else: permettent de choisir entre plusieurs blocs de code en fonction d\'une condition.
+      unless: exécute un bloc de code seulement si une condition est fausse.
+      case / when: une alternative à if pour tester plusieurs conditions.
+        Exemple :
+        if x > 10
+          puts "x est supérieur à 10"
+        elsif x == 10
+          puts "x est égal à 10"
+        else
+          puts "x est inférieur à 10"
+        end',
+    subcategory: sub_ruby2
+  },
+  {
+    content: 'Les boucles :
+      Permettent de répéter un bloc de code plusieurs fois.
+      while: exécute un bloc de code tant qu\'une condition est vraie.
+      until: exécute un bloc de code tant qu\'une condition est fausse.
+      for: parcourt une plage ou un tableau d\'éléments.
+      loop: exécute un bloc de code indéfiniment jusqu\'à ce qu\'une condition d\'arrêt soit rencontrée (utilisation de break pour arrêter).
+      Exemple :
+        i = 0
+        while i < 5
+          puts i
+          i += 1
+        end',
+    subcategory: sub_ruby2
+  },
+  {
+    content: 'Les tableaux (arrays) :
+
+    Un tableau est une collection ordonnée de valeurs indexées.
+    Les éléments sont accessibles par leur indice, commençant à 0.
+    Les tableaux peuvent contenir des éléments de différents types.
+    Exemple :
+      array = [1, "two", 3.0]
+      puts array[1]  # "two"',
+    subcategory: sub_ruby2
+  },
+  {
+    content: 'Méthodes communes :
+    push: ajoute un élément à la fin du tableau.
+    pop: retire le dernier élément du tableau.
+    shift: retire le premier élément du tableau.
+    unshift: ajoute un élément au début du tableau.
+    each: itère sur chaque élément du tableau.',
+    subcategory: sub_ruby2
+  },
+  {
+    content: 'Rappel du cours :
+    Dans cette sous-catégorie, vous allez découvrir les itérateurs et les blocs en Ruby. Les itérateurs sont des méthodes qui parcourent les éléments d\'une collection, comme un tableau, et exécutent un bloc de code pour chaque élément. Les blocs sont des morceaux de code encapsulés entre accolades {} ou entre do...end, qui peuvent être passés à une méthode.',
+    subcategory: sub_ruby3
+  },
+  {
+    content: 'Les itérateurs :
+    # each: Parcourt chaque élément d\'une collection (tableau, hash, etc.) et exécute un bloc de code pour chaque élément.
+    map: Transforme chaque élément d\'une collection en appliquant un bloc de code et retourne un nouveau tableau avec les résultats.
+    select: Filtre les éléments d\'une collection selon une condition définie dans un bloc de code et retourne un nouveau tableau avec les éléments qui satisfont cette condition.
+    reject: Fait l\'inverse de select, retournant les éléments qui ne satisfont pas la condition.
+      Exemple :
+        numbers = [1, 2, 3, 4, 5]
+        squares = numbers.map { |n| n * n }',
+    subcategory: sub_ruby3
+  },
+  {
+    content: 'Les blocs :
+    Un bloc est un morceau de code passé à une méthode.
+    Les blocs peuvent être définis avec {} pour des blocs courts ou do...end pour des blocs plus longs.
+    Les blocs peuvent prendre des paramètres, entre | |, qui représentent les éléments sur lesquels le bloc itère.
+      Exemple :
+        5.times do |i|
+          puts "This is iteration number #{i}"
+        end',
+    subcategory: sub_ruby3
+  },
+  {
+    content: 'Le mot-clé yield:
+    yield permet à une méthode d\'exécuter le bloc de code qui lui est passé.
+    Vous pouvez utiliser yield pour insérer le bloc de code passé à la méthode à un endroit spécifique dans la méthode.
+      Exemple :
+        def greet
+          puts "Hello"
+          yield if block_given?
+          puts "Goodbye"
+        end
+        greet { puts "Nice to meet you!" }',
+    subcategory: sub_ruby3
+  },
+  {
+    content: 'Les Hashes :
+    Un hash est une structure de données qui stocke des paires clé-valeur. Contrairement aux tableaux, les éléments d’un hash ne sont pas ordonnés par un index numérique mais par des clés.
+    Clé : Un objet (souvent un symbol ou une chaîne de caractères) utilisé pour accéder à la valeur associée.
+    Valeur : L\'objet associé à une clé dans un hash.
+      Syntaxe :
+      hash = { key1: "value1", key2: "value2" }
+
+      Accès aux valeurs :
+      hash[:key1]  # => "value1"
+
+    Méthodes courantes :
+      keys : retourne toutes les clés du hash.
+      values : retourne toutes les valeurs du hash.
+      each : itère sur chaque paire clé-valeur.',
+    subcategory: sub_ruby4
+  },
+  {
+    content: 'Les Symbols :
+    Un symbol est un objet immuable souvent utilisé comme identifiant ou clé dans un hash.
+    Les symbols sont créés avec : suivi du nom du symbol, par exemple :my_symbol.
+    Les symbols sont plus légers que les chaînes de caractères car ils ne changent pas et sont réutilisés.
+    Comparaison avec les strings : alors qu\'une chaîne de caractères est un objet différent chaque fois qu\'elle est créée, un symbol est le même objet chaque fois qu\'il est référencé.',
+    subcategory: sub_ruby4
+  },
+  {
+    content: 'Utilisation des Symbols comme clés de Hash :
+    Il est courant d\'utiliser des symbols comme clés dans un hash pour leur performance et leur immuabilité.
+      Exemple :
+        person = { name: "Alice", age: 30 }
+',
+    subcategory: sub_ruby4
+  },
+]
+
+lessons.each_with_index do |lesson, index|
+  puts "[#{index+1}/#{lessons.size}] Creating lesson... 🌱"
+  lesson = Lesson.create!(
+    content: lesson[:content],
+    subcategory: lesson[:subcategory]
+  )
 end
 
 puts ""
