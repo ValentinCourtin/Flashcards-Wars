@@ -65,7 +65,7 @@ puts "Creating users... 🌱"
       )
 end
 
-usertest = User.create!(
+usertest1 = User.create!(
   email: "test@test.com",
   password: "123456",
   first_name: "Toto",
@@ -103,19 +103,19 @@ puts "Creating items... 🌱"
 puts ""
 
 items = [
-   {
-     name: "Super croissant",
-     description: "The player selected has to bring croissant for next breakfast!",
-     probability: 0.05,
-     image_name: "supercroissant.png"
-   },
-   {
-     name: "Butler",
-     description: "The player selected his your butler for one day!",
-     probability: 0.2,
-     image_name: "butler.png"
-   },
-   {
+  {
+    name: "Super croissant",
+    description: "The player selected has to bring croissant for next breakfast!",
+    probability: 0.05,
+    image_name: "supercroissant.png"
+  },
+  {
+    name: "Butler",
+    description: "The player selected his your butler for one day!",
+    probability: 0.2,
+    image_name: "butler.png"
+  },
+  {
     name: "Swap",
     description: "You can give your place at the Livecode to whomever you wish!",
     probability: 0.2,
@@ -225,7 +225,10 @@ end
 
 
 puts "Creating inventories... 🌱"
-usertest2.items << Item.all.sample(10)
+usertest1.items << Item.all.sample(10)
+usertest2.items << Item.all.sample(2)
+usertest3.items << Item.all.sample(0)
+
 
 # inventory1 = Inventory.create!(user: usertest2, item: item1)
 # inventory2 = Inventory.create!(user: usertest, item: item2)
