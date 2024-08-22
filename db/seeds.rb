@@ -33,13 +33,19 @@ puts ""
 
 puts "Creating categories... 🌱"
 cat_ruby = Category.create(name:"Ruby")
-cat_rails = Category.create(name: "Rails")
+cat_oop = Category.create(name: "OOP")
+cat_db = Category.create(name: "DB")
 
 puts "Creating subcategories... 🌱"
-sub_ruby = Subcategory.create(name: "Basics ruby", content:"blablab blablabl", category: cat_ruby)
-sub_ruby2 = Subcategory.create(name: "Méthodes ruby", content:"tototototot", category: cat_ruby)
-sub_rails = Subcategory.create(name: "Basics rails", content:"hohohoho", category: cat_rails)
-sub_rails2 = Subcategory.create(name: "Methodes rails", content:"huhuhuhuh", category: cat_rails )
+sub_ruby = Subcategory.create(name: "Programming Basics", content:"Play with IRB and launch a Ruby script from the terminal. Learn about variables, methods and built-in classes.", category: cat_ruby)
+sub_ruby2 = Subcategory.create(name: "Flow, Conditionals & Arrays", content:"Learn about conditional statements and loops, coding structures that modify the flow of your programs. Discover and play with arrays.", category: cat_ruby)
+sub_ruby3 = Subcategory.create(name: "Iterators & Blocks", content:"Embrace all the cool Ruby iterators (each, select, map and more). Understand what a Ruby block is and how a method can call a block with yield.", category: cat_ruby)
+sub_ruby4 = Subcategory.create(name: "Hash & Symbols", content:"Discover and play with hashes, data structures designed to store key-value pairs like dictionaries. Understand symbols, objects a bit similar to strings but more adapted for storing identifiers. Symbols are very often used as hash keys.", category: cat_ruby)
+sub_oop = Subcategory.create(name: "Classes & Instances", content:"So far, you’ve played with lots of built-in objects in Ruby (Integer, Hash, Date, etc.). But what about defining your own classes? During this first block you’ll learn to manipulate classes, instances, instance variables and instance methods. You’ll also learn about constructors and accessors. Let’s build your first classes!", category: cat_oop)
+sub_oop2 = Subcategory.create(name: "Inheritance & Self", content:"More advanced OOP concepts, such as inheritance, class methods, and the meaning of the self keyword.", category: cat_oop)
+sub_db = Subcategory.create(name: "DB & SQL", content:"Time to learn about relational databases, discover the different relationships between tables (1:n, n:n) and how to draw a database scheme. Then, we’ll get started on SQL.", category: cat_db)
+sub_db2 = Subcategory.create(name: "Active Record Basics", content:"Active Record is a powerful Ruby library to connect your object to a database. Active Record is one of the core library in Rails. Discover how an Active Record model is magically linked to a table thanks to a simple naming convention. That’s Active Record magic!", category: cat_db)
+sub_db3 = Subcategory.create(name: "Associations & Validations", content:"Time to go deeper into Active Record and learn about validations and associations.", category: cat_db)
 
 puts "Creating questions... 🌱"
 quest_1 = Question.create(content:"question1", explication:"explication de la question 1", subcategory: sub_ruby )
@@ -221,116 +227,9 @@ items = [
   }
 ]
 
-<<<<<<< HEAD
-items = [
-  {
-    name: "Super croissant",
-    description: "The player selected has to bring croissant for next breakfast!",
-    probability: 0.05,
-    image_name: "supercroissant.png"
-  },
-  {
-    name: "Butler",
-    description: "The player selected his your butler for one day!",
-    probability: 0.2,
-    image_name: "butler.png"
-  },
-  {
-    name: "Swap",
-    description: "You can give your place at the Livecode to whomever you wish!",
-    probability: 0.2,
-    image_name: "swap.png"
-  },
-  {
-    name: "Golden ticket",
-    description: "Your next ticket has priority over all other tickets!",
-    probability: 0.6,
-    image_name: "goldenticket.png"
-  },
-  {
-    name: "Shut up",
-    description: "The selected person must not speak for 10 minutes.",
-    probability: 0.6,
-    image_name: "shutup.png"
-  },
-  {
-    name: "Walker",
-    description: "The selected player must walk around the block!",
-    probability: 0.6,
-    image_name: "walker.png"
-  },
-  {
-    name: "Keyword",
-    description: "Every time you say your keyword, everyone has to stand up for 1 day!",
-    probability: 0.05,
-    image_name: "keyword.png"
-  },
-  {
-    name: "R.E.S.P.E.C.T",
-    description: "Everyone must be very polite to you for 1 day!",
-    probability: 0.15,
-    image_name: "respect.png"
-  },
-  {
-    name: "Ola",
-    description: "For a day, every time you enter a room, everyone has to do an ola!",
-    probability: 0.15,
-    image_name: "ola.png"
-  },
-  {
-    name: "Ego Boost",
-    description: "Everyone has to give you a compliment!",
-    probability: 0.4,
-    image_name: "egoboost.png"
-  },
-  {
-    name: "Taxes",
-    description: "You can dip into other people's cakes/snacks for 1 day!",
-    probability: 0.4,
-    image_name: "taxes.png"
-  },
-  {
-    name: "Joker",
-    description: "Whatever happens, you've won, but the other player won't know until the end of the game!",
-    probability: 0.05,
-    image_name: "joker.png"
-  },
-  {
-    name: "Tornado",
-    description: "For one round of a duel and every 3 seconds, the opponent's answers are shuffled!",
-    probability: 0.2,
-    image_name: "tornado.png"
-  },
-  {
-    name: "Hide & seek",
-    description: "For one round of a duel, the opponent's screen turns off and on every 5 seconds!",
-    probability: 0.2
-  },
-  {
-    name: "Rainbow",
-    description: "For one round of a duel, each letter of the opponent's answers has a different color!",
-    probability: 0.6
-  },
-  {
-    name: "Reversed",
-    description: "For one round of a duel, the opponent's answers are reversed!",
-    probability: 0.6
-  },
-  {
-    name: "Timerr",
-    description: "For one round of a duel, the opponent has only 8 seconds to respond!",
-    probability: 0.6
-  }
-]
-
-# Itérer sur le tableau et créer chaque Item
-items.each_with_index do |item_attributes, index|
-  puts "[#{index+1}/#{items.size}] Creating item : #{item_attributes[:name]} 🔄"
-=======
 # Itérer sur le tableau et créer chaque Item
 items.each_with_index do |item_attributes, index|
   puts "[#{index+1}/#{items.size}] Creating item : #{item_attributes[:name]} 🌱"
->>>>>>> master
   item = Item.create!(name: item_attributes[:name], description: item_attributes[:description], probability: item_attributes[:probability])
   if item_attributes[:image_name].present?
     puts "Upload image for item : #{item_attributes[:name]} 📸"
@@ -349,14 +248,6 @@ puts "Creating inventories... 🌱"
 inventory1 = Inventory.create!(user: usertest, item: Item.all.sample)
 inventory2 = Inventory.create!(user: usertest, item: Item.all.sample)
 inventory3 = Inventory.create!(user: usertest2, item: Item.all.sample)
-
-<<<<<<< HEAD
-puts "Creating inventories... 🔄"
- inventory1 = Inventory.create!(user: usertest, item: Item.all.sample)
- inventory2 = Inventory.create!(user: usertest2, item: Item.all.sample)
- inventory3 = Inventory.create!(user: usertest3, item: Item.all.sample)
-=======
->>>>>>> master
 
 # inventory1 = Inventory.create!(user: usertest2, item: item1)
 # inventory2 = Inventory.create!(user: usertest, item: item2)
