@@ -1,0 +1,7 @@
+<%=turbo_frame_tag  :popup_wheel  do %>
+  <div class="popup">
+    <p><%= content %></p>
+    <button data-turbo-frame="popup-wheel" data-action="click->load-new-content">Changer le contenu</button>
+    <button data-action="click->close-popup">Fermer</button>
+  </div>
+<% end %>
