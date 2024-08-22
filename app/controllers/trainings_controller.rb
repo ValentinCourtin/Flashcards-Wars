@@ -1,7 +1,8 @@
 class TrainingsController < ApplicationController
 
+  before_action :set_training, only: [:finished, :play, :replay]
   def index
-    @trainings = current_user.trainings
+    @trainings = current_user.trainings.where(pleasur: false)
     @subcategories = Subcategory.all
     @Locked_missions_count = @subcategories.count - @trainings.count
   end
@@ -11,24 +12,6 @@ class TrainingsController < ApplicationController
   end
 
   def play
-    # On recup le training en cour
-    @training = Training.find(params[:training_id])
-    # On prend tout les training answer qui sont pas résolu
-    @training_answers = TrainingAnswer.where(
-      training: @training,
-      solved: false
-    )
-    # On en prends 1 au hasard
-    @training_answer = @training_answers.sample
-    # On récup la question
-    @question = @training_answer.question
-    # On récup les réponses de la question
-    @possibilities = @question.possibilities
-  end
-
-  def next
-    # On recup le training en cour
-    @training = Training.find(params[:training_id])
     # On prend tout les training answer qui sont pas résolu (faux ou jamais répondu)
     @training_answers = TrainingAnswer.where(
       training: @training,
@@ -46,10 +29,23 @@ class TrainingsController < ApplicationController
       @question = @training_answer.question
       # on recup les possibilité
       @possibilities = @question.possibilities
+      # On calcul le nouveau compte de try
+      @try = @training_answer.count_try += 1
+      # On ajoute un au nobmre de try
+      @training_answer.update(count_try: @try)
       # On affiche la vue qui pose la question (views/trainings/play)
       # Elle existe déjà grâçe à la méthode play
       render :play
     end
+  end
+
+  def replay
+    @training_answer_pleasur = Training.new
+    @training_answer_pleasur.user = current_user
+    @training_answer_pleasur.subcategory = @training.subcategory
+    @training_answer_pleasur.pleasur = true
+    @training_answer_pleasur.save
+    redirect_to training_play_path(@training_answer_pleasur)
   end
 
   def resolve
@@ -59,24 +55,19 @@ class TrainingsController < ApplicationController
     @answer = Possibility.find(params[:possibility_id])
     # On récupe la solution de la question posé
     @question = @training_answer.question
-
-    # On calcul le nouveau compte de try
-    @try = @training_answer.count_try += 1
-
-    # On ajoute un au nobmre de try
-    @training_answer.update(count_try: @try)
     # On cree une variable savoir si il a la bonne réponse
     @correct = @answer == @question.solution
+    @try = @training_answer.count_try
     # Si bonne réponse on passe solved a true
     @training_answer.update(solved: true) if @correct
   end
 
   def finished
-    @training = Training.find(params[:training_id])
     @gold_exp_winned = 0
     @first_attempt = 0
     @total_questions = 0
     @all = @training.training_answers
+    @training.update(finished: true)
     @all.each do |ta|
       if ta.count_try == 1
         @gold_exp_winned = @gold_exp_winned < 100 ? @gold_exp_winned + 5 : 100
@@ -86,6 +77,12 @@ class TrainingsController < ApplicationController
     end
     @training.user.gold_count += (100 + @gold_exp_winned)
     @training.user.experience += (100 + @gold_exp_winned)
+  end
+
+  private
+
+  def set_training
+    @training = Training.find(params[:training_id])
   end
 
 end

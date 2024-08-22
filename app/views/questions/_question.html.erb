@@ -10,7 +10,7 @@
         <%= link_to possibility.content, training_resolve_path(
           training_answer_id: @training_answer.id,
           possibility_id: possibility.id
-          ) %>
+          ), data: { turbo: false } %>
         <br>
       <% end %>
     </ul>
