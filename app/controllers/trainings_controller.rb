@@ -72,20 +72,32 @@ class TrainingsController < ApplicationController
   end
 
   def finished
+     # On recup le training en cour
     @training = Training.find(params[:training_id])
+    # Set up the gold/exp winned from the quiz
     @gold_exp_winned = 0
     @first_attempt = 0
     @total_questions = 0
     @all = @training.training_answers
     @all.each do |ta|
       if ta.count_try == 1
-        @gold_exp_winned = @gold_exp_winned < 100 ? @gold_exp_winned + 5 : 100
-        @first_attempt += 1
+        if @gold_exp_winned < 100
+          @gold_exp_winned += 5
+        else
+          @gold_exp_winned = 100
+        end
+        @first_attempt = @first_attempt + 1
       end
       @total_questions += 1
     end
-    @training.user.gold_count += (100 + @gold_exp_winned)
+    @actual_gold = @training.user.gold_count
+    @new_gold = @actual_gold + 100 + @gold_exp_winned
+    @training.user.update(gold_count: @new_gold)
     @training.user.experience += (100 + @gold_exp_winned)
+    @actual_exp = @training.user.experience
+    @new_exp = @actual_exp + 100 + @gold_exp_winned
+    @training.user.update(experience: @new_exp)
+    @training.update(finished: true)
   end
 
 end
