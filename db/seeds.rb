@@ -196,24 +196,28 @@ items = [
     image_name: "tornado.png"
   },
   {
-    name: "Hide & seek",
+    name: "Day & night",
     description: "For one round of a duel, the opponent's screen turns off and on every 5 seconds!",
-    probability: 0.2
+    probability: 0.2,
+    image_name: "daynight.png"
   },
   {
     name: "Rainbow",
     description: "For one round of a duel, each letter of the opponent's answers has a different color!",
-    probability: 0.6
+    probability: 0.6,
+    image_name: "rainbow.png"
   },
   {
     name: "Reversed",
     description: "For one round of a duel, the opponent's answers are reversed!",
-    probability: 0.6
+    probability: 0.6,
+    image_name: "reversed.png"
   },
   {
-    name: "Timerr",
+    name: "Timer",
     description: "For one round of a duel, the opponent has only 8 seconds to respond!",
-    probability: 0.6
+    probability: 0.6,
+    image_name: "timer.png"
   }
 ]
 
