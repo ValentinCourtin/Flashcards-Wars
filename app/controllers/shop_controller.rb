@@ -7,12 +7,23 @@ class ShopController < ApplicationController
 end
 
 
-# def Buy
-#   puts "hello"
+def Buy
+  puts "hello"
 
-# end
+end
 
 
-# def test
-#   if
-# end
+
+def create
+  @comment = Comment.create(comment_params)
+
+  respond_to do |format|
+    format.html { redirect_to @post }
+    format.turbo_stream do
+      render turbo_stream: turbo_stream.append("comments", partial: "comments/comment", locals: { comment: @comment })
+    end
+  end
+ end
+
+
+

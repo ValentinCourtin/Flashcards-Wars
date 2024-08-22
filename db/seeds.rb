@@ -22,6 +22,8 @@ puts "Destroying items...💀"
 Item.destroy_all
 puts "Destroying inventories... 💀"
 Inventory.destroy_all
+Item.destroy_all
+User.destroy_all
 
 puts ""
 puts "Finished! 💀"
@@ -232,14 +234,12 @@ items.each_with_index do |item_attributes, index|
   end
 end
 
-item1 = Item.create!(name:"Super croissant", description:"The player selected has to bring croissant for next breakfast!", probability:"1")
-item2 = Item.create!(name:"Butler", description:"The player selected his your butler for one Day!", probability:"1")
+# item1 = Item.create!(name:"Super croissant", description:"The player selected has to bring croissant for next breakfast!", probability:"1")
+# item2 = Item.create!(name:"Butler", description:"The player selected his your butler for one Day!", probability:"1")
 
 
 puts "Creating inventories... 🌱"
-inventory1 = Inventory.create!(user: usertest, item: Item.all.sample)
-inventory2 = Inventory.create!(user: usertest, item: Item.all.sample)
-inventory3 = Inventory.create!(user: usertest2, item: Item.all.sample)
+usertest2.items << Item.all.sample(10)
 
 # inventory1 = Inventory.create!(user: usertest2, item: item1)
 # inventory2 = Inventory.create!(user: usertest, item: item2)

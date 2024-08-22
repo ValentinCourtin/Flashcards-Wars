@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :duels
   has_many :training_answers, through: :trainings
   has_many :inventories
-  has_many :items, through: :inventories, dependent: :destroy
+  has_many :items, through: :inventories
 
 
   after_create :create_first_training
