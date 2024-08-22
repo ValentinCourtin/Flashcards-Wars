@@ -1,10 +1,17 @@
 <h1>FINISHED!</h1>
 <p>
-   <%= "You've mastered #{@training.subcategory}, you're on the right track!" %> <br>
+   <%= "You've mastered #{@training.subcategory.name}, you're on the right track!" %> <br>
 ________________________<br>
 
-YOU WIN<br>
-+100 experience (xp)+ 200 golds (g)<br>
-
-BONUS first attempt:+ 130 golds (g)
 </p>
+  YOU WIN<br>
+  + 100 experience (xp)+ 100 golds (g) <br>
+  <% if @gold_exp_winned > 0 %>
+  BONUS first attempt (<%= "#{@first_attempt} / #{@total_questions}" %>) <br>
+  <%= "+#{@gold_exp_winned}xp +#{@gold_exp_winned}g" %> <br>
+  <% end %>
+ </p>
+
+ <%= @u %>
+
+<%= link_to "NEXT", trainings_path %>

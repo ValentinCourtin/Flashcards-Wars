@@ -1,2 +1,6 @@
 <h1>début du jeu</h1>
-<%= render "questions/question"%>
+
+<%= turbo_frame_tag :question_answers do %>
+  <%= @training.id %>prout
+  <%= render "questions/question"%>
+<% end %>
