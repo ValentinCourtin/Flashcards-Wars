@@ -5,5 +5,9 @@
 <p>Lesson</p>
 <p><%= @training.subcategory.content %></p>
 
-<%= link_to "Get it", training_play_path(@training)%>
+<% if @training.finished %>
+  <%= link_to "Retry for pleasur", training_replay_path(@training), data: { turbo: false } %>
+<% else %>
+  <%= link_to "Get it", training_play_path(@training), data: { turbo: false } %>
+<% end %>
 

@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :duels
   has_many :training_answers, through: :trainings
   has_many :inventories
-  has_many :items, through: :inventories
+  has_many :items, through: :inventories, dependent: :destroy
 
 
   after_create :create_first_training
@@ -41,15 +41,6 @@ class User < ApplicationRecord
       user: self,
       subcategory: @subcategory
     )
-    @subcategory.questions.each do |question|
-      TrainingAnswer.create(
-        training: @training,
-        question: question,
-        count_try: 0,
-        solved: false
-      )
-    end
-
     # Direction la premiere question redirect_to
   end
 
