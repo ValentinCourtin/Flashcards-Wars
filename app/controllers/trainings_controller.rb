@@ -1,6 +1,6 @@
 class TrainingsController < ApplicationController
 
-  before_action :set_training, only: [:finished, :play, :replay]
+  before_action :set_training, only: [:finished, :play, :replay, :resolve]
   def index
     @trainings = current_user.trainings.where(pleasur: false)
     @subcategories = Subcategory.all
@@ -18,7 +18,10 @@ class TrainingsController < ApplicationController
       solved: false
     )
 
-    if @training_answers.empty?
+    if @training.finished
+      # user tries to submit severql times
+      redirect_to trainings_path
+    elsif @training_answers.empty?
       # Il n'y a plus de question on redirege a la fin
       redirect_to training_finished_path
     else
@@ -49,6 +52,9 @@ class TrainingsController < ApplicationController
   end
 
   def resolve
+    if @training.finished
+      redirect_to trainings_path
+    end
     # On récup le training answer au quel l'utilisateur a répondu
     @training_answer = TrainingAnswer.find(params[:training_answer_id])
     # On récup la réponse qu'il a donné
@@ -63,30 +69,35 @@ class TrainingsController < ApplicationController
   end
 
   def finished
-    # Set up the gold/exp winned from the quiz
-    @gold_exp_winned = 0
-    @first_attempt = 0
-    @total_questions = 0
-    @all = @training.training_answers
-    @training.update(finished: true)
-    @all.each do |ta|
-      if ta.count_try == 1
-        if @gold_exp_winned < 100
-          @gold_exp_winned += 5
-        else
-          @gold_exp_winned = 100
+
+    if @training.pleasur == false
+       # Set up the gold/exp winned from the quiz
+      @gold_exp_winned = 0
+      # Initialize the counter for the number of times where the user gave the right answer at first
+      @first_attempt = 0
+      # Count
+      @total_questions = 0
+      @all = @training.training_answers
+      @training.update(finished: true)
+      @all.each do |ta|
+        if ta.count_try == 1
+          if @gold_exp_winned < 100
+            @gold_exp_winned += 5
+          else
+            @gold_exp_winned = 100
+          end
+          @first_attempt = @first_attempt + 1
         end
-        @first_attempt = @first_attempt + 1
+        @total_questions += 1
       end
-      @total_questions += 1
+      @actual_gold = @training.user.gold_count
+      @new_gold = @actual_gold + 100 + @gold_exp_winned
+      @training.user.update(gold_count: @new_gold)
+
+      @actual_exp = @training.user.experience
+      @new_exp = @actual_exp + 100 + @gold_exp_winned
+      @training.user.update(experience: @new_exp)
     end
-    @actual_gold = @training.user.gold_count
-    @new_gold = @actual_gold + 100 + @gold_exp_winned
-    @training.user.update(gold_count: @new_gold)
-    @training.user.experience += (100 + @gold_exp_winned)
-    @actual_exp = @training.user.experience
-    @new_exp = @actual_exp + 100 + @gold_exp_winned
-    @training.user.update(experience: @new_exp)
     @training.update(finished: true)
   end
 

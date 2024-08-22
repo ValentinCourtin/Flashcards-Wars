@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_22_091533) do
+
+ActiveRecord::Schema[7.1].define(version: 2024_08_22_152200) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,6 +74,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_22_091533) do
     t.float "probability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.text "content"
+    t.bigint "subcategory_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["subcategory_id"], name: "index_lessons_on_subcategory_id"
   end
 
   create_table "possibilities", force: :cascade do |t|
@@ -168,6 +178,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_22_091533) do
   add_foreign_key "duels", "users", column: "opponent_id"
   add_foreign_key "inventories", "items"
   add_foreign_key "inventories", "users"
+  add_foreign_key "lessons", "subcategories"
   add_foreign_key "possibilities", "questions"
   add_foreign_key "questions", "subcategories"
   add_foreign_key "round_question_answers", "questions"
