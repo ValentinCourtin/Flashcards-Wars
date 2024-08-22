@@ -11,30 +11,44 @@
 
 require 'faker'
 
-puts "destroying ALL 💀"
+puts "-------- STEP 1 : DESTROYING ALL 💀 --------"
+
+puts "Destroying trainings... 💀"
 Training.destroy_all
+puts "Destroying trainingsAnswers... 💀"
 TrainingAnswer.destroy_all
+puts "Destroying users... 💀"
 User.destroy_all
+puts "Destroying possibilities... 💀"
 Possibility.destroy_all
+puts "Destroying questions... 💀"
 Question.destroy_all
+puts "Destroying subcategories... 💀"
 Subcategory.destroy_all
+puts "Destroying categories... 💀"
 Category.destroy_all
+puts "Destroying items...💀"
 Item.destroy_all
+puts "Destroying inventories... 💀"
 Inventory.destroy_all
 
+puts "Finished! 💀"
 
-puts "Creating categories 🔄"
+
+puts "-------- STEP 2 : CREATING ALL 🌱 --------"
+
+puts "Creating categories... 🌱"
 cat_ruby = Category.create(name:"Ruby")
 cat_rails = Category.create(name: "Rails")
 
 
-puts "Creating subcategories 🔄"
+puts "Creating subcategories... 🌱"
 sub_ruby = Subcategory.create(name: "Basics ruby", content:"blablab blablabl", category: cat_ruby)
 sub_ruby2 = Subcategory.create(name: "Méthodes ruby", content:"tototototot", category: cat_ruby)
 sub_rails = Subcategory.create(name: "Basics rails", content:"hohohoho", category: cat_rails)
 sub_rails2 = Subcategory.create(name: "Methodes rails", content:"huhuhuhuh", category: cat_rails )
 
-puts "Creating questions 🔄"
+puts "Creating questions... 🌱"
 quest_1 = Question.create(content:"question1", explication:"explication de la question 1", subcategory: sub_ruby )
 quest_2 = Question.create(content:"question2", explication:"explication de la question 2", subcategory: sub_ruby )
 quest_3 = Question.create(content:"question3?", explication:"explication de la question 3", subcategory: sub_ruby2 )
@@ -44,7 +58,7 @@ quest_6 = Question.create(content:"question6?", explication:"explication de la q
 quest_7 = Question.create(content:"question7?", explication:"explication de la question 7", subcategory: sub_rails2)
 quest_8 = Question.create(content:"question8?", explication:"explication de la question 8", subcategory: sub_rails2)
 
-puts "Creating answers 🔄"
+puts "Creating answers... 🌱"
 
 Question.all.each do |question|
   3.times do
@@ -55,7 +69,7 @@ end
 
 
 
-puts "Creating users... 🔄"
+puts "Creating users... 🌱"
 10.times do
   user = User.create!(
         email: Faker::Internet.email,
@@ -93,7 +107,7 @@ usertest3 = User.create!(
   experience: 500
 )
 
-puts "Creating items... 🔄"
+puts "Creating items... 🌱"
 
 # Item individual 1
 # image_path_i1 = Rails.root.join('db', 'images', 'supercroissant.png')
@@ -219,10 +233,12 @@ items.each_with_index do |item_attributes, index|
 end
 
 
-puts "Creating inventories... 🔄"
+puts "Creating inventories... 🌱"
 inventory1 = Inventory.create!(user: usertest, item: Item.all.sample)
 inventory2 = Inventory.create!(user: usertest, item: Item.all.sample)
 inventory3 = Inventory.create!(user: usertest2, item: Item.all.sample)
 
 
-puts "FINISHED 👏"
+puts "Finished! 🌱"
+
+puts "-------- SEEDS CREATED : GG! 🥳--------"
