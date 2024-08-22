@@ -7,7 +7,12 @@ class ShopController < ApplicationController
 end
 
 
-def Buy
-  puts "hello"
+# def Buy
+#   puts "hello"
 
-end
+# end
+
+
+# def test
+#   if
+# end
