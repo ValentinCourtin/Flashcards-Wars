@@ -2,6 +2,7 @@
 
 <p>You have <%= @user.gold_count %> G</p>
 
+---------------------------------------------
 
 <div class="swiper" data-controller="carousel">
   <!-- Additional required wrapper -->
@@ -9,9 +10,13 @@
   <!-- Slides -->
     <% @items.each do |item| %>
       <div class="swiper-slide">
+        <%= cl_image_tag item.photo.key %>
+        <br>
+        ---------------------------------------------
+        <br>
         <strong><%= item.name %></strong>
         <p><%= item.description %></p>
-        <%# <%= cl_image_tag item.photo.key %> 
+
       </div>
     <% end %>
   </div>
@@ -25,6 +30,22 @@
   <%# <!-- If we need scrollbar -->
   <div class="swiper-scrollbar"></div> %>
 </div>
+
+
+
+
+
+
+
+<%#
+<turbo-stream action="append" target="comments">
+  <template>
+    <%= render @comment %>
+  <%# </template>
+</turbo-stream> %>
+
+
+
 
 
 
