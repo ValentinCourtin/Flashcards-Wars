@@ -1,0 +1,16 @@
+.top_card {
+  background-color: #025470;
+  width: 226px;
+  height: 101px;
+  border-radius: 0px 0px 8px 8px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  p {
+    color: white;
+    font-size: 24px;
+
+  }
+}

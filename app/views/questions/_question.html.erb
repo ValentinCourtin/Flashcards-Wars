@@ -1,19 +1,19 @@
 <%= turbo_frame_tag :question_answers do %>
-  <div>
+  <div class="question">
     <h2> > QUESTIONS <%= @question.id %></h2>
     <p> > <%= @question.content %></p>
   </div>
 
-  <div>
-    <ul>
+  <div class="answers-container">
       <% @possibilities.each do |possibility| %>
-        <%= link_to possibility.content, training_resolve_path(
-          training_answer_id: @training_answer.id,
-          possibility_id: possibility.id
-          ), data: { turbo: false } %>
-        <br>
+        <div class="answer">
+          <%= link_to possibility.content, training_resolve_path(
+            training_answer_id: @training_answer.id,
+            possibility_id: possibility.id
+            ), data: { turbo: false },
+            class: "text-blue" %>
+        </div>
       <% end %>
-    </ul>
   </div>
 <% end %>
 
