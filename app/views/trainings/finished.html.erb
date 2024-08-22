@@ -1,8 +1,9 @@
+
 <div class="background-first">
 
    <div class="top_card d-flex justify-content-center align-items-end">
     <p>TRAINING</p>
-  </div>
+   </div>
 
   <%= turbo_frame_tag :question_answers do %>
     <div class="question">
@@ -11,18 +12,20 @@
         <%= "You've mastered #{@training.subcategory.name}, you're on the right track!" %> <br>
       ________________________<br>
       </p>
-      <p>
+      <% if @training.pleasur == false %>
+        <p>
         YOU WIN<br>
         + 100 experience (xp)+ 100 golds (g) <br>
-      </p>
-      <p>
-        <% if @gold_exp_winned > 0 %>
-        BONUS first attempt (<%= "#{@first_attempt} / #{@total_questions}" %>) <br>
-        <%= "+#{@gold_exp_winned}xp +#{@gold_exp_winned}g" %> <br>
-        <% end %>
-      </p>
+        </p>
+        <p>
+          <% if @gold_exp_winned > 0 %>
+            BONUS first attempt (<%= "#{@first_attempt} / #{@total_questions}" %>) <br>
+            <%= "+#{@gold_exp_winned}xp +#{@gold_exp_winned}g" %> <br>
+          <% end %>
+        </p>
+      <% end %>
     </div>
-
     <div class="btn-orange"><%= link_to "NEXT", trainings_path, data: {turbo: false}, class: "text-color" %></div>
   <% end %>
 </div>
+

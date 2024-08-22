@@ -2,35 +2,130 @@
 
 <p>You have <%= @user.gold_count %> G</p>
 
+---------------------------------------------
 
-<div class="swiper" data-controller="carousel">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-  <!-- Slides -->
-    <% @items.each do |item| %>
-      <div class="swiper-slide">
-        <strong><%= item.name %></strong>
-        <p><%= item.description %></p>
-        <%# <%= cl_image_tag item.photo.key %> 
-      </div>
-    <% end %>
+<% if @items.present? %>
+
+  <div class="swiper" data-controller="carousel">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+    <!-- Slides -->
+      <% @items.each do |item| %>
+        <div class="swiper-slide">
+          <%= cl_image_tag item.photo.key %>
+          <br>
+          ---------------------------------------------
+          <br>
+          <strong><%= item.name %></strong>
+          <p><%= item.description %></p>
+
+        </div>
+      <% end %>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <%# <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div> %>
   </div>
-  <!-- If we need pagination -->
-  <div class="swiper-pagination"></div>
 
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+<% else %>
+    <%= image_tag "question_point.png", alt: "question point"  %>
+      <br>
+        ---------------------------------------------
+      <br>
+    <p>&gt You don't have any item ! </p>
+    <p>LAUNCH THE WHEEL BELOW </p>
+    <p>vvvvvvvvvvv </p>
+<% end %>
 
-  <%# <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div> %>
-</div>
+<%# <button data-turbo-frame="popup-choice" data-action="click->load-popup">USE IT</button> %>
+<%= link_to "USE IT", shop_choice_path(@user) %>
+---------------------------------------------
+
+<%= image_tag "wheel.png", alt: "wheel"  %>
+  <br>
+    ---------------------------------------------
+  <br>
+<p>&gt Items wheel! </p>
+
+<button data-turbo-frame="popup-wheel" data-action="click->load-popup">LAUNCH: 400G</button>
+
+
+
+
+//////////////////////
+
+
+
+
+
+
+
+
+<%# <!-- turbo-frame qui servira de conteneur pour la pop-up -->
+<turbo-frame id="popup-wheel">
+  <!-- Le contenu initial de la pop-up peut être vide ou un message de chargement -->
+</turbo-frame> %>
+
+<%= turbo_frame_tag :popup_wheel do %>
+<% end %>
+
+<!-- Bouton qui déclenchera le chargement de la pop-up -->
+<%# <button data-turbo-frame="popup-wheel" data-action="click->load-popup" >
+  LAUNCH: 400G
+</button> %>
+<%= link_to "LAUNCH 400 G link", shop_buy_path(@user) %>
+
+<%# href="<%= launch_shop_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 <%#
+<turbo-stream action="append" target="comments">
+  <template>
+    <%= render @comment %>
+  <%# </template>
+</turbo-stream> %>
 
+
+
+<%#
   <%= cl_image_tag("THE_IMAGE_ID_FROM_LIBRARY",
       width: 400, height: 300, crop: :fill) %>
 
