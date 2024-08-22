@@ -1,8 +1,17 @@
-<%= turbo_frame_tag :question_answers do %>
-  <h1>Reso</h1>
-  <p><%= @question.explication %></p>
-  <p><%= @question.solution.content %></p>
-  <p>Try : <%= @try %></p>
-  <p>Tu as <%= @correct ? 'bon' : 'faux' %></p>
-  <%= link_to "next", training_play_path(@training_answer.training.id) %>
-<% end %>
+<div class="background-first">
+
+   <div class="top_card d-flex justify-content-center align-items-end">
+    <p>TRAINING</p>
+  </div>
+
+  <%= turbo_frame_tag :question_answers do %>
+    <div class="question">
+      <h1>Reso</h1>
+      <p><%= @question.explication %></p>
+      <p><%= @question.solution.content %></p>
+      <p>Try : <%= @try %></p>
+      <p>Tu as <%= @correct ? 'bon' : 'faux' %></p>
+    </div>
+    <div class="btn-orange"><%= link_to "NEXT", training_play_path(@training_answer.training.id), class: "text-color" %></div>
+  <% end %>
+</div>
