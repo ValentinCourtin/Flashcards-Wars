@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   resources :trainings, only: [:index, :show] do
     get 'play' => 'trainings#play'
-    get 'next' => 'trainings#next'
     get 'finished' => 'trainings#finished'
     get 'resolve' => 'trainings#resolve'
+    get 'replay' => 'trainings#replay'
   end
 
   resources :shop, only: [:index]

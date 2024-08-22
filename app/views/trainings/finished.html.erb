@@ -1,17 +1,21 @@
-<h1>FINISHED!</h1>
-<p>
-   <%= "You've mastered #{@training.subcategory.name}, you're on the right track!" %> <br>
-________________________<br>
+<%= turbo_frame_tag :question_answers do %>
+  <h1>FINISHED!</h1>
+  <p>
+    <%= "You've mastered #{@training.subcategory.name}, you're on the right track!" %> <br>
+  ________________________<br>
 
-</p>
-  YOU WIN<br>
-  + 100 experience (xp)+ 100 golds (g) <br>
-  <% if @gold_exp_winned > 0 %>
-  BONUS first attempt (<%= "#{@first_attempt} / #{@total_questions}" %>) <br>
-  <%= "+#{@gold_exp_winned}xp +#{@gold_exp_winned}g" %> <br>
-  <% end %>
- </p>
+  <p>
+    YOU WIN<br>
+    + 100 experience (xp)+ 100 golds (g) <br>
+  </p>
+  <p>
+    <% if @gold_exp_winned > 0 %>
+    BONUS first attempt (<%= "#{@first_attempt} / #{@total_questions}" %>) <br>
+    <%= "+#{@gold_exp_winned}xp +#{@gold_exp_winned}g" %> <br>
+    <% end %>
+  </p>
 
- <%= @u %>
+  <%= @u %>
 
-<%= link_to "NEXT", trainings_path %>
+  <%= link_to "NEXT", trainings_path, data: {turbo: false} %>
+<% end %>
