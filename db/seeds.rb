@@ -52,10 +52,10 @@ quest_1 = Question.create(content:"question1", explication:"explication de la qu
 quest_2 = Question.create(content:"question2", explication:"explication de la question 2", subcategory: sub_ruby )
 quest_3 = Question.create(content:"question3?", explication:"explication de la question 3", subcategory: sub_ruby2 )
 quest_4 = Question.create(content:"question4?", explication:"explication de la question 4", subcategory: sub_ruby2 )
-quest_5 = Question.create(content:"question5?", explication:"explication de la question 5", subcategory: sub_rails)
-quest_6 = Question.create(content:"question6?", explication:"explication de la question 6", subcategory: sub_rails)
-quest_7 = Question.create(content:"question7?", explication:"explication de la question 7", subcategory: sub_rails2)
-quest_8 = Question.create(content:"question8?", explication:"explication de la question 8", subcategory: sub_rails2)
+quest_5 = Question.create(content:"question5?", explication:"explication de la question 5", subcategory: sub_oop)
+quest_6 = Question.create(content:"question6?", explication:"explication de la question 6", subcategory: sub_oop)
+quest_7 = Question.create(content:"question7?", explication:"explication de la question 7", subcategory: sub_oop2)
+quest_8 = Question.create(content:"question8?", explication:"explication de la question 8", subcategory: sub_oop2)
 
 puts "Creating answers... 🌱"
 Question.all.each do |question|
@@ -112,16 +112,8 @@ puts "------ STEP 3 : CREATING ITEMS 🌱 ------"
 puts ""
 
 puts "Creating items... 🌱"
-
-Item individual 1
-image_path_i1 = Rails.root.join('db', 'images', 'supercroissant.png')
-image_file_i1 = File.open(image_path_i1)
-item_i1 = Item.create!(name:"Super Croissant", description:"The player selected has to bring croissant for next breakfast!", probability: "0,05")
-item_i1.photo.attach(io: image_file_i1, filename:'supercroissant.png', content_type: 'image/png')
-image_file_i1.close
-
-# db/seeds.rb
 puts ""
+
 items = [
    {
      name: "Super croissant",
