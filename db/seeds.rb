@@ -92,7 +92,7 @@ usertest2 = User.create!(
   password: "123456",
   first_name: "Lynn",
   last_name: "Telia",
-  gold_count: 100,
+  gold_count: 900,
   experience: 999
 )
 
@@ -235,7 +235,7 @@ items.each_with_index do |item_attributes, index|
 end
 
 # item1 = Item.create!(name:"Super croissant", description:"The player selected has to bring croissant for next breakfast!", probability:"1")
-# item2 = Item.create!(name:"Butler", description:"The player selected his your butler for one Day!", probability:"1")
+# item2 = Item.create!(name:"Butler", description:"The player selected is your butler for one Day!", probability:"1")
 
 
 puts "Creating inventories... 🌱"
