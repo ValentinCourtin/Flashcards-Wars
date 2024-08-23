@@ -1,0 +1,35 @@
+@keyframes slidein {
+
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    display: block;
+  }
+
+  30% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  90% {
+    opacity: 1;
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.image-validation {
+  animation: slidein 2s linear;
+  position: absolute;
+  z-index: 2;
+  display: none;
+  bottom: 280px;
+  left: 48px;
+}
+
+.img {
+  width: 320px;
+}
