@@ -5,6 +5,8 @@
     <p>TRAINING</p>
    </div>
 
+  <%= link_to "< Back to trainings", trainings_path, class:"btn-back" %>
+
   <%= turbo_frame_tag :question_answers do %>
     <div class="question">
       <h1>FINISHED!</h1>
@@ -28,4 +30,3 @@
     <div class="btn-orange"><%= link_to "NEXT", trainings_path, data: {turbo: false}, class: "text-color" %></div>
   <% end %>
 </div>
-
