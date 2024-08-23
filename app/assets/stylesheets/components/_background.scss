@@ -11,3 +11,33 @@
   display: flex;
   justify-content: center;
 }
+
+.background-home {
+  background-image: image-url('background-home.png');
+  background-size: cover;
+  background-position: center;
+  background-size: 220%;
+  width: 100wh;
+  height: 100vh;
+  position: relative;
+}
+
+.background-profile {
+  background-image: image-url('background-profile.png');
+  background-size: cover;
+  background-position: center;
+  background-size: 220%;
+  width: 100wh;
+  height: 100vh;
+  position: relative;
+}
+
+.background-splashscreen {
+  background-image: image-url('splashscreen.png');
+  background-size: cover;
+  background-position: center;
+  background-size: 220%;
+  width: 100wh;
+  height: 100vh;
+  position: relative;
+}
