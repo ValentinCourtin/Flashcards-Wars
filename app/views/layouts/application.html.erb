@@ -21,7 +21,7 @@
   </head>
 
   <body>
-    <% unless current_page?(profil_users_path) %>
+    <% unless current_page?(profil_users_path) || current_page?(welcome_path) %>
        <%= render "shared/navbar" %>
     <% end %>
     <%= render "shared/flashes" %>

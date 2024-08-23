@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   # creation de routes pour USERS/show
   get "home", to: "users#show"
   root to: "users#show"
+  get "welcome", to: "pages#welcome"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
