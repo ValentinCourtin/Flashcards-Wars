@@ -1,7 +1,7 @@
 .btn-orange {
   background-color: #E66E04;
-  width: 341px;
   height: 53px;
+  width: 80vw;
   border-radius: 8px;
   text-align: center;
   padding-top: 6px;
@@ -9,6 +9,18 @@
   bottom: 130px;
   left: 50%;
   transform: translateX(-50%);
+
+  /*   .btn-big {
+    width: 341px;
+  }
+
+  .btn-small {
+    width: 161px;
+  }
+
+  .btn-medium {
+    width: 222px;
+  } */
 
   .text-color {
     color: #EDFEFE;
