@@ -4,7 +4,7 @@
 
 ---------------------------------------------
 
-<% if @items.present? %>
+ <% if @items.present? %>
 
   <div class="swiper" data-controller="carousel">
     <!-- Additional required wrapper -->
@@ -18,6 +18,10 @@
           <br>
           <strong><%= item.name %></strong>
           <p><%= item.description %></p>
+
+          <%# btn, path = l'action choice dans le controller shop, data = quelle turbo frame va afficher la popup %>
+          <%= link_to "USE IT", choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop } %>
+
 
         </div>
       <% end %>
@@ -34,7 +38,7 @@
   </div>
 
 <% else %>
-    <%= image_tag "question_point.png", alt: "question point"  %>
+    <%= image_tag "question_point.png", alt: "question point", class: 'image-shop' %>
       <br>
         ---------------------------------------------
       <br>
@@ -43,8 +47,14 @@
     <p>vvvvvvvvvvv </p>
 <% end %>
 
-<%# <button data-turbo-frame="popup-choice" data-action="click->load-popup">USE IT</button> %>
-<%= link_to "USE IT", shop_choice_path(@user) %>
+
+
+
+
+<%# turbo-frame vide qui va afficher la pop up %>
+<%= turbo_frame_tag :popup_shop %>
+
+
 ---------------------------------------------
 
 <%= image_tag "wheel.png", alt: "wheel"  %>
@@ -53,66 +63,63 @@
   <br>
 <p>&gt Items wheel! </p>
 
-<button data-turbo-frame="popup-wheel" data-action="click->load-popup">LAUNCH: 400G</button>
-
 
 
 
 //////////////////////
+  <%= link_to "LAUNCH: 400G", buy_shops_path, data: {turbo_frame: :popup_shop} %>
+
+
+
+
+<%#
+<%= turbo_frame_tag :popup_wheel do %>
+<!-- Le contenu initial de la pop-up peut être vide ou un message de chargement -->
+<%# <% end %>
+
+<!-- Bouton qui déclenchera le chargement de la pop-up -->
+<%# btn, path = l'action buy dans le controller shop (avec le content), data = quelle turbo frame va afficher la popup %>
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%# <button data-turbo-frame="popup-choice" data-action="click->load-popup">USE IT</button> %>
+
+<%# <button data-turbo-frame="popup-wheel" data-action="click->load-popup">LAUNCH: 400G</button>
+ %>
 
 
 <%# <!-- turbo-frame qui servira de conteneur pour la pop-up -->
 <turbo-frame id="popup-wheel">
-  <!-- Le contenu initial de la pop-up peut être vide ou un message de chargement -->
+
 </turbo-frame> %>
 
-<%= turbo_frame_tag :popup_wheel do %>
-<% end %>
 
-<!-- Bouton qui déclenchera le chargement de la pop-up -->
+
+<%# href="<%= launch_shop_path %>
 <%# <button data-turbo-frame="popup-wheel" data-action="click->load-popup" >
   LAUNCH: 400G
 </button> %>
-<%= link_to "LAUNCH 400 G link", shop_buy_path(@user) %>
-
-<%# href="<%= launch_shop_path %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
