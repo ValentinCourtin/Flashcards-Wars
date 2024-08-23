@@ -1,7 +1,15 @@
-<div class="black-frame">
-  <%= link_to "> LOG OUT", destroy_user_session_path, data: {turbo_method: :delete}, class:"green-link" %>
-  <%= link_to "> SETTINGS", '#', class:"green-link" %>
-  <%= link_to "> CHANGE NAME", '#', class:"green-link"  %>
-  <%= link_to "> SOUNDS : ON", '#', class:"green-link"  %>
-</div>
+<div class="background-profile background-fixed">
+  <div class="profil">
+    <div>
+      <%= link_to "< Back to home", home_path, class:"btn-backtohome" %>
+    </div>
+    <div class="black-frame">
 
+        <%= link_to "> LOG OUT", destroy_user_session_path, data: {turbo_method: :delete}, class:"green-link" %>
+        <%= link_to "> SETTINGS", '#', class:"green-link" %>
+        <%= link_to "> CHANGE NAME", '#', class:"green-link"  %>
+        <%= link_to "> SOUNDS : ON", '#', class:"green-link"  %>
+
+    </div>
+  </div>
+</div>

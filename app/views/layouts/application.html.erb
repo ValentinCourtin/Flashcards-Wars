@@ -16,12 +16,13 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <% unless current_page?(profil_users_path) %>
+       <%= render "shared/navbar" %>
+    <% end %>
     <%= render "shared/flashes" %>
 
     <%= yield %>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
   </body>
 </html>
