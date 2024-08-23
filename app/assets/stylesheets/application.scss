@@ -11,4 +11,20 @@
 @import "components/index";
 @import "pages/index";
 
+@font-face {
+  font-family: 'Zorque';
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Orange\ Kid';
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+  font-family: 'Orange\ Kid', sans-serif;
+}

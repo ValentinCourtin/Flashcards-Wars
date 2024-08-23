@@ -1,17 +1,25 @@
-<h1>Trainings</h1>
+<div class="background-first">
 
-
-<% @trainings.each_with_index do |training, index| %>
-  <div>
-    <h2>> MISSION <%= index + 1 %></h2>
-    <p>> <%= link_to training.subcategory.category.name + ' - ' + training.subcategory.name, training  %></p>
+  <div class="top_card d-flex justify-content-center align-items-end">
+    <p>TRAINING</p>
   </div>
-<% end %>
+  <div class="mission-container">
+    <div class="missions">
+      <% @trainings.each_with_index do |training, index| %>
+        <%= link_to training, class:"mission-todo" do %>
+          <div class="mission-frame">
+            <h2>> MISSION <%= index + 1 %></h2>
+            <p>> <%=  training.subcategory.category.name + ' - ' + training.subcategory.name %></p>
+          </div>
+        <% end %>
+      <% end %>
 
-<% @Locked_missions_count.times do %>
-  <div>
-    <h2>> MISSION LOCKED</h2>
-    <p>> LOCKED</p>
-
+      <% @Locked_missions_count.times do %>
+        <div class="mission-frame mission-locked">
+          <h2>> MISSION LOCKED</h2>
+          <p>> LOCKED</p>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

@@ -1,0 +1,34 @@
+.answers-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .answer {
+    background-color: black;
+    border: 2px solid #025470;
+    border-radius: 4px;
+    width: 164px;
+    height: 100px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .text-blue {
+      color: #A9DBFB;
+      text-decoration: none;
+    }
+  }
+}
+
+.text-blue {
+  color: #A9DBFB;
+  text-decoration: none;
+}

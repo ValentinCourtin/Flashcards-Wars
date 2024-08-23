@@ -1,13 +1,36 @@
-<h1>Show d'un training</h1>
+<div class="background-first " >
 
-<%= link_to "Back to home", trainings_path %>
+  <div class="top_card d-flex justify-content-center align-items-end">
+    <p>TRAINING</p>
+  </div>
 
-<p>Lesson</p>
-<p><%= @training.subcategory.content %></p>
+   <%= link_to "< Back to trainings", trainings_path, class:"btn-back" %>
 
-<% if @training.finished %>
-  <%= link_to "Retry for pleasur", training_replay_path(@training), data: { turbo: false } %>
-<% else %>
-  <%= link_to "Get it", training_play_path(@training), data: { turbo: false } %>
-<% end %>
+  <!-- CARROUSSEL AVEC LE COURS -->
+  <div class="swiper question ms-0" data-controller="carousel">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+    <!-- Slides -->
+      <% @training.subcategory.lessons.each do |lesson| %>
+        <div class="swiper-slide swiper-content">
+          <p><strong>> LESSON</strong></p>
+          <p>> <%= lesson.content %></p>
 
+        </div>
+      <% end %>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <%# <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div> %>
+  </div>
+
+
+
+  <% if @training.finished %>
+    <div class="btn-orange"><%= link_to "Retry for pleasure", training_replay_path(@training), data: { turbo: false }, class: "text-color" %></div>
+  <% else %>
+    <div class="btn-orange"><%= link_to "Get it", training_play_path(@training), data: { turbo: false }, class: "text-color" %></div>
+  <% end %>
+</div>

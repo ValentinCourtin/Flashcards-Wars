@@ -1,6 +1,12 @@
-<h1>début du jeu</h1>
+<div class="background-first">
+   <div class="top_card d-flex justify-content-center align-items-end">
+    <p>TRAINING</p>
+  </div>
 
-<%= turbo_frame_tag :question_answers do %>
-  <%= @training.id %>
-  <%= render "questions/question"%>
-<% end %>
+  <%= link_to "< Back to trainings", trainings_path, class:"btn-back" %>
+
+  <%= turbo_frame_tag :question_answers do %>
+    <%= @training.id %>
+    <%= render "questions/question"%>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+.swiper-content {
+  padding: 16px;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+
+  &.swiper-pagination-bullet-active {
+    background: #E66E04 !important;
+  }
+}
