@@ -16,10 +16,19 @@
     height: 100px;
     text-align: center;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     .text-blue {
       color: #A9DBFB;
       text-decoration: none;
     }
   }
+}
 
+.text-blue {
+  color: #A9DBFB;
+  text-decoration: none;
 }
