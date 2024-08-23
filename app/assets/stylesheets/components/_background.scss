@@ -8,9 +8,13 @@
   width: 100wh;
   height: 100vh;
   position: relative;
+}
+
+.background-fixed {
   display: flex;
   justify-content: center;
 }
+
 
 .background-home {
   background-image: image-url('background-home.png');

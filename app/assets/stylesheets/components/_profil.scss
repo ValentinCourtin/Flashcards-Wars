@@ -9,11 +9,25 @@
   text-align:center;
   border-radius: 8px;
   border: 2px solid #025470;
-  margin: 82px auto;
+  margin-top: 16px;
 }
 
 .green-link {
   color: #10E711;
   text-decoration: none;
   font-size: 24px;
+}
+
+.profil {
+  height: 100vh;
+  padding-top: 133px;
+}
+
+.btn-backtohome {
+  background-color: #025470;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
 }

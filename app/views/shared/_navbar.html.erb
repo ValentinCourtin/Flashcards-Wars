@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="display: block;">
   <div class="container-fluid">
       <%= link_to home_path, class: "navbar-brand" do %>
         <div class="icone">
@@ -21,7 +21,7 @@
         </div>
       <% end %>
 
-      <%= link_to users_profil_path(@user), class: "navbar-brand" do %>
+      <%= link_to profil_users_path(), class: "navbar-brand" do %>
         <div class="icone">
           <i class="fa-solid fa-user fa-xl my-3 my-3" style="color: #ffffff;"></i>
           <p>PROFIL</p>
