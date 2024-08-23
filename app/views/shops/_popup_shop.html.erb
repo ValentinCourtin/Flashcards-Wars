@@ -1,0 +1,19 @@
+<%=turbo_frame_tag  :popup_shop do %>
+  <div class="popup">
+    <p><%= @content %></p>
+    <%# <button data-turbo-frame="popup-wheel" data-action="click->load-new-content">Changer le contenu</button>
+    <%= link_to "LAUNCH 400 G link", shop_buy_path(@user) %>
+    <%# <button data-action="click->close-popup">Fermer</button> %>
+
+    <%# mettre l'image....
+    mettre bomb
+    faire fondu entre les deux
+    faire son
+    ajouter items
+    %>
+
+
+
+    <%= link_to "BACK X", shops_path %>
+  </div>
+<% end %>

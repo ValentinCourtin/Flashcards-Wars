@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-
   resources :subcategories, only: [:index, :show] do
     resources :questions, only: [:show]
   end
-
 
   resources :trainings, only: [:index, :show] do
     get 'play' => 'trainings#play'
@@ -12,14 +10,25 @@ Rails.application.routes.draw do
     get 'replay' => 'trainings#replay'
   end
 
-  resources :shop, only: [:index, :buy, :choice] do
-    get 'buy' => 'shop#buy'
-    get 'choice' => 'shop#choice'
+  resources :shops, only: [:index] do
+    collection do
+      get :choice
+      get :buy
+    end
+    # get 'buy' => 'shop#buy'
+    # get 'choice' => 'shop#choice'
   end
 
   devise_for :users
 
-  get 'users/profil', to: 'users#profil'
+  resources :users, only: [] do
+    collection do
+      get :profil
+    end
+  end
+
+  get 'users/rank', to: "users#rank"
+  # get 'users/profil', to: 'users#profil'
 
 
   resources :inventories, only: [:edit, :update, :delete] do
@@ -31,7 +40,6 @@ Rails.application.routes.draw do
   # resources :users
 
   # creation de routes pour USERS/RANK
-  get 'users/rank', to: "users#rank"
   # get 'rank', to: "users#rank"
 
   # creation de routes pour USERS/show

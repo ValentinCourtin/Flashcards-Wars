@@ -1,0 +1,18 @@
+.popup {
+
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%; /* Largeur relative à la taille de l'écran */
+  max-width: 600px; /* Largeur maximale */
+  max-height: 80vh; /* Hauteur maximale (80% de la hauteur de la fenêtre) */
+  overflow-y: auto; /* Ajoute un défilement si le contenu dépasse la hauteur max */
+  // z-index: 1; /* set higher z-index value */
+  // position: relative; /* position must be set for z-index to work */
+
+}
+
+// .image-shop{
+//   width: 20px;
+//   height: 20px ;
+// }
