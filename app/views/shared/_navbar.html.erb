@@ -1,27 +1,27 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid d-flex justify-content-around">
-      <%= link_to 'home', class: "navbar-brand" do %>
+  <div class="container-fluid">
+      <%= link_to home_path, class: "navbar-brand" do %>
         <div class="icone">
           <i class="fa-solid fa-house fa-xl my-3" style="color: #ffffff;"></i>
           <p>HOME</p>
         </div>
       <% end %>
 
-      <%= link_to "shop", class: "navbar-brand" do %>
+      <%= link_to shop_index_path, class: "navbar-brand" do %>
         <div class="icone">
           <i class="fa-solid fa-shop fa-xl my-3" style="color: #ffffff;"></i>
           <p>SHOP</p>
         </div>
       <% end %>
 
-      <%= link_to "#", class: "navbar-brand" do %>
+      <%= link_to users_rank_path(@user), class: "navbar-brand" do %>
         <div class="icone">
           <i class="fa-solid fa-ranking-star fa-xl my-3" style="color: #ffffff;"></i>
-          <p>RANKING</p>
+          <p>RANK</p>
         </div>
       <% end %>
 
-      <%= link_to "#", class: "navbar-brand" do %>
+      <%= link_to users_profil_path(@user), class: "navbar-brand" do %>
         <div class="icone">
           <i class="fa-solid fa-user fa-xl my-3 my-3" style="color: #ffffff;"></i>
           <p>PROFIL</p>
