@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get 'users/profil', to: 'users#profil'
+
+
   resources :inventories, only: [:edit, :update, :delete] do
     collection do
       get :myitems

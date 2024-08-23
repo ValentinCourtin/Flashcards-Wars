@@ -1,0 +1,19 @@
+.black-frame {
+  width: 342px;
+  height: 578px;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  border-radius: 8px;
+  border: 2px solid #025470;
+  margin: 82px auto;
+}
+
+.green-link {
+  color: #10E711;
+  text-decoration: none;
+  font-size: 24px;
+}
