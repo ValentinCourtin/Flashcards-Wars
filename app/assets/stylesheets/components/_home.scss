@@ -1,0 +1,83 @@
+.btn-play {
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-training {
+  background-color: #E66E04;
+  height: 53px;
+  width: 80vw;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.btn-duel {
+  background-color: #0A3543;
+  height: 53px;
+  width: 80vw;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.font-white-center {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+  vertical-align: center;
+}
+
+
+
+.top-card-home {
+  background-color: #025470;
+  width: 226px;
+  height: 130px;
+  border-radius: 0px 0px 8px 8px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  padding-top: 36px;
+  p {
+    color: white;
+    font-size: 24px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .username-frame {
+    color: white;
+    text-align: center;
+    width: 182px;
+    height: 36px;
+    border-radius: 999px;
+    background-color: #025470;
+    border: 2px solid #091624;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+}
+
+.round-white {
+  background-color: black;
+  border-radius: 50%;
+  height: 270px;
+  width: 270px;
+  position: absolute;
+  top: 210px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid #025470;
+}
