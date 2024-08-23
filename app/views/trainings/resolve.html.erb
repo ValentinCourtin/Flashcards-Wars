@@ -1,4 +1,4 @@
-<div class="background-first">
+<div class="background-first <%# d-flex justify-content-center align-items-center %>">
 
    <div class="top_card d-flex justify-content-center align-items-end">
     <p>TRAINING</p>
@@ -6,14 +6,32 @@
 
   <%= link_to "< Back to trainings", trainings_path, class:"btn-back" %>
 
+
+
   <%= turbo_frame_tag :question_answers do %>
-    <div class="question">
-      <h1>Reso</h1>
-      <p><%= @question.explication %></p>
-      <p><%= @question.solution.content %></p>
-      <p>Try : <%= @try %></p>
-      <p>Tu as <%= @correct ? 'bon' : 'faux' %></p>
-    </div>
+    <%if @correct %>
+      <div class="image-validation"><%= image_tag "true", class:"img"%></div>
+    <%else%>
+      <div class="image-validation"><%= image_tag "false", class:"img"%></div>
+    <%end%>
+
+      <div class="question">
+        <h1>Reso</h1>
+        <p><%= @question.explication %></p>
+        <p>Try : <%= @try %></p>
+       <%#  <p>Tu as <%= @correct ? 'bon' : 'faux' %><%# </p>  %>
+      </div>
+
+      <div id="correct-answer">
+        <p><%= @question.solution.content %></p>
+        <%if @correct %>
+          <i class="fa-solid fa-check" style="color: #179207;"></i>
+        <%else%>
+        <i class="fa-solid fa-xmark" style="color: #db1a1a;"></i>
+        <%end%>
+
+      </div>
+
     <div class="btn-orange"><%= link_to "NEXT", training_play_path(@training_answer.training.id), class: "text-color" %></div>
   <% end %>
 </div>
