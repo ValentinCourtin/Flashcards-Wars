@@ -12,7 +12,10 @@ Rails.application.routes.draw do
     get 'replay' => 'trainings#replay'
   end
 
-  resources :shop, only: [:index]
+  resources :shop, only: [:index, :buy, :choice] do
+    get 'buy' => 'shop#buy'
+    get 'choice' => 'shop#choice'
+  end
 
   devise_for :users
 

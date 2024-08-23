@@ -1,13 +1,19 @@
-<h1>Show d'un training</h1>
+<div class="background-first " >
 
-<%= link_to "Back to home", trainings_path %>
+  <div class="top_card d-flex justify-content-center align-items-end">
+    <p>TRAINING</p>
+  </div>
 
-<p>Lesson</p>
-<p><%= @training.subcategory.content %></p>
+  <h1>Show d'un training</h1>
 
-<% if @training.finished %>
-  <%= link_to "Retry for pleasur", training_replay_path(@training), data: { turbo: false } %>
-<% else %>
-  <%= link_to "Get it", training_play_path(@training), data: { turbo: false } %>
-<% end %>
+  <%= link_to "Back to home", trainings_path %>
 
+  <p>Lesson</p>
+  <p><%= @training.subcategory.content %></p>
+
+  <% if @training.finished %>
+    <div class="btn-orange"><%= link_to "Retry for pleasure", training_replay_path(@training), data: { turbo: false }, class: "text-color" %></div>
+  <% else %>
+    <div class="btn-orange"><%= link_to "Get it", training_play_path(@training), data: { turbo: false }, class: "text-color" %></div>
+  <% end %>
+</div>
