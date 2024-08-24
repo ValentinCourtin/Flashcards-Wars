@@ -37,6 +37,10 @@
 
       </div>
 
-    <div class="btn-orange"><%= link_to "NEXT", training_play_path(@training_answer.training.id), class: "text-color" %></div>
+    <%= link_to training_play_path(@training_answer.training.id), class: "font-white-center" do %>
+      <div class="btn-orange">
+        <p>NEXT</p>
+      </div>
+    <% end %>
   <% end %>
 </div>
