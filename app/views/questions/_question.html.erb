@@ -1,8 +1,11 @@
 <%= turbo_frame_tag :question_answers do %>
-  <div class="question">
-    <h2> > QUESTIONS <%= @question.id %></h2>
-    <p> > <%= @question.content %></p>
-  </div>
+
+    <div class="question">
+      <h2> > QUESTION</h2>
+      <p> > <%= @question.content %></p>
+    </div>
+    <p id="avancement">Flashcard <%= @training.questions.count - @training_answers.count%>/<%= @training.questions.count %></p>
+
 
   <div class="answers-container" >
       <% @possibilities.each do |possibility| %>
