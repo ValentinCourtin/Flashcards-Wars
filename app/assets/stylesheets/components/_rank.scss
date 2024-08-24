@@ -1,0 +1,20 @@
+.rank-frame {
+  background: black;
+  color: #10E711;
+  width: 342px;
+  height: 54px;
+  margin: 10px;
+  border-radius: 8px;
+  border: 2px solid #025470;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+.top-rank {
+  margin-top: 120px;
+}
+
+.bottom-rank {
+  margin-top: 36px;
+}

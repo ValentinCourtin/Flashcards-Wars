@@ -27,6 +27,10 @@
         </p>
       <% end %>
     </div>
-    <div class="btn-orange"><%= link_to "NEXT", trainings_path, data: {turbo: false}, class: "text-color" %></div>
+    <%= link_to trainings_path, data: {turbo: false}, class: "font-white-center" do %>
+      <div class="btn-orange">
+        <p>NEXT</p>
+      </div>
+    <% end %>
   <% end %>
 </div>

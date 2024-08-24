@@ -11,17 +11,23 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-    <%# Connection des typos %>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+
+    <%= render 'shared/ios_pwa_links' %>
 
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <% unless current_page?(profil_users_path) || current_page?(welcome_path) %>
+       <%= render "shared/navbar" %>
+    <% end %>
     <%= render "shared/flashes" %>
 
     <%= yield %>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
   </body>
 </html>

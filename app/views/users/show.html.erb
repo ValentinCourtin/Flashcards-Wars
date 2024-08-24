@@ -1,40 +1,39 @@
 
-<div class="top_card d-flex justify-content-center align-items-end">
- <p>lvl : <%= @level %></p>
-<br>
-  <p> · N° <%= @rank %> </p>
-  <p> · <%= @user.gold_count %> G</p>
+<div class="background-home">
+  <div class="top-card-home">
+    <div class="d-flex justify-content-center">
+      <p>Level <%= @user.level %></p>
+    </div>
+    <div class="d-flex justify-content-center">
+      <p>N° <%= @rank %> • <%= @user.gold_count %> G</p>
+    </div>
+    <div class="username-frame">
+      <p><%=  @username  %> </p>
+    </div>
+  </div>
+
+
+
+  <div class="round-white">
+    <p>1</p>
+  </div>
+
+  <div class="btn-play">
+    <%= link_to trainings_path, class:"font-white-center" do %>
+      <div class="btn-training">
+        <p>TRAININGS</p>
+      </div>
+    <% end %>
+    <%= link_to home_path, class:"font-white-center" do %>
+      <div class="btn-duel">
+        <p>DUEL</p>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<br>
-<br><br>
 
-<div class="username">
-  <p> <%=  @username  %> </p>
-</div>
+  <%# <p>first_name : <%= @user.first_name %>
+  <%# <p>last_name <%= @user.last_name %>
+  <%# <p>experience : <%= @user.experience %>
 
-
-<br>
-<br><br>
-
-<p>lvl : <%= @level %></p>
-<p> rank : N° <%= @rank %> </p>
-<p>username: <%=  @username  %> </p>
-<p>gold_count : <%= @user.gold_count %></p>
-<p>experience : <%= @user.experience %> </p>
-<p>first_name : <%= @user.first_name %></p>
-<p>last_name <%= @user.last_name %></p>
-<br>
-
-
-<%= link_to 'TRAININGS', trainings_path %>
-<br>
-<%= link_to 'DUEL', home_path %>
-<br>
-<br>
-
-<%# No more used
-<%= link_to 'HOME', home_path %>
-<%# <%= link_to 'SHOP', shops_path %>
-<%# <%= link_to 'RANK', users_rank_path(@user) %>
-<%# <%= link_to 'PROFIL', home_path %>

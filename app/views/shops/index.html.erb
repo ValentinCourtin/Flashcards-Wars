@@ -1,11 +1,12 @@
-<%# <div class="top_card d-flex justify-content-center align-items-end"> %>
-  <h1>SHOP</h1>
-  <br/>
-  <p>You have <%= @user.gold_count %> G</p>
-<%# </div> %>
+
+<div class="background-first">
+  <div class="top_card top-shop">
+    <h1>SHOP</h1>
+    <p>You have <%= @user.gold_count %> G</p>
+  </div>
 
 ---------------------------------------------
-<!--  Carousel qui ne s'actualise âs à la fermeture de la pop up-->
+<!--  Carousel qui ne s'actualise pas à la fermeture de la pop up-->
       <%# <%= render "shops/carousel" %>
 
 <!--  Carousel qui s'actualise âs à la fermeture de la pop up MAIS qui disparait pdt que la pop up est là-->
@@ -14,27 +15,16 @@
 <% end %>
 ---------------------------------------------
 
+
 <div>
-  <%# <%= image_tag "wheel.png", alt: "wheel" %>
+  <%# <%= image_tag "wheel.png", alt: "wheel", width: "100px", height: "100px" %>
     <br>
 
     <br>
   <p>&gt Items wheel! </p>
 
     <%= link_to "LAUNCH: 400G", buy_shops_path, data: {turbo_frame: :popup_shop} %>
-
----------------------------------------------
 </div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 
 
 

@@ -16,15 +16,15 @@ class User < ApplicationRecord
   def level
     case experience
     when 0..99
-      1
+      "1 : BEGINNER"
     when 100..199
-      2
+      "2 : LEARNER"
     when 200..399
-      3
+      "3 : PROGRAMMER"
     when 400..699
-      4
+      "4 : DEVELOPPPER"
     when 700..1099
-      5
+      "5 : HACKER"
     else
       # Calculer pour les niveaux supérieurs
       5 + ((experience - 1099) / 500)

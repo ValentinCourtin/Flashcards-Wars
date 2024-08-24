@@ -1,15 +1,19 @@
 <%= turbo_frame_tag :question_answers do %>
-  <div class="question">
-    <h2> > QUESTIONS <%= @question.id %></h2>
-    <p> > <%= @question.content %></p>
-  </div>
 
-  <div class="answers-container">
+    <div class="question">
+      <h2> > QUESTION</h2>
+      <p> > <%= @question.content %></p>
+    </div>
+    <p id="avancement">Flashcard <%= @training.questions.count - @training_answers.count%>/<%= @training.questions.count %></p>
+
+
+  <div class="answers-container" >
       <% @possibilities.each do |possibility| %>
           <%= link_to training_resolve_path(
             training_answer_id: @training_answer.id,
             possibility_id: possibility.id
-            ), data: { turbo: false },
+            ),
+            data: { turbo: false },
             class: "text-blue" do %>
             <div class="answer">
               <p  class="text-blue"><%= possibility.content %></p>
@@ -17,6 +21,8 @@
           <% end %>
       <% end %>
   </div>
+
+
 <% end %>
 
 <%#   <% if @next_question %>

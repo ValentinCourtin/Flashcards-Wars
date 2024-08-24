@@ -29,8 +29,16 @@
 
 
   <% if @training.finished %>
-    <div class="btn-orange"><%= link_to "Retry for pleasure", training_replay_path(@training), data: { turbo: false }, class: "text-color" %></div>
+    <%= link_to training_replay_path(@training), data: { turbo: false }, class: "font-white-center" do %>
+      <div class="btn-orange">
+        <p>Retry for pleasure</p>
+      </div>
+    <% end %>
   <% else %>
-    <div class="btn-orange"><%= link_to "Get it", training_play_path(@training), data: { turbo: false }, class: "text-color" %></div>
+    <%= link_to training_play_path(@training), data: { turbo: false }, class: "font-white-center" do %>
+      <div class="btn-orange">
+        <p>Get it</p>
+      </div>
+    <% end %>
   <% end %>
 </div>
