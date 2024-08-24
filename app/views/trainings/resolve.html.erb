@@ -15,20 +15,25 @@
       <div class="image-validation"><%= image_tag "false", class:"img"%></div>
     <%end%>
 
-      <div class="question">
-        <h1>Reso</h1>
+    <%if @correct %>
+      <div class="question" id="border-green">
+        <h2>> ANSWER</h2>
         <p><%= @question.explication %></p>
         <p>Try : <%= @try %></p>
        <%#  <p>Tu as <%= @correct ? 'bon' : 'faux' %><%# </p>  %>
       </div>
+    <%else%>
+      <div class="question" id="border-red">
+        <h2>> ANSWER</h2>
+        <p><%= @question.explication %></p>
+        <p>Try : <%= @try %></p>
+       <%#  <p>Tu as <%= @correct ? 'bon' : 'faux' %><%# </p>  %>
+      </div>
+    <%end%>
 
       <div id="correct-answer">
         <p><%= @question.solution.content %></p>
-        <%if @correct %>
-          <i class="fa-solid fa-check" style="color: #179207;"></i>
-        <%else%>
-        <i class="fa-solid fa-xmark" style="color: #db1a1a;"></i>
-        <%end%>
+
 
       </div>
 
