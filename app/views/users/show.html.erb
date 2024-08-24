@@ -1,19 +1,30 @@
-<h1>Users#show  as: HOME</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<div class="top_card d-flex justify-content-center align-items-end">
+ <p>lvl : <%= @level %></p>
+<br>
+  <p> · N° <%= @rank %> </p>
+  <p> · <%= @user.gold_count %> G</p>
+</div>
+
+<br>
+<br><br>
+
+<div class="username">
+  <p> <%=  @username  %> </p>
+</div>
+
+
+<br>
+<br><br>
 
 <p>lvl : <%= @level %></p>
-<br>
-
 <p> rank : N° <%= @rank %> </p>
 <p>username: <%=  @username  %> </p>
-
 <p>gold_count : <%= @user.gold_count %></p>
 <p>experience : <%= @user.experience %> </p>
 <p>first_name : <%= @user.first_name %></p>
 <p>last_name <%= @user.last_name %></p>
 <br>
-
-
 
 
 <%= link_to 'TRAININGS', trainings_path %>
@@ -24,6 +35,6 @@
 
 <%# No more used
 <%= link_to 'HOME', home_path %>
-<%= link_to 'SHOP', shops_path %>
-<%= link_to 'RANK', users_rank_path(@user) %>
-<%= link_to 'PROFIL', home_path %>
+<%# <%= link_to 'SHOP', shops_path %>
+<%# <%= link_to 'RANK', users_rank_path(@user) %>
+<%# <%= link_to 'PROFIL', home_path %>
