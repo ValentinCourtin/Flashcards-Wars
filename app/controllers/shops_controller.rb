@@ -63,12 +63,13 @@ class ShopsController < ApplicationController
       # Logique pour générer le contenu de la pop-up
       @content = "Sorry, you need more gold to launch..."
     end
+    render partial: "shops/popup_shop"
   end
 
 
   # def update_carousel
   #   render partial: "shops/carousel"
-  #   render partial: "shops/popup_shop"
+  #
   # end
 
 end
