@@ -1,0 +1,47 @@
+ <%=turbo_frame_tag  :carousel do %>
+  <div class="popup">
+    <% if @items.present? %>
+
+      <div class="swiper" data-controller="carousel">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+          <% @items.each do |item| %>
+            <div class="swiper-slide">
+              <%= cl_image_tag item.photo.key %>
+              <br>
+              ---------------------------------------------
+              <br>
+              <strong><%= item.name %></strong>
+              <p><%= item.description %></p>
+
+              <%# btn, path = l'action choice dans le controller shop, data = quelle turbo frame va afficher la popup %>
+              <%= link_to "USE IT", choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop } %>
+
+
+            </div>
+          <% end %>
+        </div>
+        <!-- If we need pagination -->
+        <%# <div class="swiper-pagination"></div> %>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <%# <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div> %>
+      </div>
+
+    <% else %>
+        <%= image_tag "question_point.png", alt: "question point" %>
+          <br>
+            ---------------------------------------------
+          <br>
+        <p>&gt You don't have any item ! </p>
+        <p>LAUNCH THE WHEEL BELOW </p>
+        <p>vvvvvvvvvvv </p>
+    <% end %>
+
+  </div>
+<% end %>

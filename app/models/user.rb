@@ -22,7 +22,7 @@ class User < ApplicationRecord
     when 200..399
       "3 : PROGRAMMER"
     when 400..699
-      "4 : DEVELOPPPER"
+      "4 : DEVELOPPER"
     when 700..1099
       "5 : HACKER"
     else

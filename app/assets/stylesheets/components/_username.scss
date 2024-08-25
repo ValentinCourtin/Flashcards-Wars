@@ -1,0 +1,21 @@
+.username{
+  background-color: #025470;
+  width: 100px;
+  height: 50px;
+
+  border-radius: 10px 10px 10px 10px;
+  border: 3px solid #ffffff;
+
+  position: absolute;
+  top: 250;
+  left: 50%;
+  transform: translateX(-50%);
+
+  text-align: center;
+}
+
+// pk fonctionne pas ????
+.p {
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+}

@@ -9,36 +9,37 @@ class ShopsController < ApplicationController
 
   def choice
     @user = current_user
-    # Logique pour générer le contenu de la pop-up
-    @item = Item.find(params[:item_id])
 
-    @content = "Contenu initial de CHOICE/USE IT"
+    @item = Item.find(params[:item_id])
+    # @item => USE IT, ENVOI MESSAGE SLACK !!!!!!!!!!!!!!!!!!!
+    @item.destroy  # => bug prob avec find
+
+    # Logique pour générer le contenu de la pop-up
+    @content = " USE IT/CHOICE : j'ai utilisé"
     # Renvoie un partial qui sera chargé dans le turbo-frame
     render "shops/_popup_shop", locals: { content: @content }
   end
 
-  # def update_content
-  #   @new_content = "Nouveau contenu après interaction"
-  #   render "shop/_popup", locals: { content: @new_content }
-  # end
 
 
 
   def buy
     @user = current_user
 
+    # use gold to buy
     if @user.gold_count >= 400
-      @user.gold_count = @user.gold_count - 400
+      @user.gold_count -= 400
+      @user.save
 
 
+      # proba
       @items = Item.all
-    # proba
+
       total_probability = @items.sum(&:probability)
       cumulative_probabilities = @items.each_with_object([]) do |item, array|
         previous_probability = array.last || 0
         array << previous_probability + item.probability
       end
-
 
       random_number = rand(0.0...total_probability)
       selected_item = nil
@@ -51,36 +52,42 @@ class ShopsController < ApplicationController
 
       # mettre dans inventory
       Inventory.create(user: @user, item: selected_item)
+
+      # Logique pour générer le contenu de la pop-up
+      @content = "BUY/LAUNCH: J'ai acheté !"
+
       # renvoyer l'item
       @item = selected_item
+
     else
-      puts "Sorry you need more money"
+      # Logique pour générer le contenu de la pop-up
+      @content = "Sorry, you need more gold to launch..."
     end
-
-
-
-
-    # Logique pour générer le contenu de la pop-up
-    @content = "Contenu initial de BUY / LAUNCH"
-    # <%= image_tag "wheel.png", alt: "wheel"  %>
-    # Renvoie un partial qui sera chargé dans le turbo-frame
-    render 'shops/_popup_shop'
-    # render turbo_stream: turbo_stream.append(:popup_shop, partial: 'shops/popup_shop', locals: { content: @content } )
+    render partial: "shops/popup_shop"
   end
 
 
-  # def update_content
-  #   @new_content = "Nouveau contenu après interaction"
-  #   render "shops/_popup_choice", locals: { content: @new_content }
+  # def update_carousel
+  #   render partial: "shops/carousel"
+  #
   # end
 
-
-
-
-
-
-
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -98,7 +105,5 @@ end
 #     end
 #   end
 #  end
-
-
 
 #  render partial: "popups/content", locals: { content: @content }

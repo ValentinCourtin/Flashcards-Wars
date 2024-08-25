@@ -1,0 +1,43 @@
+// repris de profil ! ne pas changer ou alors changer le nom de la classe !
+
+.black-frame {
+  width: 342px;
+  height: 578px;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  border-radius: 8px;
+  border: 2px solid #025470;
+  margin-top: 16px;
+}
+
+.green-link {
+  color: #10E711;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.profil {
+  height: 100vh;
+  padding-top: 133px;
+}
+
+.btn-backtohome {
+  background-color: #025470;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+// new one, on peut changer
+
+.green-link-signup {
+  color: #10E711;
+  text-decoration: none;
+  font-size: 20px;
+}

@@ -78,8 +78,8 @@ usertest2 = User.create!(
   password: "123456",
   first_name: "Lynn",
   last_name: "Telia",
-  gold_count: 900,
-  experience: 999
+  gold_count: 20000,
+  experience: 10
 )
 
 usertest3 = User.create!(
@@ -90,6 +90,7 @@ usertest3 = User.create!(
   gold_count: 50,
   experience: 500
 )
+
 
 puts ""
 puts "Finished! 🌱"
