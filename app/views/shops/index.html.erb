@@ -1,6 +1,6 @@
 
 <div class="background-first">
-  <div class="top_card top-shop">
+  <div class="shop-card-top">
     <h1>SHOP</h1>
     <p>You have <%= @user.gold_count %> G</p>
   </div>
@@ -10,23 +10,34 @@
       <%# <%= render "shops/carousel" %>
 
 <!--  Carousel qui s'actualise âs à la fermeture de la pop up MAIS qui disparait pdt que la pop up est là-->
-<%= turbo_frame_tag "popup_shop" do %>
-  <%= render "shops/carousel" %>
-<% end %>
----------------------------------------------
-
-
-<div>
-  <%= image_tag "wheel.png", alt: "wheel", width: "100px", height: "100px" %>
-    <br>
-
-    <br>
-  <p>&gt Items wheel! </p>
-
-    <%= link_to "LAUNCH: 400G", buy_shops_path, data: {turbo_frame: :popup_shop} %>
+<div class="shop-card-middle",>
+  <%= turbo_frame_tag "popup_shop" do %>
+    <%= render "shops/carousel"%>
+  <% end %>
 </div>
 
 
+
+<div class="shop-card-bottom">
+  <%= image_tag "wheel.png", alt: "wheel", width: "100px", height: "100px" %>
+    ---------------------------------------------
+  <p>&gt Items wheel! </p>
+
+  <%# <%= link_to "LAUNCH: 400G", buy_shops_path, data: {turbo_frame: :popup_shop} %> %>
+
+
+</div>
+
+<%#
+  <div class="btn-play"> %>
+  <div class="btn-launch">
+    <%= link_to buy_shops_path, data: {turbo_frame: :popup_shop}  do %>
+
+        <p>LAUNCH: 400G</p>
+
+    <% end %>
+    </div>
+  <%# </div> %>
 
 <br>
 

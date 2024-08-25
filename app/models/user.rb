@@ -13,26 +13,83 @@ class User < ApplicationRecord
 
   after_create :create_first_training
 
+  # def level
+  #   case experience
+  #   when 0..99
+  #     "1 : BEGINNER"
+  #   when 100..199
+  #     "2 : LEARNER"
+  #   when 200..399
+  #     "3 : PROGRAMMER"
+  #   when 400..699
+  #     "4 : DEVELOPPER"
+  #   when 700..1099
+  #     "5 : HACKER"
+  #   else
+  #     # Calculer pour les niveaux supérieurs
+  #     5 + ((experience - 1099) / 500)
+  #   end
+  # end
+
+  #  calcul du level
   def level
     case experience
     when 0..99
-      "1 : BEGINNER"
+      1
     when 100..199
-      "2 : LEARNER"
+      2
     when 200..399
-      "3 : PROGRAMMER"
+      3
     when 400..699
-      "4 : DEVELOPPER"
+      4
     when 700..1099
-      "5 : HACKER"
+      5
     else
       # Calculer pour les niveaux supérieurs
       5 + ((experience - 1099) / 500)
     end
   end
 
+  #  affichage du level
+  def level_text
+    case level
+    when 1
+      "1 : BEGINNER"
+    when 2
+      "2 : LEARNER"
+    when 3
+      "3 : PROGRAMMER"
+    when 4
+      "4 : DEVELOPPER"
+    when 5
+      "5 : HACKER"
+    else
+      "#{level} : EXPERT"
+    end
+  end
 
-  # barre d experience
+
+  #  affichage du robot par level
+  def level_image
+    case level
+    when 1
+      "robots/beginner.png"
+    when 2
+      "robots/learner.png"
+    when 3
+      "robots/programmer.png"
+    when 4
+      "robots/developer.png"
+    when 5
+      "robots/hacker.png"
+    else
+      "robots/expert.png"
+    end
+  end
+
+
+
+  # barre d'experience
   def progress_percentage
     case experience
     when 0..99

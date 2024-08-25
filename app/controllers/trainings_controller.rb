@@ -22,11 +22,11 @@ class TrainingsController < ApplicationController
       # user tries to submit severql times
       redirect_to trainings_path
     elsif @training_answers.empty?
-      # Il n'y a plus de question on redirege a la fin
+      # Il n'y a plus de question on redirige à la fin
       redirect_to training_finished_path
     else
-      #Il reste des question
-      # On en prends une training answer au hasard
+      #Il reste des questions
+      # On prends une training answer au hasard
       @training_answer = @training_answers.sample
       # on recup la question
       @question = @training_answer.question

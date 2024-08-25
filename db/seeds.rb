@@ -86,9 +86,84 @@ usertest3 = User.create!(
   email: "chloe@test.com",
   password: "123456",
   first_name: "Chloe",
-  last_name: "Bourgeois",
+  last_name: "test",
   gold_count: 50,
   experience: 500
+)
+
+
+# ////////////////////////
+# user qu'on utilisera pour la démo donc faudra faire en fonction des besoin
+user0 = User.create!(
+  email: "valentin@gmail.com",
+  password: "123456",
+  first_name: "Valentin",
+  last_name: "Courtin",
+  gold_count: 500,
+  experience: 170
+)
+
+user1 = User.create!(
+  email: "chloeb@test.com",
+  password: "123456",
+  first_name: "Chloé",
+  last_name: "Bourgeois",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
+user2 = User.create!(
+  email: "clarisse@test.com",
+  password: "123456",
+  first_name: "Clarisse",
+  last_name: "Fabreges",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
+user3 = User.create!(
+  email: "pierre@test.com",
+  password: "123456",
+  first_name: "Pierre",
+  last_name: "Libran",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
+user4 = User.create!(
+  email: "kevin@test.com",
+  password: "123456",
+  first_name: "Kévin",
+  last_name: "Rossi",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
+user5 = User.create!(
+  email: "amandine@test.com",
+  password: "123456",
+  first_name: "Amandine",
+  last_name: "Porte",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
+user6 = User.create!(
+  email: "santino@test.com",
+  password: "123456",
+  first_name: "Santino",
+  last_name: "Doucet",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
+user7 = User.create!(
+  email: "Ji-fang@test.com",
+  password: "123456",
+  first_name: "Ji-Fang",
+  last_name: "Lo",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
 )
 
 
@@ -112,7 +187,7 @@ items = [
   },
   {
     name: "Butler",
-    description: "The player selected his your butler for one day!",
+    description: "The player selected is your butler for one day!",
     probability: 0.2,
     image_name: "butler.png"
   },
