@@ -1,0 +1,47 @@
+/* .progress-bar-container {
+  width: 90%;
+  background-color: white;
+  overflow: hidden;
+  height: 20px;
+  margin: 10px 0;
+  margin: 50px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #E66E04;
+  border-radius: 0px 10px 10px 0px;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  transition: width 0.4s ease;
+} */
+
+.progress-circle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 195px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0px;
+}
+
+.progress-circle {
+  transform: rotate(-90deg); /* Rotates the circle to start from the top */
+}
+
+circle {
+  fill: none;
+  stroke-width: 4px;
+}
+
+.progress-background {
+  stroke: none; /* Background color of the circle */
+}
+
+.progress-bar {
+  stroke: #E66E04; /* Progress color */
+  stroke-linecap: round;
+}
