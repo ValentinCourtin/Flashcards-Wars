@@ -32,6 +32,24 @@ class User < ApplicationRecord
   end
 
 
+  # barre d experience
+  def progress_percentage
+    case experience
+    when 0..99
+      (experience - 0) * 100 / (99 - 0)
+    when 100..199
+      (experience - 100) * 100 / (199 - 100)
+    when 200..399
+      (experience - 200) * 100 / (399 - 200)
+    when 400..699
+      (experience - 400) * 100 / (699 - 400)
+    when 700..1099
+      (experience - 700) * 100 / (1099 - 700)
+    else
+      99
+    end
+  end
+
   private
   # create first training
   def create_first_training
