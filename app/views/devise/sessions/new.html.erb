@@ -6,16 +6,16 @@
 
   <div class="profil">
     <div class="black-frame ">
-      <%# <div class="container col-5 mb-5 bg-info bg-gradient rounded-5 py-5 px-3 "> %> 
+      <%# <div class="container col-5 mb-5 bg-info bg-gradient rounded-5 py-5 px-3 "> %>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs green-link ">
             <%= f.input :email,
                         required: false,
                         autofocus: true,
-                        input_html: { autocomplete: "email" } %>
+                        input_html: { autocomplete: "email"} %>
             <%= f.input :password,
                         required: false,
-                        input_html: { autocomplete: "current-password" } %>
+                        input_html: { autocomplete: "current-password"} %>
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
 
@@ -30,5 +30,5 @@
 
 
 
-
+<%# , style: "background-color: #025470;" %>
 </div>

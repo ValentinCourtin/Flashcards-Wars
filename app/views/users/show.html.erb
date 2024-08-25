@@ -2,7 +2,7 @@
 <div class="background-home">
   <div class="top-card-home">
     <div class="d-flex justify-content-center">
-      <p>Level <%= @user.level %></p>
+      <p>Level <%= @user.level_text %></p>
     </div>
     <div class="d-flex justify-content-center">
       <p>N° <%= @rank %> • <%= @user.gold_count %> G</p>
@@ -14,8 +14,9 @@
 
 
 <%# Image of the avatar %>
-  <div class="round-white">
-    <p>1</p>
+  <div class="round-white robot">
+    <%# <p>1</p> %>
+    <%= image_tag @user.level_image, alt: @user.level_text %>
   </div>
 
 <%# Experience progress bar %>
@@ -55,4 +56,3 @@
   <%# <p>first_name : <%= @user.first_name %>
   <%# <p>last_name <%= @user.last_name %>
   <%# <p>experience : <%= @user.experience %>
-
