@@ -6,10 +6,14 @@
   <div class="mission-container">
     <div class="missions">
       <% @trainings.each_with_index do |training, index| %>
-        <%= link_to training, class:"mission-todo" do %>
+        <%= link_to training, class: training.finished? ? "mission-finished" : "mission-todo" do %>
           <div class="mission-frame">
-            <h2>> MISSION <%= index + 1 %></h2>
-            <p>> <%=  training.subcategory.category.name + ' - ' + training.subcategory.name %></p>
+          <% if training.finished? %>
+            <h2>> MISSION <%= (index + 1)%> - FINISHED </h2>
+          <% else %>
+            <h2>> MISSION <%= (index + 1)%></h2>
+          <% end %>
+          <p>> <%=  training.subcategory.category.name + ' - ' + training.subcategory.name %></p>
           </div>
         <% end %>
       <% end %>
