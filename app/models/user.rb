@@ -10,7 +10,6 @@ class User < ApplicationRecord
   has_many :inventories
   has_many :items, through: :inventories, dependent: :destroy
 
-
   after_create :create_first_training
 
   # def level
@@ -100,6 +99,7 @@ class User < ApplicationRecord
   end
 
   private
+
   # create first training
   def create_first_training
     # @subcategory = Subcategory.find params[:subcategory_id]
@@ -110,5 +110,4 @@ class User < ApplicationRecord
     )
     # Direction la premiere question redirect_to
   end
-
 end
