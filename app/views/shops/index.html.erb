@@ -21,16 +21,14 @@
 
   <div class="popup">
     <div class="d-flex justify-content-center">
-      <%= image_tag "wheel.png", alt: "wheel", width: "100px", height: "100px" %>
+      <%= image_tag "wheel_round.png", alt: "wheel", width: "120px", height: "120px" %>
     </div>
-      <br>
 
-
-      <br>
-    <p>&gt Items wheel! </p>
+    <p class="text-center">---------------------------------------------</p>
+    <h3>&gt Items wheel! </h3>
 
         <%= link_to wheel_shops_path, data: {turbo_frame: :popup_shop }, action: :wheel do %>
-          <div class="btn-blue"><h2>LAUNCH: 400G</h2></div>
+          <div class="btn-blue"><p>LAUNCH: 400G</p></div>
         <%end%>
 
   </div>

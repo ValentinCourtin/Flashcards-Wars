@@ -2,9 +2,13 @@
   <div class="blur">
     <div class="modal-pop-up" id="small" data-controller="modals">
       <div data-modals-target="wheel">
-        <%= image_tag "wheel.png", alt: "wheel", width: "200px", height: "200px" %>
+        <div class="d-flex justify-content-center wheel-container">
+          <%= image_tag "wheel_round.png", alt: "wheel", width: "142px", height: "142px", class:"wheel" %>
+        </div>
         <br>
-        <h3>-----------------------</h3>
+        <br>
+        <h3 class="text-center">-----------------------</h3>
+        <br>
         <h3>> Wheel is turning</h3>
         <h3> <%=@content%></h3>
       </div>
@@ -14,8 +18,11 @@
         controller: "modals"
         # action: "modals#close"
       }, class: "cancel-button" %>
-        <%= cl_image_tag @item.photo.key %>
-        <h3>-----------------------</h3>
+        <div class="d-flex justify-content-center">
+          <%= cl_image_tag @item.photo.key, width: "142px", height: "142px"%>
+        </div>
+        <h3 class="text-center">-----------------------</h3>
+        <br>
         <h3> > YOU WIN : <%=@item.name%></h3>
       </div>
     </div>
