@@ -7,11 +7,12 @@
         <div class="swiper-wrapper">
         <!-- Slides -->
           <% @items.each do |item| %>
-            <div class="swiper-slide">
-              <%= cl_image_tag item.photo.key, width: "142px", height: "142px" %>
+            <div class="swiper-slide ">
+              <div class="d-flex justify-content-center">
+                <%= cl_image_tag item.photo.key, width: "142px", height: "142px", class:"img-center" %>
+              </div>
               <br>
               ---------------------------------------------
-              <br>
               <h3><%= item.name %></h3>
               <p><%= item.description %></p>
 
@@ -34,7 +35,9 @@
       </div>
 
     <% else %>
-        <%= image_tag "question_point.png", alt: "question point" %>
+        <div class="d-flex justify-content-center">
+          <%= image_tag "question_point.png", alt: "question point", width: "142px", height: "142px" %>
+        </div>
           <br>
             ---------------------------------------------
           <br>

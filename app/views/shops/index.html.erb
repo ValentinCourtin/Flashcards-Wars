@@ -4,7 +4,6 @@
 <div class="background-first">
 
   <div class="top_card top-shop ">
-
     <h1>SHOP</h1>
     <p>You have <%= @user.gold_count %> G</p>
   </div>
@@ -21,19 +20,25 @@
 
 
   <div class="popup">
-    <%= image_tag "wheel.png", alt: "wheel", width: "100px", height: "100px" %>
+    <div class="d-flex justify-content-center">
+      <%= image_tag "wheel.png", alt: "wheel", width: "100px", height: "100px" %>
+    </div>
       <br>
 
 
       <br>
     <p>&gt Items wheel! </p>
 
-      <%= link_to "LAUNCH: 400G", wheel_shops_path, data: {turbo_frame: :popup_shop }, action: :wheel %>
+        <%= link_to wheel_shops_path, data: {turbo_frame: :popup_shop }, action: :wheel do %>
+          <div class="btn-blue"><h2>LAUNCH: 400G</h2></div>
+        <%end%>
+
   </div>
 
 </div>
 
 <% end %>
+
 
 
 

@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="modals"
 export default class extends Controller {
-  static targets = ["wheel", "win", "background"]
+  static targets = ["wheel", "win", "background", "selection", "choice"]
 
   connect() {
 
@@ -19,7 +19,8 @@ export default class extends Controller {
     this.winTarget.style.display = "block"
   }
 
-  blurBackground() {
-    this.backgroundTarget.classList.add('blur-background')
+  changeContent(event) {
+    this.selectionTarget.style.display = "none"
+    this.choiceTarget.style.display = "block"
   }
 }

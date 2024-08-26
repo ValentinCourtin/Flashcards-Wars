@@ -1,0 +1,13 @@
+<%= turbo_frame_tag "popup_shop" do %>
+  <div class="blur">
+    <div class="modal-pop-up">
+            <%= link_to "X", "#", data: {
+            controller: "modals"
+            # action: "modals#close"
+          }, class: "cancel-button" %>
+          <h3> > WELL DONE !</h3>
+            <h3> > You use <%=@item.name%> on <%=@target_user.first_name%> </h3>
+            <h3> we've just send <%=@target_user.first_name%> a message on Slack ! </h3>
+          </div>
+  </div>
+<% end %>
