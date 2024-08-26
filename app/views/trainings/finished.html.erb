@@ -23,6 +23,7 @@
           <% if @gold_exp_winned > 0 %>
             BONUS first attempt (<%= "#{@first_attempt} / #{@total_questions}" %>) <br>
             <%= "+#{@gold_exp_winned}xp +#{@gold_exp_winned}g" %> <br>
+            <%= @subcategory %>
           <% end %>
         </p>
       <% end %>

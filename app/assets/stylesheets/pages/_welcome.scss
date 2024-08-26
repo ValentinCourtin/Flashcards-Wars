@@ -1,7 +1,6 @@
 .welcome {
   width: 100vw;
   height: 100vh;
-  background-color: red;
   background-image: url("splashscreen.png");
   background-size: cover;
   background-position: center;
@@ -9,15 +8,14 @@
 }
 
 @keyframes neon {
-  0%, 30%, 38%, 56%, 64%, 72%, 80%,
-  82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
+  0%, 26%, 36%, 56%, 64%, 72%, 80%,
+  82%, 84%, 86%, 88%, 90%, 92%, 100% {
     background-image: url("background-profile.png");
   }
-  1%, 29%,
-  31%, 33%, 35%, 37%, 39%,
+  27%, 35%,
   41%, 43%, 45%, 47%, 49%, 51%, 53%, 55%, 57%, 59%,
-  61%, 63%, 65%, 67%, 69%, 71%, 73%, 75%, 77%, 79%,
-  81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+  61%, 65%, 67%, 69%, 71%, 73%, 79%,
+  81%, 85%, 89% {
     background-image: url("splashscreen.png");
   }
 }

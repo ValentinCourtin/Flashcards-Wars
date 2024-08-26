@@ -1,6 +1,7 @@
 class TrainingsController < ApplicationController
 
   before_action :set_training, only: [:finished, :play, :replay, :resolve]
+
   def index
     @trainings = current_user.trainings.where(pleasur: false)
     @subcategories = Subcategory.all
@@ -22,11 +23,11 @@ class TrainingsController < ApplicationController
       # user tries to submit severql times
       redirect_to trainings_path
     elsif @training_answers.empty?
-      # Il n'y a plus de question on redirege a la fin
+      # Il n'y a plus de question on redirige à la fin
       redirect_to training_finished_path
     else
-      #Il reste des question
-      # On en prends une training answer au hasard
+      #Il reste des questions
+      # On prends une training answer au hasard
       @training_answer = @training_answers.sample
       # on recup la question
       @question = @training_answer.question
@@ -69,9 +70,8 @@ class TrainingsController < ApplicationController
   end
 
   def finished
-
     if @training.pleasur == false
-       # Set up the gold/exp winned from the quiz
+      # Set up the gold/exp winned from the quiz
       @gold_exp_winned = 0
       # Initialize the counter for the number of times where the user gave the right answer at first
       @first_attempt = 0
@@ -86,7 +86,7 @@ class TrainingsController < ApplicationController
           else
             @gold_exp_winned = 100
           end
-          @first_attempt = @first_attempt + 1
+          @first_attempt += 1
         end
         @total_questions += 1
       end
@@ -97,6 +97,7 @@ class TrainingsController < ApplicationController
       @actual_exp = @training.user.experience
       @new_exp = @actual_exp + 100 + @gold_exp_winned
       @training.user.update(experience: @new_exp)
+      next_training
     end
     @training.update(finished: true)
   end
@@ -107,4 +108,16 @@ class TrainingsController < ApplicationController
     @training = Training.find(params[:training_id])
   end
 
+  def next_training
+    if Subcategory.exists? (@training.subcategory.id + 1)
+      @next_subcategory = Subcategory.find(@training.subcategory.id + 1)
+      @next_training = Training.create(
+        user: current_user,
+        subcategory: @next_subcategory
+      )
+    else
+      flash[:notice] = "You have completed all subcategories."
+      redirect_to home_path # Redirect to an appropriate page
+    end
+  end
 end

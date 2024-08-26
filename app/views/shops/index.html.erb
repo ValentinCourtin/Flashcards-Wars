@@ -2,7 +2,9 @@
 
 
 <div class="background-first">
+
   <div class="top_card top-shop ">
+
     <h1>SHOP</h1>
     <p>You have <%= @user.gold_count %> G</p>
   </div>
@@ -14,11 +16,14 @@
 
 <!--  Carousel qui s'actualise âs à la fermeture de la pop up MAIS qui disparait pdt que la pop up est là-->
 
+
   <%= render "shops/carousel" %>
+
 
   <div class="popup">
     <%= image_tag "wheel.png", alt: "wheel", width: "100px", height: "100px" %>
       <br>
+
 
       <br>
     <p>&gt Items wheel! </p>
@@ -29,6 +34,7 @@
 </div>
 
 <% end %>
+
 
 
 

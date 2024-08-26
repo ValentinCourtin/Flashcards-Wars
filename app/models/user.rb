@@ -10,29 +10,96 @@ class User < ApplicationRecord
   has_many :inventories
   has_many :items, through: :inventories, dependent: :destroy
 
-
   after_create :create_first_training
 
+  # def level
+  #   case experience
+  #   when 0..99
+  #     "1 : BEGINNER"
+  #   when 100..199
+  #     "2 : LEARNER"
+  #   when 200..399
+  #     "3 : PROGRAMMER"
+  #   when 400..699
+  #     "4 : DEVELOPPER"
+  #   when 700..1099
+  #     "5 : HACKER"
+  #   else
+  #     # Calculer pour les niveaux supérieurs
+  #     5 + ((experience - 1099) / 500)
+  #   end
+  # end
+
+  #  calcul du level
   def level
     case experience
     when 0..99
-      "1 : BEGINNER"
+      1
     when 100..199
-      "2 : LEARNER"
+      2
     when 200..399
-      "3 : PROGRAMMER"
+      3
     when 400..699
-      "4 : DEVELOPPER"
-    when 700..1099
-      "5 : HACKER"
+      4
     else
       # Calculer pour les niveaux supérieurs
-      5 + ((experience - 1099) / 500)
+      4 + ((experience - 1099) / 500)
+    end
+  end
+
+  #  affichage du level
+  def level_text
+    case level
+    when 1
+      "1 : BEGINNER"
+    when 2
+      "2 : LEARNER"
+    when 3
+      "3 : PROGRAMMER"
+    when 4
+      "4 : DEVELOPPER"
+    else
+      "#{level} : HACKER"
     end
   end
 
 
+  #  affichage du robot par level
+  def level_image
+    case level
+    when 1
+      "robots/beginner.png"
+    when 2
+      "robots/learner.png"
+    when 3
+      "robots/programmer.png"
+    when 4
+      "robots/developer.png"
+    else
+      "robots/hacker.png"
+    end
+  end
+
+
+
+  # barre d'experience
+  def progress_percentage
+    case experience
+    when 0..99
+      (experience - 0) * 100 / (99 - 0)
+    when 100..199
+      (experience - 100) * 100 / (199 - 100)
+    when 200..399
+      (experience - 200) * 100 / (399 - 200)
+    when 400..699
+      (experience - 400) * 100 / (699 - 400)
+    else
+      99
+    end
+  end
+
   private
+
   # create first training
   def create_first_training
     # @subcategory = Subcategory.find params[:subcategory_id]
@@ -43,5 +110,4 @@ class User < ApplicationRecord
     )
     # Direction la premiere question redirect_to
   end
-
 end
