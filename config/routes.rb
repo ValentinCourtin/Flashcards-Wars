@@ -12,8 +12,10 @@ Rails.application.routes.draw do
 
   resources :shops, only: [:index] do
     collection do
-      get :choice
+      post :choice
       get :buy
+      get :player_choice
+      get :wheel
       # get :update_carousel
     end
   end

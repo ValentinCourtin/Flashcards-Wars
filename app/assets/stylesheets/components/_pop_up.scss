@@ -1,15 +1,38 @@
 .popup {
-
-  background: white;
+  margin-left: auto;
+  margin-right: auto;
+  background: black;
   padding: 20px;
   border-radius: 10px;
-  width: 80%; /* Largeur relative à la taille de l'écran */
-  max-width: 600px; /* Largeur maximale */
-  max-height: 80vh; /* Hauteur maximale (80% de la hauteur de la fenêtre) */
-  overflow-y: auto; /* Ajoute un défilement si le contenu dépasse la hauteur max */
+  width: 80%;
+  /* Largeur relative à la taille de l'écran */
+  max-width: 600px;
+  /* Largeur maximale */
+  max-height: 80vh;
+  /* Hauteur maximale (80% de la hauteur de la fenêtre) */
+  overflow-y: auto;
+
+  /* Ajoute un défilement si le contenu dépasse la hauteur max */
   // z-index: 1; /* set higher z-index value */
   // position: relative; /* position must be set for z-index to work */
+  p,
+  h3 {
+    color: #10E711;
+  }
 
+}
+
+.top {
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+.blur {
+  background-image: image-url('blur2.png');
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
 }
 
 // .image-shop{

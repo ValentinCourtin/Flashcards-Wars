@@ -1,5 +1,5 @@
- <%=turbo_frame_tag  :carousel do %>
-  <div class="popup">
+
+  <div class="popup top">
     <% if @items.present? %>
 
       <div class="swiper" data-controller="carousel">
@@ -8,15 +8,15 @@
         <!-- Slides -->
           <% @items.each do |item| %>
             <div class="swiper-slide">
-              <%= cl_image_tag item.photo.key %>
+              <%= cl_image_tag item.photo.key, width: "142px", height: "142px" %>
               <br>
               ---------------------------------------------
               <br>
-              <strong><%= item.name %></strong>
+              <h3><%= item.name %></h3>
               <p><%= item.description %></p>
 
               <%# btn, path = l'action choice dans le controller shop, data = quelle turbo frame va afficher la popup %>
-              <%= link_to "USE IT", choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop } %>
+              <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop } %>
 
 
             </div>
@@ -44,4 +44,3 @@
     <% end %>
 
   </div>
-<% end %>

@@ -1,0 +1,23 @@
+<%= turbo_frame_tag "popup_shop" do %>
+  <div class="blur">
+    <div class="modal-pop-up">
+      <%= link_to "X", "#", data: {
+        controller: "modals"
+        # action: "modals#close"
+      }, class: "cancel-button" %>
+      <h3> > Use : <%=@item.name%></h3>
+      <h3> > Select a player :</h3>
+
+
+      <%= form_with url: choice_shops_path do |f| %>
+        <%= f.hidden_field :item_id, value: @item.id %>
+        <%= f.hidden_field :inventory_id, value: @inventory.id %>
+        <%= f.label :user_id, "Assign to User" %>
+        <%= f.select :user_id, @users, prompt: "..." %>
+        <h3> > Validate ?</h3>
+        <%= f.submit "Yes, sure!", class:"background-white" %>
+      <% end %>
+
+    </div>
+  </div>
+<% end %>
