@@ -11,9 +11,9 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
     <!-- Slides -->
-      <% @training.subcategory.lessons.each do |lesson| %>
+      <% @training.subcategory.lessons.each_with_index do |lesson, index| %>
         <div class="swiper-slide swiper-content">
-          <p><strong>> LESSON</strong></p>
+          <p><strong>> LESSON <%= "#{(index + 1)}/#{@training.subcategory.lessons.size}" %></strong></p>
           <p>> <%= lesson.content %></p>
 
         </div>
@@ -31,7 +31,7 @@
   <% if @training.finished %>
     <%= link_to training_replay_path(@training), data: { turbo: false }, class: "font-white-center" do %>
       <div class="btn-orange">
-        <p>Retry for pleasure</p>
+        <p>Try again</p>
       </div>
     <% end %>
   <% else %>
