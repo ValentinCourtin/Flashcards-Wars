@@ -9,12 +9,12 @@
   <!-- CARROUSSEL AVEC LE COURS -->
   <div class="swiper question ms-0" data-controller="carousel">
     <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper frame-lesson-size">
     <!-- Slides -->
       <% @training.subcategory.lessons.each_with_index do |lesson, index| %>
-        <div class="swiper-slide swiper-content">
+        <div class="swiper-slide swiper-content frame-lesson-scroll">
           <p><strong>> LESSON <%= "#{(index + 1)}/#{@training.subcategory.lessons.size}" %></strong></p>
-          <p>> <%= lesson.content %></p>
+          <p>> <%= lesson.content.truncate(10000) %></p>
 
         </div>
       <% end %>
