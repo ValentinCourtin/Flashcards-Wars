@@ -11,11 +11,23 @@
   padding: 12px 24px;
 }
 
+.rank-first {
+  border: 2px solid #FFC34A;
+}
+
+.rank-second {
+  border: 2px solid #DADADA;
+}
+
+.rank-third {
+  border: 2px solid #DD6102;
+}
+
 .top-rank {
   margin-top: 120px;
 }
 
 .bottom-rank {
-  margin-top: 36px;
+  margin-top: 16px;
+  width: 200px;
 }
-
