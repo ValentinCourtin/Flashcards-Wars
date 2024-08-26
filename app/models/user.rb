@@ -42,11 +42,9 @@ class User < ApplicationRecord
       3
     when 400..699
       4
-    when 700..1099
-      5
     else
       # Calculer pour les niveaux supérieurs
-      5 + ((experience - 1099) / 500)
+      4 + ((experience - 1099) / 500)
     end
   end
 
@@ -61,10 +59,8 @@ class User < ApplicationRecord
       "3 : PROGRAMMER"
     when 4
       "4 : DEVELOPPER"
-    when 5
-      "5 : HACKER"
     else
-      "#{level} : EXPERT"
+      "#{level} : HACKER"
     end
   end
 
@@ -80,10 +76,8 @@ class User < ApplicationRecord
       "robots/programmer.png"
     when 4
       "robots/developer.png"
-    when 5
-      "robots/hacker.png"
     else
-      "robots/expert.png"
+      "robots/hacker.png"
     end
   end
 
@@ -100,8 +94,6 @@ class User < ApplicationRecord
       (experience - 200) * 100 / (399 - 200)
     when 400..699
       (experience - 400) * 100 / (699 - 400)
-    when 700..1099
-      (experience - 700) * 100 / (1099 - 700)
     else
       99
     end
