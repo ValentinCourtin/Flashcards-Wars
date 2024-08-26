@@ -19,3 +19,4 @@ notifier.ping "#{user.first_name} #{target.first_name} #{item.name} #{item.descr
 
   end
 end
+

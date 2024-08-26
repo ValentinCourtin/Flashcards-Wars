@@ -82,35 +82,6 @@ class ShopsController < ApplicationController
 
 
 
-  # def slack
-  #   slack_token = ENV['SLACK_TOKEN']
-  #   channel = 'C07JKSNCMK6'
-
-  #   target_user = User.find(params[:user_id])
-  #   item = Item.find(params[:item_id])
-  #   raise
-  #   # Exemple de texte dynamique basé sur des paramètres ou des données
-  #   message_text = "Hello from Rails application! The time is now #{Time.current} #{target_user} #{item_id} #{@target_user.first_name} #{@item.name}"
-
-  #   slack_service = SlackService.new(slack_token)
-  #   slack_service.send_message(channel: channel, text: message_text)
-
-  #   render plain: 'Message sent to Slack'
-  # end
-
-
-#   curl -X POST -H 'Authorization: Bearer xoxb-7622778104902-7642118584049-Lq9EuoTWunH19vpWO854gl4y' \
-#   -H 'Content-type: application/json' \
-#   --data '{"channel":"C07JKSNCMK6","text":"Hello from my app!"}' \
-#   https://slack.com/api/chat.postMessage
-
-
-#   curl -X POST -H 'Authorization: Bearer xoxb-XXXXXXXXXXXX-XXXXXXXXXXXX-XXXXXXXXXXXX' \
-# -H 'Content-type: application/json' \
-# --data '{"channel":"C1234567890","text":"Hello from my app!"}' \
-# https://slack.com/api/chat.postMessage
-
-
 
 
 
