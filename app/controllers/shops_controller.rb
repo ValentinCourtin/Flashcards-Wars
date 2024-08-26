@@ -20,7 +20,7 @@ class ShopsController < ApplicationController
 
     # Logique pour générer le contenu de la pop-up
     @content = " USE IT/CHOICE : j'ai utilisé"
-    redirect_to shops_path
+    render "shops/_done"
     # Renvoie un partial qui sera chargé dans le turbo-frame
     #render "shops/_popup_shop", locals: { content: @content }
   end
@@ -31,6 +31,7 @@ class ShopsController < ApplicationController
     @users = User.all.collect { |user| [user.first_name, user.id] }
     @item = Item.find(params[:item_id])
     @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)
+
 
   end
 
