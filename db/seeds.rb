@@ -323,8 +323,8 @@ puts ""
 
 questions = [
   {
-    content: "Comment démarrez-vous une session IRB dans le terminal ?",
-    explication: "irb est la commande utilisée pour lancer l'environnement interactif de Ruby dans le terminal.",
+    content: "How do you start an IRB session in the terminal?",
+    explication: "irb is the command used to launch Ruby's interactive environment in the terminal.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -346,8 +346,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle commande utilisez-vous pour exécuter un script Ruby appelé app.rb ?",
-    explication: "ruby app.rb est la commande standard pour exécuter un script Ruby.",
+    content: "Which command do you use to run a Ruby script called app.rb?",
+    explication: "ruby app.rb is the standard command to run a Ruby script.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -369,8 +369,8 @@ questions = [
     ]
   },
   {
-    content: "Comment définissez-vous une variable en Ruby ?",
-    explication: "En Ruby, les variables sont définies simplement en assignant une valeur avec = sans déclaration préalable du type.",
+    content: "How do you define a variable in Ruby?",
+    explication: "In Ruby, variables are defined simply by assigning a value with = without prior type declaration.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -392,8 +392,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle syntaxe est utilisée pour définir une méthode en Ruby ?",
-    explication: "En Ruby, les méthodes sont définies avec def suivi du nom de la méthode et de end pour clôturer la définition.",
+    content: "What syntax is used to define a method in Ruby?",
+    explication: "In Ruby, methods are defined with def followed by the method name and end to close the definition.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -415,8 +415,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle classe Ruby est utilisée pour manipuler des chaînes de caractères ?",
-    explication: "La classe String en Ruby est utilisée pour manipuler des chaînes de caractères.",
+    content: "Which Ruby class is used to handle strings?",
+    explication: "The String class in Ruby is used to handle strings.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -438,8 +438,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle est la sortie de l'expression puts \"Hello, \#\{name\}\" si name = \"Alice\" ?",
-    explication: "L'interpolation de chaîne avec \#\{...\} permet d'insérer la valeur d'une variable dans une chaîne de caractères.",
+    content: "What is the output of puts \"Hello, \#\{name\}\" if name = \"Alice\"?",
+    explication: "String interpolation with \#\{...\} allows inserting the value of a variable into a string.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -461,8 +461,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle méthode de la classe String renvoie la longueur de la chaîne ?",
-    explication: "length est une méthode de la classe String qui retourne le nombre de caractères dans la chaîne.",
+    content: "Which method in the String class returns the length of the string?",
+    explication: "length is a method in the String class that returns the number of characters in the string.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -484,8 +484,8 @@ questions = [
     ]
   },
   {
-    content: "Comment stockez-vous une valeur numérique dans une variable ?",
-    explication: "En Ruby, les variables sont déclarées en assignant directement une valeur sans spécifier de type.",
+    content: "How do you store a numeric value in a variable?",
+    explication: "In Ruby, variables are declared by directly assigning a value without specifying the type.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -507,8 +507,8 @@ questions = [
     ]
   },
   {
-    content: "Quel mot-clé utilisez-vous pour créer un bloc de code réutilisable en Ruby ?",
-    explication: "def est le mot-clé utilisé en Ruby pour définir une méthode, qui est un bloc de code réutilisable.",
+    content: "What keyword do you use to create a reusable block of code in Ruby?",
+    explication: "def is the keyword used in Ruby to define a method, which is a reusable block of code.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -530,8 +530,8 @@ questions = [
     ]
   },
   {
-    content: "Comment imprimez-vous la chaîne \"Bonjour, monde !\" dans Ruby ?",
-    explication: "puts est utilisé pour afficher une chaîne de caractères avec une nouvelle ligne à la fin.",
+    content: "How do you print the string \"Bonjour, monde !\" in Ruby?",
+    explication: "puts is used to display a string with a new line at the end.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -553,31 +553,31 @@ questions = [
     ]
   },
   {
-    content: "Que se passe-t-il si vous essayez d'accéder à une variable non définie en Ruby ?",
-    explication: "En Ruby, accéder à une variable non définie provoque une erreur NameError.",
+    content: "What happens if you try to access an undefined variable in Ruby?",
+    explication: "In Ruby, accessing an undefined variable raises a NameError.",
     subcategory: "Programming Basics",
     possibilities: [
       {
-        content: "0 est retourné",
+        content: "0 is returned",
         correct: false
       },
       {
-        content: "nil est retourné",
+        content: "nil is returned",
         correct: false
       },
       {
-        content: "Une erreur est levée",
+        content: "An error is raised",
         correct: true
       },
       {
-        content: "La variable est automatiquement définie sur nil",
+        content: "The variable is automatically set to nil",
         correct: false
       }
     ]
   },
   {
-    content: "Comment appelez-vous une méthode greet définie comme def greet(name) en Ruby ?",
-    explication: "Les méthodes en Ruby sont appelées en utilisant leur nom suivi de parenthèses contenant les arguments, si nécessaire.",
+    content: "How do you call a greet method defined as def greet(name) in Ruby?",
+    explication: "Methods in Ruby are called using their name followed by parentheses containing the arguments, if necessary.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -599,8 +599,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle méthode de String convertit tous les caractères en majuscules ?",
-    explication: "La méthode upcase convertit tous les caractères d'une chaîne en majuscules.",
+    content: "Which String method converts all characters to uppercase?",
+    explication: "The upcase method converts all characters in a string to uppercase.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -622,8 +622,8 @@ questions = [
     ]
   },
   {
-    content: "Quel est le résultat de 5 + \"10\" en Ruby ?",
-    explication: "Ruby ne permet pas d'additionner un nombre avec une chaîne de caractères, ce qui lève une TypeError.",
+    content: "What is the result of 5 + \"10\" in Ruby?",
+    explication: "Ruby does not allow adding a number to a string, which raises a TypeError.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -635,7 +635,7 @@ questions = [
         correct: false
       },
       {
-        content: "Une erreur",
+        content: "An error",
         correct: true
       },
       {
@@ -645,8 +645,8 @@ questions = [
     ]
   },
   {
-    content: "Comment arrêtez-vous une session IRB ?",
-    explication: "Vous pouvez quitter IRB en tapant exit, quit ou en utilisant Ctrl + D.",
+    content: "How do you stop an IRB session?",
+    explication: "You can exit IRB by typing exit, quit, or using Ctrl + D.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -664,8 +664,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle structure utilisez-vous pour exécuter du code uniquement si une condition est vraie ?",
-    explication: "La structure if est utilisée pour exécuter du code seulement si une condition donnée est vraie.",
+    content: "Which structure do you use to execute code only if a condition is true?",
+    explication: "The if structure is used to execute code only if a given condition is true.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -687,8 +687,8 @@ questions = [
     ]
   },
   {
-    content: "Quel mot-clé Ruby permet de tester une condition après l'exécution d'un bloc de code, c'est-à-dire exécuter le bloc tant que la condition est fausse ?",
-    explication: "until exécute un bloc de code tant que la condition spécifiée est fausse.",
+    content: "What Ruby keyword allows you to test a condition after executing a block of code, i.e., execute the block as long as the condition is false?",
+    explication: "until executes a block of code as long as the specified condition is false.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -710,8 +710,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle est la valeur de arr = [1, 2, 3]; arr[2] ?",
-    explication: "Les indices des tableaux en Ruby commencent à 0, donc arr[2] renvoie le troisième élément du tableau, soit 3.",
+    content: "What is the value of arr = [1, 2, 3]; arr[2]?",
+    explication: "Array indices in Ruby start at 0, so arr[2] returns the third element of the array, which is 3.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -733,8 +733,8 @@ questions = [
     ]
   },
   {
-    content: "Quel mot-clé est utilisé pour sortir prématurément d'une boucle ?",
-    explication: "break est utilisé pour sortir immédiatement d'une boucle, quelles que soient les conditions restantes.",
+    content: "What keyword is used to prematurely exit a loop?",
+    explication: "break is used to immediately exit a loop, regardless of the remaining conditions.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -756,8 +756,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle méthode permet d'ajouter un élément à la fin d'un tableau ?",
-    explication: "La méthode push ajoute un nouvel élément à la fin d'un tableau.",
+    content: "Which method adds an element to the end of an array?",
+    explication: "The push method adds a new element to the end of an array.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -779,8 +779,8 @@ questions = [
     ]
   },
   {
-    content: "Comment appelez-vous un bloc de code qui se répète tant qu'une condition reste vraie ?",
-    explication: "La boucle while continue de s'exécuter tant que la condition spécifiée reste vraie.",
+    content: "How do you call a block of code that repeats as long as a condition remains true?",
+    explication: "The while loop continues to execute as long as the specified condition remains true.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -802,8 +802,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle est la sortie de l'expression suivante : arr = [1, 2, 3]; arr.pop ?",
-    explication: "La méthode pop supprime et retourne le dernier élément du tableau, ici 3.",
+    content: "What is the output of the following expression: arr = [1, 2, 3]; arr.pop?",
+    explication: "The pop method removes and returns the last element of the array, here 3.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -825,8 +825,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle structure est utilisée pour itérer sur chaque élément d'un tableau ?",
-    explication: "each est couramment utilisée pour parcourir chaque élément d'un tableau.",
+    content: "Which structure is used to iterate over each element of an array?",
+    explication: "each is commonly used to iterate over each element of an array.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -848,8 +848,8 @@ questions = [
     ]
   },
   {
-    content: "Quel mot-clé utilisez-vous pour gérer plusieurs conditions en Ruby ?",
-    explication: "Le mot-clé case en Ruby est utilisé pour évaluer une variable contre plusieurs valeurs.",
+    content: "What keyword do you use to handle multiple conditions in Ruby?",
+    explication: "The case keyword in Ruby is used to evaluate a variable against multiple values.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -871,8 +871,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle boucle est la mieux adaptée pour exécuter un bloc de code un nombre spécifique de fois ?",
-    explication: "La boucle for est idéale pour exécuter un bloc de code un nombre spécifique de fois, généralement sur une plage ou une collection.",
+    content: "Which loop is best suited to execute a block of code a specific number of times?",
+    explication: "The for loop is ideal for executing a block of code a specific number of times, usually over a range or collection.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -894,8 +894,8 @@ questions = [
     ]
   },
   {
-    content: "Comment accédez-vous au premier élément d'un tableau appelé arr ?",
-    explication: "Le premier élément d'un tableau est accessible via l'indice 0, donc arr[0].",
+    content: "How do you access the first element of an array called arr?",
+    explication: "The first element of an array is accessed via index 0, so arr[0].",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -917,8 +917,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle structure de contrôle exécute un bloc de code si une condition est fausse ?",
-    explication: "unless exécute un bloc de code uniquement si la condition spécifiée est fausse.",
+    content: "Which control structure executes a block of code if a condition is false?",
+    explication: "unless executes a block of code only if the specified condition is false.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -940,31 +940,31 @@ questions = [
     ]
   },
   {
-    content: "Quelle est la différence entre while et until ?",
-    explication: "while exécute un bloc tant qu'une condition est vraie, tandis que until exécute un bloc tant qu'une condition est fausse.",
+    content: "What is the difference between while and until?",
+    explication: "while executes a block as long as a condition is true, while until executes a block as long as a condition is false.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
-        content: "while vérifie si une condition est vraie, until vérifie si elle est fausse.",
+        content: "while checks if a condition is true, until checks if it is false.",
         correct: true
       },
       {
-        content: "while est utilisé pour des boucles infinies, until ne l'est pas.",
+        content: "while is used for infinite loops, until is not.",
         correct: false
       },
       {
-        content: "until vérifie si une condition est vraie, while vérifie si elle est fausse.",
+        content: "until checks if a condition is true, while checks if it is false.",
         correct: false
       },
       {
-        content: "Il n'y a aucune différence.",
+        content: "There is no difference.",
         correct: false
       }
     ]
   },
   {
-    content: "Comment remplacez-vous un élément dans un tableau en Ruby ?",
-    explication: "Vous pouvez remplacer un élément dans un tableau en assignant une nouvelle valeur à un indice spécifique, comme array[index] = value.",
+    content: "How do you replace an element in an array in Ruby?",
+    explication: "You can replace an element in an array by assigning a new value to a specific index, such as array[index] = value.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -986,8 +986,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle méthode retourne et retire le premier élément d'un tableau ?",
-    explication: "La méthode shift retire et retourne le premier élément d'un tableau.",
+    content: "Which method removes and returns the first element of an array?",
+    explication: "The shift method removes and returns the first element of an array.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -1009,8 +1009,8 @@ questions = [
     ]
   },
   {
-    content: "Comment ajouter un élément au début d'un tableau ?",
-    explication: "unshift ajoute un élément au début d'un tableau.",
+    content: "How do you add an element to the beginning of an array?",
+    explication: "unshift adds an element to the beginning of an array.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -1032,8 +1032,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle méthode est utilisée pour itérer sur chaque élément d'un tableau en Ruby ?",
-    explication: "each est l'itérateur le plus courant en Ruby pour parcourir chaque élément d'un tableau ou d'une collection.",
+    content: "Which method is used to iterate over each element of an array in Ruby?",
+    explication: "each is the most common iterator in Ruby to go through each element of an array or collection.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1055,123 +1055,123 @@ questions = [
     ]
   },
   {
-    content: "Que fait la méthode map lorsqu'elle est utilisée sur un tableau ?",
-    explication: "map applique le bloc de code à chaque élément et retourne un nouveau tableau avec les résultats.",
+    content: "What does the map method do when used on an array?",
+    explication: "map applies the block of code to each element and returns a new array with the results.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
-        content: "Elle retourne un tableau avec les mêmes éléments.",
+        content: "It returns an array with the same elements.",
         correct: false
       },
       {
-        content: "Elle modifie chaque élément du tableau en place.",
+        content: "It modifies each element of the array in place.",
         correct: false
       },
       {
-        content: "Elle retourne un nouveau tableau avec les résultats du bloc de code appliqué à chaque élément.",
+        content: "It returns a new array with the results of the block of code applied to each element.",
         correct: true
       },
       {
-        content: "Elle ne fait rien.",
+        content: "It does nothing.",
         correct: false
       }
     ]
   },
   {
-    content: "Comment passez-vous un bloc de code à une méthode en Ruby ?",
-    explication: "Les blocs de code en Ruby sont passés à une méthode avec {} pour des blocs courts ou do...end pour des blocs plus longs.",
+    content: "How do you pass a block of code to a method in Ruby?",
+    explication: "Blocks of code in Ruby are passed to a method with {} for short blocks or do...end for longer blocks.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
-        content: "Utilisez yield.",
+        content: "Use yield.",
         correct: false
       },
       {
-        content: "Passez-le entre parenthèses.",
+        content: "Pass it in parentheses.",
         correct: false
       },
       {
-        content: "Utilisez les accolades {} ou do...end.",
+        content: "Use braces {} or do...end.",
         correct: true
       },
       {
-        content: "Utilisez le mot-clé block.",
+        content: "Use the block keyword.",
         correct: false
       }
     ]
   },
   {
-    content: "Que fait le mot-clé yield dans une méthode ?",
-    explication: "yield exécute le bloc de code passé à la méthode, permettant d'insérer du code externe dans le corps de la méthode.",
+    content: "What does the yield keyword do in a method?",
+    explication: "yield executes the block of code passed to the method, allowing external code to be inserted into the method's body.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
-        content: "Il arrête l'exécution de la méthode.",
+        content: "It stops the method execution.",
         correct: false
       },
       {
-        content: "Il exécute le bloc de code passé à la méthode.",
+        content: "It executes the block of code passed to the method.",
         correct: true
       },
       {
-        content: "Il lève une exception.",
+        content: "It raises an exception.",
         correct: false
       },
       {
-        content: "Il retourne une valeur par défaut.",
+        content: "It returns a default value.",
         correct: false
       }
     ]
   },
   {
-    content: "Que renvoie la méthode select lorsqu'elle est utilisée sur un tableau ?",
-    explication: "select retourne un nouveau tableau contenant uniquement les éléments pour lesquels le bloc de code a retourné true.",
+    content: "What does the select method return when used on an array?",
+    explication: "select returns a new array containing only the elements for which the block of code returned true.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
-        content: "Les éléments pour lesquels le bloc retourne false.",
+        content: "The elements for which the block returns false.",
         correct: false
       },
       {
-        content: "Les éléments pour lesquels le bloc retourne true.",
+        content: "The elements for which the block returns true.",
         correct: true
       },
       {
-        content: "Un tableau inversé.",
+        content: "A reversed array.",
         correct: false
       },
       {
-        content: "Le tableau original sans modifications.",
+        content: "The original array without changes.",
         correct: false
       }
     ]
   },
   {
-    content: "Quelle est la différence entre map et each ?",
-    explication: "map transforme chaque élément et retourne un nouveau tableau, tandis que each itère simplement sans retourner un nouveau tableau.",
+    content: "What is the difference between map and each?",
+    explication: "map transforms each element and returns a new array, while each simply iterates without returning a new array.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
-        content: "each modifie les éléments du tableau en place, map les laisse intacts.",
+        content: "each modifies the array elements in place, map leaves them intact.",
         correct: false
       },
       {
-        content: "map retourne un nouveau tableau, each ne retourne rien.",
+        content: "map returns a new array, each returns nothing.",
         correct: true
       },
       {
-        content: "map ne fonctionne qu'avec des chaînes de caractères.",
+        content: "map only works with strings.",
         correct: false
       },
       {
-        content: "Il n'y a aucune différence.",
+        content: "There is no difference.",
         correct: false
       }
     ]
   },
   {
-    content: "Quelle méthode retourne un tableau avec les éléments qui ne satisfont pas la condition du bloc de code ?",
-    explication: "reject fait l'inverse de select, il retourne les éléments pour lesquels la condition est fausse.",
+    content: "Which method returns an array with the elements that do not satisfy the block's condition?",
+    explication: "reject does the opposite of select, it returns the elements for which the condition is false.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1193,31 +1193,31 @@ questions = [
     ]
   },
   {
-    content: "Comment spécifiez-vous les paramètres d'un bloc en Ruby ?",
-    explication: "Les paramètres d'un bloc sont placés entre | | et représentent les éléments passés au bloc par l'itérateur.",
+    content: "How do you specify the parameters of a block in Ruby?",
+    explication: "The parameters of a block are placed between | | and represent the elements passed to the block by the iterator.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
-        content: "En utilisant yield.",
+        content: "By using yield.",
         correct: false
       },
       {
-        content: "En les passant directement après do.",
+        content: "By passing them directly after do.",
         correct: false
       },
       {
-        content: "En les plaçant entre | | dans le bloc.",
+        content: "By placing them between | | in the block.",
         correct: true
       },
       {
-        content: "En les déclarant dans la méthode.",
+        content: "By declaring them in the method.",
         correct: false
       }
     ]
   },
   {
-    content: "Quelle est la sortie du code suivant ? [1, 2, 3].map { |n| n * 2 }",
-    explication: "Le code applique n * 2 à chaque élément du tableau et retourne [2, 4, 6].",
+    content: "What is the output of the following code? [1, 2, 3].map { |n| n * 2 }",
+    explication: "The code applies n * 2 to each element of the array and returns [2, 4, 6].",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1239,8 +1239,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle méthode permet de s'assurer qu'un bloc est présent avant d'utiliser yield ?",
-    explication: "block_given? vérifie si un bloc a été passé à la méthode avant d'utiliser yield.",
+    content: "Which method ensures that a block is present before using yield?",
+    explication: "block_given? checks if a block was passed to the method before using yield.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1262,8 +1262,8 @@ questions = [
     ]
   },
   {
-    content: "Quel est le résultat du code suivant ? 3.times { |i| puts i }",
-    explication: "times itère 3 fois en passant à chaque fois l'index actuel au bloc, ici 0, 1 et 2.",
+    content: "What is the result of the following code? 3.times { |i| puts i }",
+    explication: "times iterates 3 times, each time passing the current index to the block, here 0, 1, and 2.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1285,31 +1285,31 @@ questions = [
     ]
   },
   {
-    content: "Que retourne la méthode find ?",
-    explication: "find retourne le premier élément correspondant ou nil s'il n'y a aucun élément qui satisfait la condition.",
+    content: "What does the find method return?",
+    explication: "find returns the first matching element or nil if there are no elements that satisfy the condition.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
-        content: "Un tableau avec tous les éléments correspondants.",
+        content: "An array with all matching elements.",
         correct: false
       },
       {
-        content: "Le premier élément qui satisfait la condition.",
+        content: "The first element that satisfies the condition.",
         correct: true
       },
       {
-        content: "nil si aucun élément ne correspond.",
+        content: "nil if no elements match.",
         correct: true
       },
       {
-        content: "Les deux réponses B et C.",
+        content: "Both B and C.",
         correct: false
       }
     ]
   },
   {
-    content: "Quelle est la sortie de ce code ? result = [10, 20, 30].select { |n| n > 15 } puts result",
-    explication: "select filtre les éléments du tableau, ne gardant que ceux qui sont supérieurs à 15, donc [20, 30].",
+    content: "What is the output of this code? result = [10, 20, 30].select { |n| n > 15 } puts result",
+    explication: "select filters the array elements, keeping only those greater than 15, so [20, 30].",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1331,8 +1331,8 @@ questions = [
     ]
   },
   {
-    content: "Comment écrivez-vous un bloc qui prend deux paramètres ?",
-    explication: "Un bloc en Ruby prenant deux paramètres est écrit comme { |param1, param2| ... } ou do |param1, param2| ... end.",
+    content: "How do you write a block that takes two parameters?",
+    explication: "A block in Ruby taking two parameters is written as { |param1, param2| ... } or do |param1, param2| ... end.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1354,31 +1354,31 @@ questions = [
     ]
   },
   {
-    content: "Que se passe-t-il si vous essayez d'utiliser yield sans passer de bloc ?",
-    explication: "Appeler yield sans qu'un bloc ait été passé lève une exception LocalJumpError.",
+    content: "What happens if you try to use yield without passing a block?",
+    explication: "Calling yield without passing a block raises a LocalJumpError exception.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
-        content: "La méthode continue sans exécuter yield.",
+        content: "The method continues without executing yield.",
         correct: false
       },
       {
-        content: "Une erreur est levée.",
+        content: "An error is raised.",
         correct: true
       },
       {
-        content: "yield retourne nil.",
+        content: "yield returns nil.",
         correct: false
       },
       {
-        content: "Le programme s'arrête.",
+        content: "The program stops.",
         correct: false
       }
     ]
   },
   {
-    content: "Quelle méthode est la plus adaptée pour transformer tous les éléments d'un tableau en appliquant une opération sur chacun d'eux ?",
-    explication: "map est conçue pour transformer chaque élément d'un tableau en appliquant une opération et en retournant un nouveau tableau.",
+    content: "Which method is best suited to transform all elements of an array by applying an operation to each of them?",
+    explication: "map is designed to transform each element of an array by applying an operation and returning a new array.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1400,8 +1400,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle méthode est utilisée pour itérer sur chaque élément d'un tableau en Ruby ?",
-    explication: "each est l'itérateur le plus courant en Ruby pour parcourir chaque élément d'un tableau ou d'une collection.",
+    content: "Which method is used to iterate over each element of an array in Ruby?",
+    explication: "each is the most common iterator in Ruby to go through each element of an array or collection.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1423,123 +1423,123 @@ questions = [
     ]
   },
   {
-    content: "Que fait la méthode map lorsqu'elle est utilisée sur un tableau ?",
-    explication: "map applique le bloc de code à chaque élément et retourne un nouveau tableau avec les résultats.",
+    content: "What does the map method do when used on an array?",
+    explication: "map applies the block of code to each element and returns a new array with the results.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
-        content: "Elle retourne un tableau avec les mêmes éléments.",
+        content: "It returns an array with the same elements.",
         correct: false
       },
       {
-        content: "Elle modifie chaque élément du tableau en place.",
+        content: "It modifies each element of the array in place.",
         correct: false
       },
       {
-        content: "Elle retourne un nouveau tableau avec les résultats du bloc de code appliqué à chaque élément.",
+        content: "It returns a new array with the results of the block of code applied to each element.",
         correct: true
       },
       {
-        content: "Elle ne fait rien.",
+        content: "It does nothing.",
         correct: false
       }
     ]
   },
   {
-    content: "Comment passez-vous un bloc de code à une méthode en Ruby ?",
-    explication: "Les blocs de code en Ruby sont passés à une méthode avec {} pour des blocs courts ou do...end pour des blocs plus longs.",
+    content: "How do you pass a block of code to a method in Ruby?",
+    explication: "Blocks of code in Ruby are passed to a method with {} for short blocks or do...end for longer blocks.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
-        content: "Utilisez yield.",
+        content: "Use yield.",
         correct: false
       },
       {
-        content: "Passez-le entre parenthèses.",
+        content: "Pass it in parentheses.",
         correct: false
       },
       {
-        content: "Utilisez les accolades {} ou do...end.",
+        content: "Use braces {} or do...end.",
         correct: true
       },
       {
-        content: "Utilisez le mot-clé block.",
+        content: "Use the block keyword.",
         correct: false
       }
     ]
   },
   {
-    content: "Que fait le mot-clé yield dans une méthode ?",
-    explication: "yield exécute le bloc de code passé à la méthode, permettant d'insérer du code externe dans le corps de la méthode.",
+    content: "What does the yield keyword do in a method?",
+    explication: "yield executes the block of code passed to the method, allowing external code to be inserted into the method's body.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
-        content: "Il arrête l'exécution de la méthode.",
+        content: "It stops the method execution.",
         correct: false
       },
       {
-        content: "Il exécute le bloc de code passé à la méthode.",
+        content: "It executes the block of code passed to the method.",
         correct: true
       },
       {
-        content: "Il lève une exception.",
+        content: "It raises an exception.",
         correct: false
       },
       {
-        content: "Il retourne une valeur par défaut.",
+        content: "It returns a default value.",
         correct: false
       }
     ]
   },
   {
-    content: "Que renvoie la méthode select lorsqu'elle est utilisée sur un tableau ?",
-    explication: "select retourne un nouveau tableau contenant uniquement les éléments pour lesquels le bloc de code a retourné true.",
+    content: "What does the select method return when used on an array?",
+    explication: "select returns a new array containing only the elements for which the block of code returned true.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
-        content: "Les éléments pour lesquels le bloc retourne false.",
+        content: "The elements for which the block returns false.",
         correct: false
       },
       {
-        content: "Les éléments pour lesquels le bloc retourne true.",
+        content: "The elements for which the block returns true.",
         correct: true
       },
       {
-        content: "Un tableau inversé.",
+        content: "A reversed array.",
         correct: false
       },
       {
-        content: "Le tableau original sans modifications.",
+        content: "The original array without changes.",
         correct: false
       }
     ]
   },
   {
-    content: "Quelle est la différence entre map et each ?",
-    explication: "map transforme chaque élément et retourne un nouveau tableau, tandis que each itère simplement sans retourner un nouveau tableau.",
+    content: "What is the difference between map and each?",
+    explication: "map transforms each element and returns a new array, while each simply iterates without returning a new array.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
-        content: "each modifie les éléments du tableau en place, map les laisse intacts.",
+        content: "each modifies the array elements in place, map leaves them intact.",
         correct: false
       },
       {
-        content: "map retourne un nouveau tableau, each ne retourne rien.",
+        content: "map returns a new array, each returns nothing.",
         correct: true
       },
       {
-        content: "map ne fonctionne qu'avec des chaînes de caractères.",
+        content: "map only works with strings.",
         correct: false
       },
       {
-        content: "Il n'y a aucune différence.",
+        content: "There is no difference.",
         correct: false
       }
     ]
   },
   {
-    content: "Quelle méthode retourne un tableau avec les éléments qui ne satisfont pas la condition du bloc de code ?",
-    explication: "reject fait l'inverse de select, il retourne les éléments pour lesquels la condition est fausse.",
+    content: "Which method returns an array with the elements that do not satisfy the block's condition?",
+    explication: "reject does the opposite of select, it returns the elements for which the condition is false.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1561,31 +1561,31 @@ questions = [
     ]
   },
   {
-    content: "Comment spécifiez-vous les paramètres d'un bloc en Ruby ?",
-    explication: "Les paramètres d'un bloc sont placés entre | | et représentent les éléments passés au bloc par l'itérateur.",
+    content: "How do you specify the parameters of a block in Ruby?",
+    explication: "The parameters of a block are placed between | | and represent the elements passed to the block by the iterator.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
-        content: "En utilisant yield.",
+        content: "By using yield.",
         correct: false
       },
       {
-        content: "En les passant directement après do.",
+        content: "By passing them directly after do.",
         correct: false
       },
       {
-        content: "En les plaçant entre | | dans le bloc.",
+        content: "By placing them between | | in the block.",
         correct: true
       },
       {
-        content: "En les déclarant dans la méthode.",
+        content: "By declaring them in the method.",
         correct: false
       }
     ]
   },
   {
-    content: "Quelle est la sortie du code suivant ? [1, 2, 3].map { |n| n * 2 }",
-    explication: "Le code applique n * 2 à chaque élément du tableau et retourne [2, 4, 6].",
+    content: "What is the output of the following code? [1, 2, 3].map { |n| n * 2 }",
+    explication: "The code applies n * 2 to each element of the array and returns [2, 4, 6].",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1607,8 +1607,8 @@ questions = [
     ]
   },
   {
-    content: "Quelle méthode permet de s'assurer qu'un bloc est présent avant d'utiliser yield ?",
-    explication: "block_given? vérifie si un bloc a été passé à la méthode avant d'utiliser yield.",
+    content: "Which method ensures that a block is present before using yield?",
+    explication: "block_given? checks if a block was passed to the method before using yield.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1630,8 +1630,8 @@ questions = [
     ]
   },
   {
-    content: "Quel est le résultat du code suivant ? 3.times { |i| puts i }",
-    explication: "times itère 3 fois en passant à chaque fois l'index actuel au bloc, ici 0, 1 et 2.",
+    content: "What is the result of the following code? 3.times { |i| puts i }",
+    explication: "times iterates 3 times, each time passing the current index to the block, here 0, 1, and 2.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1653,31 +1653,31 @@ questions = [
     ]
   },
   {
-    content: "Que retourne la méthode find ?",
-    explication: "find retourne le premier élément correspondant ou nil s'il n'y a aucun élément qui satisfait la condition.",
+    content: "What does the find method return?",
+    explication: "find returns the first matching element or nil if there are no elements that satisfy the condition.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
-        content: "Un tableau avec tous les éléments correspondants.",
+        content: "An array with all matching elements.",
         correct: false
       },
       {
-        content: "Le premier élément qui satisfait la condition.",
+        content: "The first element that satisfies the condition.",
         correct: true
       },
       {
-        content: "nil si aucun élément ne correspond.",
+        content: "nil if no elements match.",
         correct: true
       },
       {
-        content: "Les deux réponses B et C.",
+        content: "Both B and C.",
         correct: false
       }
     ]
   },
   {
-    content: "Quelle est la sortie de ce code ? result = [10, 20, 30].select { |n| n > 15 } puts result",
-    explication: "select filtre les éléments du tableau, ne gardant que ceux qui sont supérieurs à 15, donc [20, 30].",
+    content: "What is the output of this code? result = [10, 20, 30].select { |n| n > 15 } puts result",
+    explication: "select filters the array elements, keeping only those greater than 15, so [20, 30].",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1699,8 +1699,8 @@ questions = [
     ]
   },
   {
-    content: "Comment écrivez-vous un bloc qui prend deux paramètres ?",
-    explication: "Un bloc en Ruby prenant deux paramètres est écrit comme { |param1, param2| ... } ou do |param1, param2| ... end.",
+    content: "How do you write a block that takes two parameters?",
+    explication: "A block in Ruby taking two parameters is written as { |param1, param2| ... } or do |param1, param2| ... end.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1722,31 +1722,31 @@ questions = [
     ]
   },
   {
-    content: "Que se passe-t-il si vous essayez d'utiliser yield sans passer de bloc ?",
-    explication: "Appeler yield sans qu'un bloc ait été passé lève une exception LocalJumpError.",
+    content: "What happens if you try to use yield without passing a block?",
+    explication: "Calling yield without passing a block raises a LocalJumpError exception.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
-        content: "La méthode continue sans exécuter yield.",
+        content: "The method continues without executing yield.",
         correct: false
       },
       {
-        content: "Une erreur est levée.",
+        content: "An error is raised.",
         correct: true
       },
       {
-        content: "yield retourne nil.",
+        content: "yield returns nil.",
         correct: false
       },
       {
-        content: "Le programme s'arrête.",
+        content: "The program stops.",
         correct: false
       }
     ]
   },
   {
-    content: "Quelle méthode est la plus adaptée pour transformer tous les éléments d'un tableau en appliquant une opération sur chacun d'eux ?",
-    explication: "map est conçue pour transformer chaque élément d'un tableau en appliquant une opération et en retournant un nouveau tableau.",
+    content: "Which method is best suited to transform all elements of an array by applying an operation to each of them?",
+    explication: "map is designed to transform each element of an array by applying an operation and returning a new array.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1793,27 +1793,27 @@ puts "Finished! 🌱"
 puts ""
 
 puts ""
-puts "---- STEP 4 : CREATING LESSONS 🌱 ----"
+puts "---- STEP 5 : CREATING LESSONS 🌱 ----"
 puts ""
 
 lessons = [
   {
-    content: 'Rappel du cours :
-    Dans cette sous-catégorie, vous apprendrez à utiliser IRB (Interactive Ruby), un shell pour interagir directement avec Ruby. Vous apprendrez également à lancer un script Ruby à partir du terminal. Voici les concepts essentiels à retenir :',
+    content: 'Course Recap:
+    In this subcategory, you will learn to use IRB (Interactive Ruby), a shell for interacting directly with Ruby. You will also learn how to run a Ruby script from the terminal. Here are the key concepts to remember:',
     subcategory: sub_ruby
   },
   {
     content: 'Variables:
-        Une variable est un moyen de stocker une valeur pour une utilisation ultérieure.
-        En Ruby, les variables sont dynamiquement typées (vous n\'avez pas besoin de déclarer le type).
-        Exemple : name = "Alice" assigne la valeur "Alice" à la variable name.',
+        A variable is a way to store a value for later use.
+        In Ruby, variables are dynamically typed (you don\'t need to declare the type).
+        Example: name = "Alice" assigns the value "Alice" to the variable name.',
     subcategory: sub_ruby
   },
   {
-    content: 'Méthodes:
-        Les méthodes sont des blocs de code que vous pouvez appeler à tout moment pour effectuer une tâche spécifique.
-        Définition : def method_name(arguments) ... end
-        Exemple :
+    content: 'Methods:
+        Methods are blocks of code that you can call at any time to perform a specific task.
+        Definition: def method_name(arguments) ... end
+        Example:
         ruby
           def greet(name)
             "Hello, #{name}!"
@@ -1821,48 +1821,47 @@ lessons = [
     subcategory: sub_ruby
   },
   {
-    content: 'Classes intégrées :
-    Ruby fournit plusieurs classes intégrées comme String, Array, Hash, etc.
-    Ces classes offrent de nombreuses méthodes utiles pour manipuler des données.
-',
+    content: 'Built-in Classes:
+    Ruby provides several built-in classes like String, Array, Hash, etc.
+    These classes offer many useful methods to manipulate data.',
     subcategory: sub_ruby
   },
   {
-    content: 'Exécution d\'un script Ruby :
-    Pour exécuter un script Ruby, créez un fichier avec l\'extension .rb, par exemple script.rb.
-    Lancer le script dans le terminal avec la commande : ruby script.rb.',
+    content: 'Running a Ruby Script:
+    To run a Ruby script, create a file with the .rb extension, for example, script.rb.
+    Run the script in the terminal with the command: ruby script.rb.',
     subcategory: sub_ruby
   },
   {
-    content: 'Sous-catégorie 2 de Ruby : Flow, Conditionals & Arrays
-Rappel du cours :
-Dans cette sous-catégorie, nous allons aborder les structures de contrôle du flux, telles que les instructions conditionnelles et les boucles, qui modifient le déroulement de vos programmes. Vous découvrirez également les tableaux (arrays) et comment les manipuler.',
+    content: 'Ruby Subcategory 2: Flow, Conditionals & Arrays
+      Course Recap:
+      In this subcategory, we will cover flow control structures, such as conditional statements and loops, which change the flow of your programs. You will also learn about arrays and how to manipulate them.',
     subcategory: sub_ruby2
   },
   {
-    content: 'Les instructions conditionnelles :
-      Elles permettent d\'exécuter du code en fonction de certaines conditions.
-      if, elsif, else: permettent de choisir entre plusieurs blocs de code en fonction d\'une condition.
-      unless: exécute un bloc de code seulement si une condition est fausse.
-      case / when: une alternative à if pour tester plusieurs conditions.
-        Exemple :
+    content: 'Conditional Statements:
+      These allow you to execute code based on certain conditions.
+      if, elsif, else: allow you to choose between multiple blocks of code based on a condition.
+      unless: executes a block of code only if a condition is false.
+      case / when: an alternative to if for testing multiple conditions.
+        Example:
         if x > 10
-          puts "x est supérieur à 10"
+          puts "x is greater than 10"
         elsif x == 10
-          puts "x est égal à 10"
+          puts "x is equal to 10"
         else
-          puts "x est inférieur à 10"
+          puts "x is less than 10"
         end',
     subcategory: sub_ruby2
   },
   {
-    content: 'Les boucles :
-      Permettent de répéter un bloc de code plusieurs fois.
-      while: exécute un bloc de code tant qu\'une condition est vraie.
-      until: exécute un bloc de code tant qu\'une condition est fausse.
-      for: parcourt une plage ou un tableau d\'éléments.
-      loop: exécute un bloc de code indéfiniment jusqu\'à ce qu\'une condition d\'arrêt soit rencontrée (utilisation de break pour arrêter).
-      Exemple :
+    content: 'Loops:
+      Allow you to repeat a block of code multiple times.
+      while: executes a block of code as long as a condition is true.
+      until: executes a block of code as long as a condition is false.
+      for: iterates over a range or an array of elements.
+      loop: executes a block of code indefinitely until a stopping condition is met (use break to stop).
+      Example:
         i = 0
         while i < 5
           puts i
@@ -1871,57 +1870,56 @@ Dans cette sous-catégorie, nous allons aborder les structures de contrôle du f
     subcategory: sub_ruby2
   },
   {
-    content: 'Les tableaux (arrays) :
-
-    Un tableau est une collection ordonnée de valeurs indexées.
-    Les éléments sont accessibles par leur indice, commençant à 0.
-    Les tableaux peuvent contenir des éléments de différents types.
-    Exemple :
+    content: 'Arrays:
+    An array is an ordered collection of indexed values.
+    Elements are accessed by their index, starting at 0.
+    Arrays can contain elements of different types.
+    Example:
       array = [1, "two", 3.0]
       puts array[1]  # "two"',
     subcategory: sub_ruby2
   },
   {
-    content: 'Méthodes communes :
-    push: ajoute un élément à la fin du tableau.
-    pop: retire le dernier élément du tableau.
-    shift: retire le premier élément du tableau.
-    unshift: ajoute un élément au début du tableau.
-    each: itère sur chaque élément du tableau.',
+    content: 'Common Methods:
+    push: adds an element to the end of the array.
+    pop: removes the last element from the array.
+    shift: removes the first element from the array.
+    unshift: adds an element to the beginning of the array.
+    each: iterates over each element of the array.',
     subcategory: sub_ruby2
   },
   {
-    content: 'Rappel du cours :
-    Dans cette sous-catégorie, vous allez découvrir les itérateurs et les blocs en Ruby. Les itérateurs sont des méthodes qui parcourent les éléments d\'une collection, comme un tableau, et exécutent un bloc de code pour chaque élément. Les blocs sont des morceaux de code encapsulés entre accolades {} ou entre do...end, qui peuvent être passés à une méthode.',
+    content: 'Course Recap:
+    In this subcategory, you will discover iterators and blocks in Ruby. Iterators are methods that traverse the elements of a collection, such as an array, and execute a block of code for each element. Blocks are pieces of code enclosed between curly braces {} or between do...end, which can be passed to a method.',
     subcategory: sub_ruby3
   },
   {
-    content: 'Les itérateurs :
-    # each: Parcourt chaque élément d\'une collection (tableau, hash, etc.) et exécute un bloc de code pour chaque élément.
-    map: Transforme chaque élément d\'une collection en appliquant un bloc de code et retourne un nouveau tableau avec les résultats.
-    select: Filtre les éléments d\'une collection selon une condition définie dans un bloc de code et retourne un nouveau tableau avec les éléments qui satisfont cette condition.
-    reject: Fait l\'inverse de select, retournant les éléments qui ne satisfont pas la condition.
-      Exemple :
+    content: 'Iterators:
+    each: Iterates over each element of a collection (array, hash, etc.) and executes a block of code for each element.
+    map: Transforms each element of a collection by applying a block of code and returns a new array with the results.
+    select: Filters the elements of a collection according to a condition defined in a block of code and returns a new array with the elements that satisfy this condition.
+    reject: Does the opposite of select, returning the elements that do not satisfy the condition.
+      Example:
         numbers = [1, 2, 3, 4, 5]
         squares = numbers.map { |n| n * n }',
     subcategory: sub_ruby3
   },
   {
-    content: 'Les blocs :
-    Un bloc est un morceau de code passé à une méthode.
-    Les blocs peuvent être définis avec {} pour des blocs courts ou do...end pour des blocs plus longs.
-    Les blocs peuvent prendre des paramètres, entre | |, qui représentent les éléments sur lesquels le bloc itère.
-      Exemple :
+    content: 'Blocks:
+    A block is a piece of code passed to a method.
+    Blocks can be defined with {} for short blocks or do...end for longer blocks.
+    Blocks can take parameters, between | |, which represent the elements the block iterates over.
+      Example:
         5.times do |i|
           puts "This is iteration number #{i}"
         end',
     subcategory: sub_ruby3
   },
   {
-    content: 'Le mot-clé yield:
-    yield permet à une méthode d\'exécuter le bloc de code qui lui est passé.
-    Vous pouvez utiliser yield pour insérer le bloc de code passé à la méthode à un endroit spécifique dans la méthode.
-      Exemple :
+    content: 'The yield Keyword:
+    yield allows a method to execute the block of code that is passed to it.
+    You can use yield to insert the block of code passed to the method at a specific point within the method.
+      Example:
         def greet
           puts "Hello"
           yield if block_given?
@@ -1931,38 +1929,37 @@ Dans cette sous-catégorie, nous allons aborder les structures de contrôle du f
     subcategory: sub_ruby3
   },
   {
-    content: 'Les Hashes :
-    Un hash est une structure de données qui stocke des paires clé-valeur. Contrairement aux tableaux, les éléments d’un hash ne sont pas ordonnés par un index numérique mais par des clés.
-    Clé : Un objet (souvent un symbol ou une chaîne de caractères) utilisé pour accéder à la valeur associée.
-    Valeur : L\'objet associé à une clé dans un hash.
-      Syntaxe :
+    content: 'Hashes:
+    A hash is a data structure that stores key-value pairs. Unlike arrays, the elements of a hash are not ordered by numeric index but by keys.
+    Key: An object (often a symbol or a string) used to access the associated value.
+    Value: The object associated with a key in a hash.
+      Syntax:
       hash = { key1: "value1", key2: "value2" }
 
-      Accès aux valeurs :
+      Accessing Values:
       hash[:key1]  # => "value1"
 
-    Méthodes courantes :
-      keys : retourne toutes les clés du hash.
-      values : retourne toutes les valeurs du hash.
-      each : itère sur chaque paire clé-valeur.',
+    Common Methods:
+      keys: returns all the keys in the hash.
+      values: returns all the values in the hash.
+      each: iterates over each key-value pair.',
     subcategory: sub_ruby4
   },
   {
-    content: 'Les Symbols :
-    Un symbol est un objet immuable souvent utilisé comme identifiant ou clé dans un hash.
-    Les symbols sont créés avec : suivi du nom du symbol, par exemple :my_symbol.
-    Les symbols sont plus légers que les chaînes de caractères car ils ne changent pas et sont réutilisés.
-    Comparaison avec les strings : alors qu\'une chaîne de caractères est un objet différent chaque fois qu\'elle est créée, un symbol est le même objet chaque fois qu\'il est référencé.',
+    content: 'Symbols:
+    A symbol is an immutable object often used as an identifier or key in a hash.
+    Symbols are created with : followed by the symbol name, e.g., :my_symbol.
+    Symbols are lighter than strings because they do not change and are reused.
+    Comparison with strings: while a string is a different object each time it is created, a symbol is the same object each time it is referenced.',
     subcategory: sub_ruby4
   },
   {
-    content: 'Utilisation des Symbols comme clés de Hash :
-    Il est courant d\'utiliser des symbols comme clés dans un hash pour leur performance et leur immuabilité.
-      Exemple :
-        person = { name: "Alice", age: 30 }
-',
+    content: 'Using Symbols as Hash Keys:
+    It is common to use symbols as keys in a hash for their performance and immutability.
+      Example:
+        person = { name: "Alice", age: 30 }',
     subcategory: sub_ruby4
-  },
+  }
 ]
 
 lessons.each_with_index do |lesson, index|
