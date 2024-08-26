@@ -18,11 +18,21 @@
 
     <%= render 'shared/ios_pwa_links' %>
 
+    <%# Font-Family headers %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+    <%# Font-Family body %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
     <% unless current_page?(profil_users_path) || current_page?(welcome_path) %>
-       <%= render "shared/navbar" %>
+      <%= render "shared/navbar" %>
     <% end %>
     <%= render "shared/flashes" %>
 
