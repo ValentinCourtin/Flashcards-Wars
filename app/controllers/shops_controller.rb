@@ -17,9 +17,10 @@ class ShopsController < ApplicationController
     # @item => USE IT, ENVOI MESSAGE SLACK !!!!!!!!!!!!!!!!!!!
     @inventory.destroy # => bug prob avec find
 
+    SendSlackMessageJob.perform_later(@target_user, @item, @user)
 
     # Logique pour générer le contenu de la pop-up
-    @content = " USE IT/CHOICE : j'ai utilisé"
+    # @content = " USE IT/CHOICE : j'ai utilisé"
     render "shops/_done"
     # redirect_to shops_path
     # Renvoie un partial qui sera chargé dans le turbo-frame
@@ -81,18 +82,21 @@ class ShopsController < ApplicationController
 
 
 
-  def slack(target_user, item_id)
-    slack_token = ENV['SLACK_TOKEN']
-    channel = 'C07JKSNCMK6'
+  # def slack
+  #   slack_token = ENV['SLACK_TOKEN']
+  #   channel = 'C07JKSNCMK6'
 
-    # Exemple de texte dynamique basé sur des paramètres ou des données
-    message_text = "Hello from Rails application! The time is now #{Time.current}"
+  #   target_user = User.find(params[:user_id])
+  #   item = Item.find(params[:item_id])
+  #   raise
+  #   # Exemple de texte dynamique basé sur des paramètres ou des données
+  #   message_text = "Hello from Rails application! The time is now #{Time.current} #{target_user} #{item_id} #{@target_user.first_name} #{@item.name}"
 
-    slack_service = SlackService.new(slack_token)
-    slack_service.send_message(channel: channel, text: message_text)
+  #   slack_service = SlackService.new(slack_token)
+  #   slack_service.send_message(channel: channel, text: message_text)
 
-    render plain: 'Message sent to Slack'
-  end
+  #   render plain: 'Message sent to Slack'
+  # end
 
 
 #   curl -X POST -H 'Authorization: Bearer xoxb-7622778104902-7642118584049-Lq9EuoTWunH19vpWO854gl4y' \

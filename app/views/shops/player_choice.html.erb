@@ -24,11 +24,11 @@
 
 
           <h3> > Validate ?</h3>
-          <%= f.submit "Yes, sure!", class:"background-white" %>
+          <%= f.submit "Yes, sure!", class:"background-white", action: :slack %>
         <% end %>
       </div>
-      
-      <% slack() %>
+
+      <%# <% slack(user[1],user[0]) %>
 
     </div>
   </div>
