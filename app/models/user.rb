@@ -74,7 +74,7 @@ class User < ApplicationRecord
     when 3
       "robots/programmer.png"
     when 4
-      "robots/developer.png"
+      "robots/developper.png"
     else
       "robots/hacker.png"
     end

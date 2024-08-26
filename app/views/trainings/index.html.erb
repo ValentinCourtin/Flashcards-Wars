@@ -8,12 +8,14 @@
       <% @trainings.each_with_index do |training, index| %>
         <%= link_to training, class: training.finished? ? "mission-finished" : "mission-todo" do %>
           <div class="mission-frame">
+
           <% if training.finished? %>
             <h2>> MISSION <%= (index + 1)%> - FINISHED </h2>
           <% else %>
             <h2>> MISSION <%= (index + 1)%></h2>
           <% end %>
           <p>> <%=  training.subcategory.category.name + ' - ' + training.subcategory.name %></p>
+
           </div>
         <% end %>
       <% end %>
@@ -21,7 +23,7 @@
       <% @Locked_missions_count.times do %>
         <div class="mission-frame mission-locked">
           <h2>> MISSION LOCKED</h2>
-          <p>> LOCKED</p>
+          <p>>  LOCKED</p>
         </div>
       <% end %>
     </div>

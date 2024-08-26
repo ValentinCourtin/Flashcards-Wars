@@ -22,7 +22,7 @@
       <% if !@users_ordered.first(8).include?(@current_user) %>
         <div class="rank-frame bottom-rank">
           <div>
-            <%= "#{(@users_ordered.index(@current_user) + 1)} - #{@current_user.first_name.capitalize} #{@current_user.last_name[0].upcase}." %>
+            <%= "#{(@users_ordered.index(@current_user) + 1)} - YOU" %>
           </div>
           <div>
             <%= "#{@current_user.experience} XP" %>
