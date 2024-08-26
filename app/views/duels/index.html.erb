@@ -1,0 +1,25 @@
+<div class="background-first background-fixed">
+
+  <div class="top_card d-flex justify-content-center align-items-end">
+    <p>DUELS</p>
+  </div>
+
+  <div class="mission-container">
+    <div class="missions">
+      <% @duels.each_with_index do |duel, index| %>
+        <%= link_to "#", class: "mission-todo" do %>
+          <div class="mission-frame">
+            <h2>> MISSION <%= (index + 1)%> - FINISHED </h2>
+            <p>> <%= 'Duel ' + duel.opponent_id.name %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= link_to 'opponent_choice_duels_path', class: "font-white-center" do %>
+      <div class="btn-orange">
+        <p>NEW DUEL</p>
+      </div>
+  <% end %>
+</div>
