@@ -10,7 +10,12 @@ Rails.application.routes.draw do
     get 'replay' => 'trainings#replay'
   end
 
-  resources :duels, only: [:index, :show]
+  resources :duels, only: [:index, :show] do
+    collection do
+      post :choice
+      get :opponent_choice
+    end
+  end
 
   resources :shops, only: [:index] do
     collection do
