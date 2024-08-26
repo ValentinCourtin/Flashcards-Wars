@@ -10,9 +10,9 @@
 
   <%= turbo_frame_tag :question_answers do %>
     <%if @correct %>
-      <div class="image-validation"><%= image_tag "true", class:"img"%></div>
+      <div class="image-validation"><%= image_tag "true.png", class:"img"%></div>
     <%else%>
-      <div class="image-validation"><%= image_tag "false", class:"img"%></div>
+      <div class="image-validation"><%= image_tag "false.png", class:"img"%></div>
     <%end%>
 
     <%if @correct %>
