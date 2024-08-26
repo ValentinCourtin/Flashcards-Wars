@@ -1,7 +1,7 @@
 <%= turbo_frame_tag :question_answers do %>
 
     <div class="question">
-      <h2> > QUESTION</h2>
+      <h2> > QUESTION </h2>
       <p> > <%= @question.content %></p>
     </div>
     <p id="avancement">Flashcard <%= @training.questions.count - @training_answers.count%>/<%= @training.questions.count %></p>

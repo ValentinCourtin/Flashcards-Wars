@@ -16,7 +16,6 @@
     height: 100px;
     text-align: center;
     padding: 5px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,12 +25,17 @@
       color: #A9DBFB;
       text-decoration: none;
     }
+
+    p {
+      font-size: 20px;
+    }
   }
 }
 
 .text-blue {
   color: #A9DBFB;
   text-decoration: none;
+  margin: 0px;
 }
 
 #correct-answer {
@@ -51,6 +55,8 @@
 
   p {
     color: #A9DBFB;
+    margin: 0px;
+    font-size: 22px;
   }
 }
 

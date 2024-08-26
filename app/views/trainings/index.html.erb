@@ -9,7 +9,7 @@
         <%= link_to training, class:"mission-todo" do %>
           <div class="mission-frame">
             <h2>> MISSION <%= index + 1 %></h2>
-            <p>> <%=  training.subcategory.category.name + ' - ' + training.subcategory.name %></p>
+            <p>>  <%=  training.subcategory.category.name + ' - ' + training.subcategory.name %></p>
           </div>
         <% end %>
       <% end %>
@@ -17,7 +17,7 @@
       <% @Locked_missions_count.times do %>
         <div class="mission-frame mission-locked">
           <h2>> MISSION LOCKED</h2>
-          <p>> LOCKED</p>
+          <p>>  LOCKED</p>
         </div>
       <% end %>
     </div>
