@@ -14,16 +14,18 @@ class ShopsController < ApplicationController
     @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)
     @target_user = User.find(params[:user_id])
 
-
     # @item => USE IT, ENVOI MESSAGE SLACK !!!!!!!!!!!!!!!!!!!
-    @inventory.destroy  # => bug prob avec find
+    @inventory.destroy # => bug prob avec find
+
 
     # Logique pour générer le contenu de la pop-up
     @content = " USE IT/CHOICE : j'ai utilisé"
     render "shops/_done"
+    # redirect_to shops_path
     # Renvoie un partial qui sera chargé dans le turbo-frame
     #render "shops/_popup_shop", locals: { content: @content }
   end
+
 
 
   def player_choice
@@ -31,9 +33,10 @@ class ShopsController < ApplicationController
     @users = User.all.collect { |user| [user.first_name, user.id] }
     @item = Item.find(params[:item_id])
     @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)
-
-
   end
+
+
+
 
   def wheel
     @user = current_user
@@ -75,30 +78,85 @@ class ShopsController < ApplicationController
     end
   end
 
+
+
+
+  def slack(target_user, item_id)
+    slack_token = ENV['SLACK_TOKEN']
+    channel = 'C07JKSNCMK6'
+
+    # Exemple de texte dynamique basé sur des paramètres ou des données
+    message_text = "Hello from Rails application! The time is now #{Time.current}"
+
+    slack_service = SlackService.new(slack_token)
+    slack_service.send_message(channel: channel, text: message_text)
+
+    render plain: 'Message sent to Slack'
+  end
+
+
+#   curl -X POST -H 'Authorization: Bearer xoxb-7622778104902-7642118584049-Lq9EuoTWunH19vpWO854gl4y' \
+#   -H 'Content-type: application/json' \
+#   --data '{"channel":"C07JKSNCMK6","text":"Hello from my app!"}' \
+#   https://slack.com/api/chat.postMessage
+
+
+#   curl -X POST -H 'Authorization: Bearer xoxb-XXXXXXXXXXXX-XXXXXXXXXXXX-XXXXXXXXXXXX' \
+# -H 'Content-type: application/json' \
+# --data '{"channel":"C1234567890","text":"Hello from my app!"}' \
+# https://slack.com/api/chat.postMessage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   #def buy
-   # @user = current_user
+    # @user = current_user
 
     # use gold to buy
     #if @user.gold_count >= 400
-     # @user.gold_count -= 400
+      # @user.gold_count -= 400
       #@user.save
 
 
       # proba
       #@items = Item.all
 
-     # total_probability = @items.sum(&:probability)
+      # total_probability = @items.sum(&:probability)
       #cumulative_probabilities = @items.each_with_object([]) do |item, array|
-       # previous_probability = array.last || 0
-       # array << previous_probability + item.probability
+        # previous_probability = array.last || 0
+        # array << previous_probability + item.probability
       #end
 
       #random_number = rand(0.0...total_probability)
       #selected_item = nil
       #cumulative_probabilities.each_with_index do |cumulative_probability, index|
         #if random_number < cumulative_probability
-         # selected_item = @items[index]
-         # break
+          # selected_item = @items[index]
+          # break
         #end
       #end
 
