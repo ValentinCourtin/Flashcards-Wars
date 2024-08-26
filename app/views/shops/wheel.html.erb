@@ -1,0 +1,22 @@
+<%= turbo_frame_tag "popup_shop" do %>
+  <div class="blur">
+    <div class="modal-pop-up" id="small" data-controller="modals">
+      <div data-modals-target="wheel">
+        <%= image_tag "wheel.png", alt: "wheel", width: "200px", height: "200px" %>
+        <br>
+        <h3>-----------------------</h3>
+        <h3>> Wheel is turning</h3>
+        <h3> <%=@content%></h3>
+      </div>
+      <div data-modals-target="win" style="display: none;">
+        <%= link_to "X", "#", data: {
+        controller: "modals"
+        # action: "modals#close"
+      }, class: "cancel-button" %>
+        <%= cl_image_tag @item.photo.key %>
+        <h3>-----------------------</h3>
+        <h3> > YOU WIN : <%=@item.name%></h3>
+      </div>
+    </div>
+  </div>
+<%end%>

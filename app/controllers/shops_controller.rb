@@ -11,19 +11,30 @@ class ShopsController < ApplicationController
     @user = current_user
 
     @item = Item.find(params[:item_id])
+    @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)
+    @target_user = User.find(params[:user_id])
+
+
     # @item => USE IT, ENVOI MESSAGE SLACK !!!!!!!!!!!!!!!!!!!
-    @item.destroy  # => bug prob avec find
+    @inventory.destroy  # => bug prob avec find
 
     # Logique pour générer le contenu de la pop-up
     @content = " USE IT/CHOICE : j'ai utilisé"
+    redirect_to shops_path
     # Renvoie un partial qui sera chargé dans le turbo-frame
-    render "shops/_popup_shop", locals: { content: @content }
+    #render "shops/_popup_shop", locals: { content: @content }
   end
 
 
+  def player_choice
+    @user = current_user
+    @users = User.all.collect { |user| [user.first_name, user.id] }
+    @item = Item.find(params[:item_id])
+    @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)
 
+  end
 
-  def buy
+  def wheel
     @user = current_user
 
     # use gold to buy
@@ -31,8 +42,6 @@ class ShopsController < ApplicationController
       @user.gold_count -= 400
       @user.save
 
-
-      # proba
       @items = Item.all
 
       total_probability = @items.sum(&:probability)
@@ -51,20 +60,62 @@ class ShopsController < ApplicationController
       end
 
       # mettre dans inventory
-      Inventory.create(user: @user, item: selected_item)
+      @inventory = Inventory.create(user: @user, item: selected_item)
+      @inventory.save
 
       # Logique pour générer le contenu de la pop-up
-      @content = "BUY/LAUNCH: J'ai acheté !"
+      @content = ""
 
       # renvoyer l'item
       @item = selected_item
-
     else
       # Logique pour générer le contenu de la pop-up
       @content = "Sorry, you need more gold to launch..."
     end
-    render partial: "shops/popup_shop"
   end
+
+  #def buy
+   # @user = current_user
+
+    # use gold to buy
+    #if @user.gold_count >= 400
+     # @user.gold_count -= 400
+      #@user.save
+
+
+      # proba
+      #@items = Item.all
+
+     # total_probability = @items.sum(&:probability)
+      #cumulative_probabilities = @items.each_with_object([]) do |item, array|
+       # previous_probability = array.last || 0
+       # array << previous_probability + item.probability
+      #end
+
+      #random_number = rand(0.0...total_probability)
+      #selected_item = nil
+      #cumulative_probabilities.each_with_index do |cumulative_probability, index|
+        #if random_number < cumulative_probability
+         # selected_item = @items[index]
+         # break
+        #end
+      #end
+
+      # mettre dans inventory
+      #Inventory.create(user: @user, item: selected_item)
+
+      # Logique pour générer le contenu de la pop-up
+      #@content = "BUY/LAUNCH: J'ai acheté !"
+
+      # renvoyer l'item
+      #@item = selected_item
+
+    #else
+      # Logique pour générer le contenu de la pop-up
+      #@content = "Sorry, you need more gold to launch..."
+    #end
+    #render partial: "shops/popup_shop"
+  #end
 
 
   # def update_carousel
