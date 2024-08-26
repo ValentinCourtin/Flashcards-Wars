@@ -53,6 +53,7 @@ gem "sassc-rails"
 gem "cloudinary"
 
 gem 'faker'
+gem 'slack-notifier'
 
 
 group :development, :test do
