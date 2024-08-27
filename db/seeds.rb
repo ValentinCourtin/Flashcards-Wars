@@ -4,6 +4,11 @@ puts ""
 puts "-------- STEP 1 : DESTROYING ALL 💀 --------"
 puts ""
 
+
+puts "Destroying rounds... 💀"
+Round.destroy_all
+puts "Destroying duels... 💀"
+Duel.destroy_all
 puts "Destroying trainings... 💀"
 Training.destroy_all
 puts "Destroying trainingsAnswers... 💀"

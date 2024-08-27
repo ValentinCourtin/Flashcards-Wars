@@ -1,0 +1,33 @@
+<div class="background-first <%# d-flex justify-content-center align-items-center %>">
+
+   <div class="top_card d-flex justify-content-center align-items-end">
+    <p>DUEL</p>
+  </div>
+
+  <%= turbo_frame_tag :popup_opponent do %>
+
+    <% if @correct %>
+      <div class="question" id="border-green">
+        <h2>> CORRECT ANSWER</h2>
+        <p class="mt-3">> <%= @question.explication %></p>
+       <%#  <p>Tu as <%= @correct ? 'bon' : 'faux' %><%# </p>  %>
+      </div>
+    <% else %>
+      <div class="question" id="border-red">
+        <h2>> INCORRECT ANSWER</h2>
+        <p class="text-center">----------------------------------------</p>
+        <p class="mb-1 mt-3"> > RIGHT ANSWER : "<%= @question.solution.content %>" </p>
+        <p class="text-center">----------------------------------------</p>
+        <p>> DETAILS : <%= @question.explication %></p>
+       <%#  <p>Tu as <%= @correct ? 'bon' : 'faux' %><%# </p>  %>
+      </div>
+    <% end %>
+
+
+    <%= link_to duel_duelplay_path(@round_question_answer.round.duel.id), class: "font-white-center" do %>
+      <div class="btn-orange">
+        <p>NEXT</p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
