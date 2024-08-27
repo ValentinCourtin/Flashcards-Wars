@@ -1,0 +1,30 @@
+
+<div class="background-first">
+
+   <div class="top_card d-flex justify-content-center align-items-end">
+    <p>DUEL</p>
+   </div>
+
+  <%= link_to "< Back to trainings", trainings_path, class:"btn-back" %>
+
+  <%= turbo_frame_tag :popup_opponent do %>
+    <div class="question">
+      <h1>SCORE</h1>
+      <p>
+        <%= @user.first_name %> VS <%= @opponent.first_name %> <br>
+      </p>
+      <p>----------------------------</p>
+      <p>ROUND 1</p>
+      <%= "" %> - <%= "" %>
+      <p>----------------------------</p>
+      <p>ROUND 2</p>
+      <%= "" %> - <%= "" %>
+      <p>----------------------------</p>
+      <p>ROUND 3</p>
+      <%= "" %> - <%= "" %>
+      
+
+    </div>
+
+  <% end %>
+</div>
