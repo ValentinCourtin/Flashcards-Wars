@@ -3,12 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :trainings
+  has_many :trainings, dependent: :destroy
 
   has_many :duels
   has_many :training_answers, through: :trainings
   has_many :inventories
   has_many :items, through: :inventories, dependent: :destroy
+
+  has_many :subcategories, through: :training
 
   after_create :create_first_training
 

@@ -5,8 +5,6 @@ class ShopsController < ApplicationController
     @user = current_user
   end
 
-
-
   def choice
     @user = current_user
     @username = " #{@user.first_name.capitalize} #{@user.last_name[0].upcase}."
@@ -28,8 +26,6 @@ class ShopsController < ApplicationController
     #render "shops/_popup_shop", locals: { content: @content }
   end
 
-
-
   def player_choice
     @user = current_user
     # @users = User.all.collect { |user| [user.first_name, user.id] } # remettre dans player choice user[0]et user[1]
@@ -39,8 +35,6 @@ class ShopsController < ApplicationController
 
     
   end
-
-
 
   def wheel
     @user = current_user
@@ -81,5 +75,4 @@ class ShopsController < ApplicationController
       @content = "Sorry, you need more gold to launch..."
     end
   end
-
 end

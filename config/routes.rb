@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     end
   end
 
+  post 'create' => "duels#create"
+
   resources :shops, only: [:index] do
     collection do
       post :choice

@@ -1,5 +1,4 @@
 class TrainingsController < ApplicationController
-
   before_action :set_training, only: [:finished, :play, :replay, :resolve]
 
   def index
@@ -20,7 +19,7 @@ class TrainingsController < ApplicationController
     )
 
     if @training.finished
-      # user tries to submit severql times
+      # user tries to submit several times
       redirect_to trainings_path
     elsif @training_answers.empty?
       # Il n'y a plus de question on redirige à la fin
