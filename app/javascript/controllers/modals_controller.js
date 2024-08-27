@@ -9,12 +9,12 @@ export default class extends Controller {
     setTimeout(() => {
       this.createExplosion();
       this.hideWheel();
-    }, 2000);
+    }, 1500);
 
     setTimeout(() => {
+      this.explosionTarget.style.display = "none"
       this.showWin();
-    }, 4000);
-
+    }, 3500);
 
   }
 
@@ -33,6 +33,7 @@ export default class extends Controller {
   createExplosion() {
     this.explosionTarget.classList.remove("explosion")
     this.explosionTarget.classList.add("show-explosion")
+
   }
 
 
