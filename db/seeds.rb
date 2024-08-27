@@ -74,7 +74,7 @@ usertest1 = User.create!(
   experience: 50
 )
 usertest2 = User.create!(
-  email: "lynn@telia.com",
+  email: "lynn@test.com",
   password: "123456",
   first_name: "Lynn",
   last_name: "Telia",
@@ -95,7 +95,7 @@ usertest3 = User.create!(
 # ////////////////////////
 # user qu'on utilisera pour la démo donc faudra faire en fonction des besoin
 user0 = User.create!(
-  email: "valentin@gmail.com",
+  email: "valentin@test.com",
   password: "123456",
   first_name: "Valentin",
   last_name: "Courtin",

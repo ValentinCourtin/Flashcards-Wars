@@ -1,0 +1,23 @@
+
+  <div class="blur">
+      <h3> > Select a player :</h3>
+      <div >
+        <%= form_with url: choice_duels_path do |f| %>
+          <%= f.hidden_field :user_id, value: @user %>
+          <%= f.hidden_field :user_id, value: @user %>
+
+
+          <select name="user_id" class="form-select background-white" aria-label="Default select example" required>
+            <option selected>...</option>
+            <%@users.each do |user|%>
+              <option value="<%=user[1]%>"><%=user[0]%></option>
+            <%end%>
+          </select>
+
+
+          <h3> > Validate ?</h3>
+          <%= f.submit "Yes, sure!", class:"background-white" %>
+        <% end %>
+      </div>
+
+  </div>

@@ -13,17 +13,23 @@
               </div>
               <br>
               ---------------------------------------------
-              <h3><%= item.name %></h3>
+              <h3>> Object : <%= item.name %></h3>
               <p><%= item.description %></p>
 
               <%# btn, path = l'action choice dans le controller shop, data = quelle turbo frame va afficher la popup %>
+
               <%# <div class="btn-blue">
               <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop } %>
-              <%# </div> %> 
+              <%# </div> %>
 
-              <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice do %>
-                <div class="btn-blue"><h2>USE IT</h2></div>
+              <%# <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice do %>
+                <%# <div class="btn-blue"><h2>USE IT</h2></div>
               <%end%>
+
+              <div class="btn-orange-small">
+                <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop }, class:"text-properties" %>
+              </div>
+
 
             </div>
           <% end %>
@@ -41,14 +47,14 @@
 
     <% else %>
         <div class="d-flex justify-content-center">
-          <%= image_tag "question_point.png", alt: "question point", width: "142px", height: "142px" %>
+          <%= image_tag "question_point.png", alt: "question point", width: "120px", height: "120px" %>
         </div>
-          <br>
-            ---------------------------------------------
-          <br>
-        <p>&gt You don't have any item ! </p>
-        <p>LAUNCH THE WHEEL BELOW </p>
-        <p>vvvvvvvvvvv </p>
+        <div class="text-center">
+          <p>---------------------------------------------</p>
+          <h3>You don't have any item ! </h3>
+          <p>LAUNCH THE WHEEL BELOW </p>
+          <p>vvvvvvvvvvv </p>
+        </div>
     <% end %>
 
   </div>

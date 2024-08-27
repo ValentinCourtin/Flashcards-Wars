@@ -5,9 +5,11 @@
             controller: "modals"
             # action: "modals#close"
           }, class: "cancel-button" %>
-          <h3> > WELL DONE !</h3>
-            <h3> > You use <%=@item.name%> on <%=@target_user.first_name%> </h3>
-            <h3> we've just send <%=@target_user.first_name%> a message on Slack ! </h3>
-          </div>
+    <h3> > WELL DONE !</h3>
+    <p> > You use <%=@item.name%> on <%=@target_user.first_name%> </p>
+    <p> we've just send <%=@target_user.first_name%> a message on Slack ! </p>
+     <%= image_tag "alien.png", alt: "alien", width: "142px", height: "142px"%>
+    </div>
+
   </div>
 <% end %>

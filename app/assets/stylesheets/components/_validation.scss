@@ -3,7 +3,6 @@
   0% {
     opacity: 0;
     transform: scale(0.5);
-    display: block;
   }
 
   30% {
@@ -17,15 +16,15 @@
   }
 
   100% {
+    opacity: 0;
     transform: scale(0);
   }
 }
 
 .image-validation {
-  animation: slidein 2s linear;
+  animation: slidein 2s linear forwards;
   position: absolute;
   z-index: 2;
-  display: none;
   bottom: 280px;
   left: 48px;
 }
