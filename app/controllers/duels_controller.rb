@@ -46,11 +46,13 @@ class DuelsController < ApplicationController
     @answer = Possibility.find(params[:possibility_id])
     @correct = @answer == @question.solution
     @round_question_answer.update(solved: true)
+    @round_question_answer.update(success: true) if @correct
   end
 
   def duelfinished
     @user = current_user
     @duel = Duel.find(params[:duel_id])
     @opponent = @duel.opponent
+    @current_user_score = RoundQuestionAnswer.where(user: @user, success: true).count
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_27_084201) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_27_170721) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -109,6 +109,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_27_084201) do
     t.bigint "round_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "success", default: false
     t.index ["question_id"], name: "index_round_question_answers_on_question_id"
     t.index ["round_id"], name: "index_round_question_answers_on_round_id"
     t.index ["user_id"], name: "index_round_question_answers_on_user_id"
