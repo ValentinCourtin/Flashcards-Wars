@@ -16,37 +16,38 @@
   position: absolute;
   /* top: 100px;
   left: 100px;  */
-  display: none;
+  opacity: 0;
   animation: none;
   width: 0;
   height: 0;
   z-index: 0;
-  /* transition: opacity 1s ease-in-out; */
+  transition: opacity 1s ease-in-out;
 }
 
 @keyframes explode {
   0% {
     opacity: 0;
-    transform: scale(0.5) rotate(0deg);
+    transform: scale(0.5);
   }
 
   90% {
     opacity: 1;
-    transform: scale(2.5) rotate(180deg);
+    transform: scale(2.5);
   }
 
   100% {
-    transform: scale(0) rotate(360deg);
+    transform: scale(0);
   }
 }
 
 .show-explosion {
+  opacity: 1;
   display: flex;
   justify-content: center;
   margin-top: 30px;
   animation: explode 2s ease-in-out forwards;
   z-index: 0;
-
+  /* transition: opacity 1s ease-in-out; */
 }
 
 /* .forground {
