@@ -1,25 +1,84 @@
-.shop-card-top {
+.top_card_shop {
   background-color: #025470;
   width: 226px;
-  height: 130px;
+  height: 101px;
   border-radius: 0px 0px 8px 8px;
+  border: 2px solid #025470;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
 
-  padding-top: 36px;
-  justify-content: center;
-  text-align: center;
-
-  h1,
   p {
     color: white;
     font-size: 24px;
-    padding: 0px;
-    margin: 0px;
+  }
+
+  h1{
+    font-family: "Jersey 10", sans-serif;
   }
 }
+
+.top-shop {
+  padding-top: 20px;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  border: 2px solid #025470;
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+
+.btn-launch {
+  background-color: #E66E04;
+  height: 53px;
+  width: 80vw;
+  border-radius: 8px;
+  border: 2px solid #025470;
+  padding: 8px;
+  // text-decoration: none; ne fonctionne pas.............
+  z-index: 10;
+  text-align: center;
+
+  position: absolute;
+  top: 675px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-blue {
+  background-color: #036D91;
+  width: 231px;
+  border-radius: 8px;
+  text-align: center;
+  // text-decoration: none; ne fonctionne tj pas.............
+}
+
+
+// .shop-card-top {
+//   background-color: #025470;
+//   width: 226px;
+//   height: 130px;
+//   border-radius: 0px 0px 8px 8px;
+//   position: absolute;
+//   top: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+
+//   padding-top: 36px;
+//   justify-content: center;
+//   text-align: center;
+
+//   h1,
+//   p {
+//     color: white;
+//     font-size: 24px;
+//     padding: 0px;
+//     margin: 0px;
+//   }
+// }
 
 // .shop-card-middle {
 //   border-radius: 8px;
@@ -63,21 +122,6 @@
 //   }
 // }
 
-.btn-launch {
-  background-color: #E66E04;
-  height: 53px;
-  width: 80vw;
-  border-radius: 8px;
-  padding: 8px;
-  // text-decoration: none; ça ne fonctionne pas....
-  z-index: 10;
-  text-align: center;
-
-  position: absolute;
-  top: 675px;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 // turbo-frame a {
 //   text-decoration: none;

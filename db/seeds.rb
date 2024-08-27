@@ -183,110 +183,128 @@ items = [
     name: "Super croissant",
     description: "The player selected has to bring croissant for next breakfast!",
     probability: 0.05,
-    image_name: "supercroissant.png"
+    image_name: "supercroissant.png",
+    category: "single"
   },
   {
     name: "Butler",
     description: "The player selected is your butler for one day!",
     probability: 0.2,
-    image_name: "butler.png"
-  },
-  {
-    name: "Swap",
-    description: "You can give your place at the Livecode to whomever you wish!",
-    probability: 0.2,
-    image_name: "swap.png"
-  },
-  {
-    name: "Golden ticket",
-    description: "Your next ticket has priority over all other tickets!",
-    probability: 0.6,
-    image_name: "goldenticket.png"
+    image_name: "butler.png",
+    category: "single"
   },
   {
     name: "Shut up",
     description: "The selected person must not speak for 10 minutes.",
     probability: 0.6,
-    image_name: "shutup.png"
+    image_name: "shutup.png",
+    category: "single"
   },
   {
     name: "Walker",
     description: "The selected player must walk around the block!",
     probability: 0.6,
-    image_name: "walker.png"
+    image_name: "walker.png",
+    category: "single"
   },
+  {
+    name: "Swap",
+    description: "You can give your place at the Livecode to whomever you wish!",
+    probability: 0.2,
+    image_name: "swap.png",
+    category: "single"
+  },
+  {
+    name: "Golden ticket",
+    description: "Your next ticket has priority over all other tickets!",
+    probability: 0.6,
+    image_name: "goldenticket.png",
+    category: "group"
+  },
+
   {
     name: "Keyword",
     description: "Every time you say your keyword, everyone has to stand up for 1 day!",
     probability: 0.05,
-    image_name: "keyword.png"
+    image_name: "keyword.png",
+    category: "group"
   },
   {
     name: "R.E.S.P.E.C.T",
     description: "Everyone must be very polite to you for 1 day!",
     probability: 0.15,
-    image_name: "respect.png"
+    image_name: "respect.png",
+    category: "group"
   },
   {
     name: "Ola",
     description: "For a day, every time you enter a room, everyone has to do an ola!",
     probability: 0.15,
-    image_name: "ola.png"
+    image_name: "ola.png",
+    category: "group"
   },
   {
     name: "Ego Boost",
     description: "Everyone has to give you a compliment!",
     probability: 0.4,
-    image_name: "egoboost.png"
+    image_name: "egoboost.png",
+    category: "group"
   },
   {
     name: "Taxes",
     description: "You can dip into other people's cakes/snacks for 1 day!",
     probability: 0.4,
-    image_name: "taxes.png"
+    image_name: "taxes.png",
+    category: "group"
   },
   {
     name: "Joker",
     description: "Whatever happens, you've won, but the other player won't know until the end of the game!",
     probability: 0.05,
-    image_name: "joker.png"
+    image_name: "joker.png",
+    category: "duel"
   },
   {
     name: "Tornado",
     description: "For one round of a duel and every 3 seconds, the opponent's answers are shuffled!",
     probability: 0.2,
-    image_name: "tornado.png"
+    image_name: "tornado.png",
+    category: "duel"
   },
   {
     name: "Day & night",
     description: "For one round of a duel, the opponent's screen turns off and on every 5 seconds!",
     probability: 0.2,
-    image_name: "daynight.png"
+    image_name: "daynight.png",
+    category: "duel"
   },
   {
     name: "Rainbow",
     description: "For one round of a duel, each letter of the opponent's answers has a different color!",
     probability: 0.6,
-    image_name: "rainbow.png"
+    image_name: "rainbow.png",
+    category: "duel"
   },
   {
     name: "Reversed",
     description: "For one round of a duel, the opponent's answers are reversed!",
     probability: 0.6,
-    image_name: "reversed.png"
+    image_name: "reversed.png",
+    category: "duel"
   },
   {
     name: "Timer",
     description: "For one round of a duel, the opponent has only 8 seconds to respond!",
     probability: 0.6,
-    image_name: "timer.png"
+    image_name: "timer.png",
+    category: "duel"
   }
 ]
 
 # Itérer sur le tableau et créer chaque Item
 items.each_with_index do |item_attributes, index|
   puts "[#{index+1}/#{items.size}] Creating item : #{item_attributes[:name]} 🌱"
-  item = Item.create!(name: item_attributes[:name], description: item_attributes[:description], probability: item_attributes[:probability])
+  item = Item.create!(name: item_attributes[:name], description: item_attributes[:description], probability: item_attributes[:probability], category: item_attributes[:category])
     if item_attributes[:image_name].present?
       puts "Upload image for item : #{item_attributes[:name]} 📸"
       image_path = Rails.root.join('db', 'images', item_attributes[:image_name])
@@ -302,7 +320,7 @@ end
 
 puts "Creating inventories... 🌱"
 usertest1.items << Item.all.sample(10)
-usertest2.items << Item.all.sample(2)
+usertest2.items << Item.all.sample(15)
 usertest3.items << Item.all.sample(0)
 
 
@@ -324,7 +342,7 @@ puts ""
 questions = [
   {
     content: "How do you start an IRB session in the terminal?",
-    explication: "irb is the command used to launch Ruby's interactive environment in the terminal.",
+    explication: "Irb is the command used to launch Ruby's interactive environment in the terminal.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -347,7 +365,7 @@ questions = [
   },
   {
     content: "Which command do you use to run a Ruby script called app.rb?",
-    explication: "ruby app.rb is the standard command to run a Ruby script.",
+    explication: "Ruby app.rb is the standard command to run a Ruby script.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -462,7 +480,7 @@ questions = [
   },
   {
     content: "Which method in the String class returns the length of the string?",
-    explication: "length is a method in the String class that returns the number of characters in the string.",
+    explication: "Length is a method in the String class that returns the number of characters in the string.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -508,7 +526,7 @@ questions = [
   },
   {
     content: "What keyword do you use to create a reusable block of code in Ruby?",
-    explication: "def is the keyword used in Ruby to define a method, which is a reusable block of code.",
+    explication: "Def is the keyword used in Ruby to define a method, which is a reusable block of code.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -531,7 +549,7 @@ questions = [
   },
   {
     content: "How do you print the string \"Bonjour, monde !\" in Ruby?",
-    explication: "puts is used to display a string with a new line at the end.",
+    explication: "Puts is used to display a string with a new line at the end.",
     subcategory: "Programming Basics",
     possibilities: [
       {
@@ -688,7 +706,7 @@ questions = [
   },
   {
     content: "What Ruby keyword allows you to test a condition after executing a block of code, i.e., execute the block as long as the condition is false?",
-    explication: "until executes a block of code as long as the specified condition is false.",
+    explication: "Until executes a block of code as long as the specified condition is false.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -734,7 +752,7 @@ questions = [
   },
   {
     content: "What keyword is used to prematurely exit a loop?",
-    explication: "break is used to immediately exit a loop, regardless of the remaining conditions.",
+    explication: "Break is used to immediately exit a loop, regardless of the remaining conditions.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -826,7 +844,7 @@ questions = [
   },
   {
     content: "Which structure is used to iterate over each element of an array?",
-    explication: "each is commonly used to iterate over each element of an array.",
+    explication: "Each is commonly used to iterate over each element of an array.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -918,7 +936,7 @@ questions = [
   },
   {
     content: "Which control structure executes a block of code if a condition is false?",
-    explication: "unless executes a block of code only if the specified condition is false.",
+    explication: "Unless executes a block of code only if the specified condition is false.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -941,7 +959,7 @@ questions = [
   },
   {
     content: "What is the difference between while and until?",
-    explication: "while executes a block as long as a condition is true, while until executes a block as long as a condition is false.",
+    explication: "While executes a block as long as a condition is true, while until executes a block as long as a condition is false.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -1010,7 +1028,7 @@ questions = [
   },
   {
     content: "How do you add an element to the beginning of an array?",
-    explication: "unshift adds an element to the beginning of an array.",
+    explication: "Unshift adds an element to the beginning of an array.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -1033,7 +1051,7 @@ questions = [
   },
   {
     content: "Which method is used to iterate over each element of an array in Ruby?",
-    explication: "each is the most common iterator in Ruby to go through each element of an array or collection.",
+    explication: "Each is the most common iterator in Ruby to go through each element of an array or collection.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1056,7 +1074,7 @@ questions = [
   },
   {
     content: "What does the map method do when used on an array?",
-    explication: "map applies the block of code to each element and returns a new array with the results.",
+    explication: "Map applies the block of code to each element and returns a new array with the results.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1102,7 +1120,7 @@ questions = [
   },
   {
     content: "What does the yield keyword do in a method?",
-    explication: "yield executes the block of code passed to the method, allowing external code to be inserted into the method's body.",
+    explication: "Yield executes the block of code passed to the method, allowing external code to be inserted into the method's body.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1125,7 +1143,7 @@ questions = [
   },
   {
     content: "What does the select method return when used on an array?",
-    explication: "select returns a new array containing only the elements for which the block of code returned true.",
+    explication: "Select returns a new array containing only the elements for which the block of code returned true.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1148,7 +1166,7 @@ questions = [
   },
   {
     content: "What is the difference between map and each?",
-    explication: "map transforms each element and returns a new array, while each simply iterates without returning a new array.",
+    explication: "Map transforms each element and returns a new array, while each simply iterates without returning a new array.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1171,7 +1189,7 @@ questions = [
   },
   {
     content: "Which method returns an array with the elements that do not satisfy the block's condition?",
-    explication: "reject does the opposite of select, it returns the elements for which the condition is false.",
+    explication: "Reject does the opposite of select, it returns the elements for which the condition is false.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1263,7 +1281,7 @@ questions = [
   },
   {
     content: "What is the result of the following code? 3.times { |i| puts i }",
-    explication: "times iterates 3 times, each time passing the current index to the block, here 0, 1, and 2.",
+    explication: "Times iterates 3 times, each time passing the current index to the block, here 0, 1, and 2.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1286,7 +1304,7 @@ questions = [
   },
   {
     content: "What does the find method return?",
-    explication: "find returns the first matching element or nil if there are no elements that satisfy the condition.",
+    explication: "Find returns the first matching element or nil if there are no elements that satisfy the condition.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1309,7 +1327,7 @@ questions = [
   },
   {
     content: "What is the output of this code? result = [10, 20, 30].select { |n| n > 15 } puts result",
-    explication: "select filters the array elements, keeping only those greater than 15, so [20, 30].",
+    explication: "Select filters the array elements, keeping only those greater than 15, so [20, 30].",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1378,7 +1396,7 @@ questions = [
   },
   {
     content: "Which method is best suited to transform all elements of an array by applying an operation to each of them?",
-    explication: "map is designed to transform each element of an array by applying an operation and returning a new array.",
+    explication: "Map is designed to transform each element of an array by applying an operation and returning a new array.",
     subcategory: "Iterators & Blocks",
     possibilities: [
       {
@@ -1401,7 +1419,7 @@ questions = [
   },
   {
     content: "Which method is used to iterate over each element of an array in Ruby?",
-    explication: "each is the most common iterator in Ruby to go through each element of an array or collection.",
+    explication: "Each is the most common iterator in Ruby to go through each element of an array or collection.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1424,7 +1442,7 @@ questions = [
   },
   {
     content: "What does the map method do when used on an array?",
-    explication: "map applies the block of code to each element and returns a new array with the results.",
+    explication: "Map applies the block of code to each element and returns a new array with the results.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1470,7 +1488,7 @@ questions = [
   },
   {
     content: "What does the yield keyword do in a method?",
-    explication: "yield executes the block of code passed to the method, allowing external code to be inserted into the method's body.",
+    explication: "Yield executes the block of code passed to the method, allowing external code to be inserted into the method's body.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1493,7 +1511,7 @@ questions = [
   },
   {
     content: "What does the select method return when used on an array?",
-    explication: "select returns a new array containing only the elements for which the block of code returned true.",
+    explication: "Select returns a new array containing only the elements for which the block of code returned true.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1516,7 +1534,7 @@ questions = [
   },
   {
     content: "What is the difference between map and each?",
-    explication: "map transforms each element and returns a new array, while each simply iterates without returning a new array.",
+    explication: "Map transforms each element and returns a new array, while each simply iterates without returning a new array.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1539,7 +1557,7 @@ questions = [
   },
   {
     content: "Which method returns an array with the elements that do not satisfy the block's condition?",
-    explication: "reject does the opposite of select, it returns the elements for which the condition is false.",
+    explication: "Reject does the opposite of select, it returns the elements for which the condition is false.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1631,7 +1649,7 @@ questions = [
   },
   {
     content: "What is the result of the following code? 3.times { |i| puts i }",
-    explication: "times iterates 3 times, each time passing the current index to the block, here 0, 1, and 2.",
+    explication: "Times iterates 3 times, each time passing the current index to the block, here 0, 1, and 2.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1654,7 +1672,7 @@ questions = [
   },
   {
     content: "What does the find method return?",
-    explication: "find returns the first matching element or nil if there are no elements that satisfy the condition.",
+    explication: "Find returns the first matching element or nil if there are no elements that satisfy the condition.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1677,7 +1695,7 @@ questions = [
   },
   {
     content: "What is the output of this code? result = [10, 20, 30].select { |n| n > 15 } puts result",
-    explication: "select filters the array elements, keeping only those greater than 15, so [20, 30].",
+    explication: "Select filters the array elements, keeping only those greater than 15, so [20, 30].",
     subcategory: "Hash & Symbols",
     possibilities: [
       {
@@ -1746,7 +1764,7 @@ questions = [
   },
   {
     content: "Which method is best suited to transform all elements of an array by applying an operation to each of them?",
-    explication: "map is designed to transform each element of an array by applying an operation and returning a new array.",
+    explication: "Map is designed to transform each element of an array by applying an operation and returning a new array.",
     subcategory: "Hash & Symbols",
     possibilities: [
       {

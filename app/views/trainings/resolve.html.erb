@@ -12,30 +12,26 @@
     <%if @correct %>
       <div class="image-validation"><%= image_tag "true.png", class:"img"%></div>
     <%else%>
-      <div class="image-validation"><%= image_tag "false.png", class:"img"%></div>
+      <div class="image-invalidation"><%= image_tag "false.png", class:"img"%></div>
     <%end%>
 
     <%if @correct %>
       <div class="question" id="border-green">
-        <h2>> ANSWER</h2>
-        <p><%= @question.explication %></p>
-        <p>Try : <%= @try %></p>
+        <h2>> CORRECT ANSWER</h2>
+        <p class="mt-3">> <%= @question.explication %></p>
        <%#  <p>Tu as <%= @correct ? 'bon' : 'faux' %><%# </p>  %>
       </div>
     <%else%>
       <div class="question" id="border-red">
-        <h2>> ANSWER</h2>
-        <p><%= @question.explication %></p>
-        <p>Try : <%= @try %></p>
+        <h2>> INCORRECT ANSWER</h2>
+        <p class="text-center">----------------------------------------</p>
+        <p class="mb-1 mt-3"> > RIGHT ANSWER : "<%= @question.solution.content %>" </p>
+        <p class="text-center">----------------------------------------</p>
+        <p>> DETAILS : <%= @question.explication %></p>
        <%#  <p>Tu as <%= @correct ? 'bon' : 'faux' %><%# </p>  %>
       </div>
     <%end%>
 
-      <div id="correct-answer">
-        <p><%= @question.solution.content %></p>
-
-
-      </div>
 
     <%= link_to training_play_path(@training_answer.training.id), class: "font-white-center" do %>
       <div class="btn-orange">

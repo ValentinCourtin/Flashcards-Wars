@@ -7,6 +7,7 @@ class ShopsController < ApplicationController
 
   def choice
     @user = current_user
+    @username = " #{@user.first_name.capitalize} #{@user.last_name[0].upcase}."
 
     @item = Item.find(params[:item_id])
     @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)
@@ -14,7 +15,7 @@ class ShopsController < ApplicationController
 
     # @item => USE IT, ENVOI MESSAGE SLACK !!!!!!!!!!!!!!!!!!!
     @inventory.destroy # => bug prob avec find
-
+    
     SendSlackMessageJob.perform_later(@target_user, @item, @user)
 
     # Logique pour générer le contenu de la pop-up
@@ -27,7 +28,8 @@ class ShopsController < ApplicationController
 
   def player_choice
     @user = current_user
-    @users = User.all.collect { |user| [user.first_name, user.id] }
+    # @users = User.all.collect { |user| [user.first_name, user.id] } # remettre dans player choice user[0]et user[1]
+    @users = User.all.collect { |user| [user.id, user.first_name, user.last_name] }
     @item = Item.find(params[:item_id])
     @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)
   end
