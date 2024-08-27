@@ -9,6 +9,7 @@ class ShopsController < ApplicationController
 
   def choice
     @user = current_user
+    @username = " #{@user.first_name.capitalize} #{@user.last_name[0].upcase}."
 
     @item = Item.find(params[:item_id])
     @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)

@@ -17,8 +17,13 @@
               <p><%= item.description %></p>
 
               <%# btn, path = l'action choice dans le controller shop, data = quelle turbo frame va afficher la popup %>
+              <%# <div class="btn-blue">
               <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop } %>
+              <%# </div> %> 
 
+              <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice do %>
+                <div class="btn-blue"><h2>USE IT</h2></div>
+              <%end%>
 
             </div>
           <% end %>

@@ -302,7 +302,7 @@ end
 
 puts "Creating inventories... 🌱"
 usertest1.items << Item.all.sample(10)
-usertest2.items << Item.all.sample(2)
+usertest2.items << Item.all.sample(15)
 usertest3.items << Item.all.sample(0)
 
 
