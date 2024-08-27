@@ -10,7 +10,8 @@
   font-family: "Jersey 10", sans-serif;
 
   .answer {
-    background-color: black;
+    background-image: radial-gradient(#222, #111);
+    box-shadow: 0 0 5vmin 1vmin #000 inset;
     border: 2px solid #025470;
     border-radius: 4px;
     width: 164px;
@@ -41,7 +42,8 @@
 }
 
 #correct-answer {
-  background-color: black;
+  background-image: radial-gradient(#222, #111);
+  box-shadow: 0 0 5vmin 1vmin #000 inset;
   border: 2px solid #025470;
   border-radius: 4px;
   width: 164px;

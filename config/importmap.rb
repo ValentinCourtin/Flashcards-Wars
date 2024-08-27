@@ -11,3 +11,4 @@ pin "@popperjs/core", to: "popper.js", preload: true
 
 
 # pin "@hotwired/stimulus", to: "stimulus.min.js"
+pin "typed.js" # @2.1.0
