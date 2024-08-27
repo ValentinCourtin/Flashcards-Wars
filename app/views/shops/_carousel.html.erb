@@ -26,9 +26,9 @@
                 <%# <div class="btn-blue"><h2>USE IT</h2></div>
               <%end%>
 
-              <div class="btn-orange-small">
-                <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop }, class:"text-properties" %>
-              </div>
+
+                <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop }, class:"text-properties btn-orange-shop" %>
+
 
 
             </div>

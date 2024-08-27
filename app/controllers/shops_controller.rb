@@ -17,7 +17,7 @@ class ShopsController < ApplicationController
 
     # @item => USE IT, ENVOI MESSAGE SLACK !!!!!!!!!!!!!!!!!!!
     @inventory.destroy # => bug prob avec find
-    # raise
+    
     SendSlackMessageJob.perform_later(@target_user, @item, @user)
 
     # Logique pour générer le contenu de la pop-up
