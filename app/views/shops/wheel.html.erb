@@ -1,9 +1,12 @@
 <%= turbo_frame_tag "popup_shop" do %>
-  <div class="blur">
-    <div class="modal-pop-up" id="small" data-controller="modals">
+  <div class="blur" data-controller="modals">
+
+    <div class="modal-pop-up" id="small" >
+      <div data-modals-target="explosion" class="explosion <%# d-flex justify-content-center %>"><%= image_tag "explosion.png", alt: "explosion", width: "200px", height: "200px" %></div>
       <div data-modals-target="wheel">
-        <div class="d-flex justify-content-center wheel-container">
+        <div class="d-flex justify-content-center">
           <%= image_tag "wheel_round.png", alt: "wheel", width: "142px", height: "142px", class:"wheel" %>
+
         </div>
 
         <br>
@@ -14,7 +17,9 @@
         <h3> <%=@content%></h3>
       </div>
 
-      <div data-modals-target="win" style="display: none;">
+
+
+      <div data-modals-target="win" style="display: none;" class="forground">
         <%= link_to "X", "#", data: {
         controller: "modals"
         # action: "modals#close"
