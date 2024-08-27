@@ -183,110 +183,128 @@ items = [
     name: "Super croissant",
     description: "The player selected has to bring croissant for next breakfast!",
     probability: 0.05,
-    image_name: "supercroissant.png"
+    image_name: "supercroissant.png",
+    category: "single"
   },
   {
     name: "Butler",
     description: "The player selected is your butler for one day!",
     probability: 0.2,
-    image_name: "butler.png"
-  },
-  {
-    name: "Swap",
-    description: "You can give your place at the Livecode to whomever you wish!",
-    probability: 0.2,
-    image_name: "swap.png"
-  },
-  {
-    name: "Golden ticket",
-    description: "Your next ticket has priority over all other tickets!",
-    probability: 0.6,
-    image_name: "goldenticket.png"
+    image_name: "butler.png",
+    category: "single"
   },
   {
     name: "Shut up",
     description: "The selected person must not speak for 10 minutes.",
     probability: 0.6,
-    image_name: "shutup.png"
+    image_name: "shutup.png",
+    category: "single"
   },
   {
     name: "Walker",
     description: "The selected player must walk around the block!",
     probability: 0.6,
-    image_name: "walker.png"
+    image_name: "walker.png",
+    category: "single"
   },
+  {
+    name: "Swap",
+    description: "You can give your place at the Livecode to whomever you wish!",
+    probability: 0.2,
+    image_name: "swap.png",
+    category: "single"
+  },
+  {
+    name: "Golden ticket",
+    description: "Your next ticket has priority over all other tickets!",
+    probability: 0.6,
+    image_name: "goldenticket.png",
+    category: "group"
+  },
+
   {
     name: "Keyword",
     description: "Every time you say your keyword, everyone has to stand up for 1 day!",
     probability: 0.05,
-    image_name: "keyword.png"
+    image_name: "keyword.png",
+    category: "group"
   },
   {
     name: "R.E.S.P.E.C.T",
     description: "Everyone must be very polite to you for 1 day!",
     probability: 0.15,
-    image_name: "respect.png"
+    image_name: "respect.png",
+    category: "group"
   },
   {
     name: "Ola",
     description: "For a day, every time you enter a room, everyone has to do an ola!",
     probability: 0.15,
-    image_name: "ola.png"
+    image_name: "ola.png",
+    category: "group"
   },
   {
     name: "Ego Boost",
     description: "Everyone has to give you a compliment!",
     probability: 0.4,
-    image_name: "egoboost.png"
+    image_name: "egoboost.png",
+    category: "group"
   },
   {
     name: "Taxes",
     description: "You can dip into other people's cakes/snacks for 1 day!",
     probability: 0.4,
-    image_name: "taxes.png"
+    image_name: "taxes.png",
+    category: "group"
   },
   {
     name: "Joker",
     description: "Whatever happens, you've won, but the other player won't know until the end of the game!",
     probability: 0.05,
-    image_name: "joker.png"
+    image_name: "joker.png",
+    category: "duel"
   },
   {
     name: "Tornado",
     description: "For one round of a duel and every 3 seconds, the opponent's answers are shuffled!",
     probability: 0.2,
-    image_name: "tornado.png"
+    image_name: "tornado.png",
+    category: "duel"
   },
   {
     name: "Day & night",
     description: "For one round of a duel, the opponent's screen turns off and on every 5 seconds!",
     probability: 0.2,
-    image_name: "daynight.png"
+    image_name: "daynight.png",
+    category: "duel"
   },
   {
     name: "Rainbow",
     description: "For one round of a duel, each letter of the opponent's answers has a different color!",
     probability: 0.6,
-    image_name: "rainbow.png"
+    image_name: "rainbow.png",
+    category: "duel"
   },
   {
     name: "Reversed",
     description: "For one round of a duel, the opponent's answers are reversed!",
     probability: 0.6,
-    image_name: "reversed.png"
+    image_name: "reversed.png",
+    category: "duel"
   },
   {
     name: "Timer",
     description: "For one round of a duel, the opponent has only 8 seconds to respond!",
     probability: 0.6,
-    image_name: "timer.png"
+    image_name: "timer.png",
+    category: "duel"
   }
 ]
 
 # Itérer sur le tableau et créer chaque Item
 items.each_with_index do |item_attributes, index|
   puts "[#{index+1}/#{items.size}] Creating item : #{item_attributes[:name]} 🌱"
-  item = Item.create!(name: item_attributes[:name], description: item_attributes[:description], probability: item_attributes[:probability])
+  item = Item.create!(name: item_attributes[:name], description: item_attributes[:description], probability: item_attributes[:probability], category: item_attributes[:category])
     if item_attributes[:image_name].present?
       puts "Upload image for item : #{item_attributes[:name]} 📸"
       image_path = Rails.root.join('db', 'images', item_attributes[:image_name])
