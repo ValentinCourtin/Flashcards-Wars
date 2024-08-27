@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_22_152200) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_27_074531) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -133,7 +133,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_22_152200) do
 
   create_table "training_answers", force: :cascade do |t|
     t.integer "count_try"
-    t.boolean "solved"
+    t.boolean "solved", default: false
     t.bigint "training_id", null: false
     t.bigint "question_id", null: false
     t.datetime "created_at", null: false
@@ -144,7 +144,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_22_152200) do
 
   create_table "trainings", force: :cascade do |t|
     t.date "unlock_date"
-    t.boolean "finished"
+    t.boolean "finished", default: false
     t.bigint "user_id", null: false
     t.bigint "subcategory_id", null: false
     t.datetime "created_at", null: false

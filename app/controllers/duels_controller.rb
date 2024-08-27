@@ -4,18 +4,25 @@ class DuelsController < ApplicationController
   end
 
   def show
-    @duel = Duel.find(params[:id])
+    # @duel = Duel.find(params[:id])
   end
 
-  def choice
-    @users = User.all
-    @user = current_user
-  end
+  # def choice
+  #   @users = User.all
+  #   @user = current_user
+  # end
 
-  def player_choice
+  def opponent_choice
     @user = current_user
     @users = User.all.collect { |user| [user.first_name, user.id] }
-    # @item = Item.find(params[:item_id])
-    # @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)
+  end
+
+  def create
+    @opponent = User.find(params[:user_id])
+    @duel = Duel.create(
+      user: current_user,
+      opponent: @opponent
+    )
+    redirect_to duel_path(@duel)
   end
 end
