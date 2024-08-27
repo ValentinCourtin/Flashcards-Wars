@@ -3,13 +3,36 @@ class SendSlackMessageJob < ApplicationJob
 
   def perform(target, item, user)
     # Do something later
-p user
-p item
+    p user
+    p item
 
-notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
-  defaults channel: "#flashcards2",
-           username: "Game Master"
+    notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
+      defaults channel: "#flashcards3",
+              username: "Game Master"
+    end
+    # /home/chloe/code/Chloe-Brgs/Flashcards-Wars/app/assets/images/icons/ms-icon-310x310.png
+
+    @username = " #{user.first_name.capitalize} #{user.last_name[0].upcase}."
+    @target_username = " #{target.first_name.capitalize} #{target.last_name[0].upcase}."
+
+
+    # notifier.ping "🎮 New item used ! 🎮
+    # [#{@username}] used '#{item.name}' on [#{@target_username}] .
+    # ➡️  #{item.description}"
+
+    if item.category === "single"
+      notifier.ping "🎮 New item used ! 🎮
+    [#{@username}] used '#{item.name}' on [#{@target_username}] .
+    ➡️  #{item.description} "
+    elsif item.category === "group"
+      notifier.ping "🎮 New item used ! 🎮
+    [#{@username}] used '#{item.name}' on [everyone].
+    ➡️  #{item.description} "
+    end
+
+  end
 end
+
 
 # notifier.ping "#{user.first_name} #{target.first_name} #{item.name} #{item.description}"
 
@@ -19,14 +42,12 @@ end
 # ➡️  #{item.description} #{@username}"
 
 
-@username = " #{user.first_name.capitalize} #{user.last_name[0].upcase}."
-@target_username = " #{target.first_name.capitalize} #{target.last_name[0].upcase}."
-
-notifier.ping "🎮 New item used ! 🎮
-[#{@username}] used '#{item.name}' on [#{@target_username}] .
-➡️  #{item.description} "
-  end
-end
+# notifier.ping "🎮 New item used ! 🎮
+# [#{@username}] used '#{item.name}' on [#{@target_username}] .
+# ➡️  #{item.description} "
+#   end
+# end
 
 
 # "https://hooks.slack.com/services/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"
+# "https://hooks.slack.com/services/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"
