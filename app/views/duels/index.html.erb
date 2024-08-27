@@ -1,25 +1,48 @@
-<div class="background-first background-fixed">
+<%= turbo_frame_tag "popup_opponent" do %>
+  <div class="background-first background-fixed">
 
-  <div class="top_card d-flex justify-content-center align-items-end">
-    <p>DUELS</p>
-  </div>
-
-  <div class="mission-container">
-    <div class="missions">
-      <% @duels.each_with_index do |duel, index| %>
-        <%= link_to "#", class: "mission-todo" do %>
-          <div class="mission-frame">
-            <h2>> MISSION <%= (index + 1)%> - FINISHED </h2>
-            <p>> <%= 'Duel ' + duel.opponent_id.name %></p>
-          </div>
-        <% end %>
-      <% end %>
+    <div class="top_card d-flex justify-content-center align-items-end">
+      <p>DUELS</p>
     </div>
-  </div>
 
-  <%= link_to 'opponent_choice_duels_path', class: "font-white-center" do %>
-      <div class="btn-orange">
-        <p>NEW DUEL</p>
+    <div class="duel-nav-bar-Bcontainer">
+      <div class="duel-nav-bar-container">
+        <%= link_to "#", class: "text-white" do %>
+              <div class="duel-nav-bar">
+                <p>Your turn</p>
+              </div>
+        <% end %>
+        <%= link_to "#", class: "text-white" do %>
+              <div class="duel-nav-bar">
+                <p>Pending</p>
+              </div>
+        <% end %>
+        <%= link_to "#", class: "text-white" do %>
+              <div class="duel-nav-bar">
+                <p>Finished</p>
+              </div>
+        <% end %>
       </div>
-  <% end %>
-</div>
+    </div>
+
+
+    <div class="mission-container">
+      <div class="missions">
+        <% @duels.each_with_index do |duel, index| %>
+          <%= link_to "#", class: "mission-todo" do %>
+            <div class="mission-frame">
+              <h2>> Duel <%= (index + 1)%></h2>
+              <p>> Duel <%= duel.opponent_id %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <%= link_to opponent_choice_duels_path, data: {turbo_frame: :popup_opponent}, class: "font-white-center" do %>
+        <div class="btn-orange">
+          <p>NEW DUEL</p>
+        </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,7 +1,7 @@
 class Training < ApplicationRecord
   belongs_to :user
   belongs_to :subcategory
-  has_many :training_answers
+  has_many :training_answers, dependent: :destroy
 
   has_many :questions, through: :subcategory
 # si ça pète, enlever le has many through question mais bien garder les dependent
@@ -10,7 +10,7 @@ class Training < ApplicationRecord
   after_create :create_training_answer
 
   private
-
+  
   def create_training_answer
     subcategory.questions.each do |question|
       TrainingAnswer.create(
@@ -21,5 +21,4 @@ class Training < ApplicationRecord
       )
     end
   end
-
 end
