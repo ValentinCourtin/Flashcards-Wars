@@ -11,8 +11,7 @@
               <div class="d-flex justify-content-center">
                 <%= cl_image_tag item.photo.key, width: "142px", height: "142px", class:"img-center"%>
               </div>
-              <br>
-              ---------------------------------------------
+              <%# <p> --------------------------------------</p> %>
               <h3>> Object : <%= item.name %></h3>
               <p><%= item.description %></p>
 
@@ -26,20 +25,22 @@
                 <%# <div class="btn-blue"><h2>USE IT</h2></div>
               <%end%>
 
+                <%# <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop }, class:"text-properties btn-orange-shop" %>
 
-                <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop }, class:"text-properties btn-orange-shop" %>
-
+                <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice do %>
+                  <div class="btn-blue disable"><p>USE IT</p></div>
+                <%end%>
 
 
             </div>
           <% end %>
         </div>
         <!-- If we need pagination -->
-        <%# <div class="swiper-pagination"></div> %>
+        <div class="swiper-pagination"></div>
 
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <%# <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> %>
 
         <%# <!-- If we need scrollbar -->
         <div class="swiper-scrollbar"></div> %>
