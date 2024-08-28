@@ -10,7 +10,7 @@
 
 
         <%= form_with url: duels_path do |f| %>
-          <select name="user_id" class="form-select background-white" aria-label="Default select example" required>
+          <select name="user_id" class="form-select background-white mb-3" aria-label="Default select example" required>
             <option selected>...</option>
             <%@users.each do |user|%>
               <option value="<%=user[1]%>"><%=user[0]%></option>
@@ -19,7 +19,7 @@
 
           <% if @inventories.any? %>
             <h3> > Use an item ?</h3>
-            <select name="inventory_id" class="form-select background-white" aria-label="Select ingame item">
+            <select name="inventory_id" class="form-select background-white mb-3" aria-label="Select ingame item">
               <option selected disabled>...</option>
               <% @inventories.each do |inventory| %>
                 <option value="<%= inventory.id %>"><%= inventory.item.name %></option>
