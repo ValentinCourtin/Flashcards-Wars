@@ -10,15 +10,11 @@
         <%= @duel.user.first_name %> VS <%= @opponent.first_name %> <br>
         </p>
         <p>----------------------------</p>
-        <%# <% @duel.rounds.each %> %>
-        <p>ROUND 1</p>
-        <p><%= @user_score %> - <%= @opponent_score %> </p>
-        <p>----------------------------</p>
-        <p>ROUND 2</p>
-        <p>? - ?</p>
-        <p>----------------------------</p>
-        <p>ROUND 3</p>
-        <p>? - ?</p>
+        <% @duel.rounds.each_with_index do |round, index| %>
+          <p>ROUND <%= index + 1 %></p>
+          <p><%= round.user_score %> - <%= round.opponent_score %> </p>
+          <p>----------------------------</p>
+        <% end %>
     </div>
 
   <% end %>
