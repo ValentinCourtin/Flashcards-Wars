@@ -1,35 +1,3 @@
-// .top_card_shop {
-//   background-color: #025470;
-//   width: 226px;
-//   height: 101px;
-//   border-radius: 0px 0px 8px 8px;
-//   border: 2px solid #025470;
-//   position: absolute;
-//   top: 0;
-//   left: 50%;
-//   transform: translateX(-50%);
-
-//   p {
-//     color: white;
-//     font-size: 24px;
-//   }
-
-//   h1{
-//     font-family: "Jersey 10", sans-serif;
-//   }
-// }
-
-// .top-shop {
-//   padding-top: 20px;
-//   color: white;
-//   font-size: 24px;
-//   text-align: center;
-//   border: 2px solid #025470;
-//   h1 {
-//     margin-bottom: 0;
-//   }
-// }
-
 
 .top_card_shop {
   background-color: #025470;
@@ -56,13 +24,6 @@
   }
 }
 
-
-
-
-
-
-
-
 .btn-blue {
   background-color: #036D91;
   width: 231px;
@@ -75,6 +36,19 @@
 }
 
 
+.btn-blue-test {
+  background-color: #036D91;
+  width: 231px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: "Bungee", sans-serif;
+  text-decoration: none; /* Supprime le soulignement doit être dans le lien a et pas p*/
+}
+
+
+
 .btn-orange-shop {
   background-color: #E66E04;
   width: 231px;
@@ -82,6 +56,10 @@
   text-align: center;
   p {color: white;
     font-family: "Bungee", sans-serif;
+
+  }
+  a {text-decoration: underline; /* Assure que le texte est souligné */
+  text-decoration-color: #ff6347; /* Couleur du soulignement */
   }
   text-decoration: none; /* Supprime le soulignement doit être dans le lien a et pas p*/
 
@@ -89,10 +67,16 @@
 
 
 
-
-
-
-
+.btn-orange-test {
+  background-color: #E66E04;
+  width: 231px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: "Bungee", sans-serif;
+  text-decoration: none; /* Supprime le soulignement doit être dans le lien a et pas p*/
+}
 
 
 
