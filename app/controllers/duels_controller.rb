@@ -24,7 +24,7 @@ class DuelsController < ApplicationController
 
   def opponent_choice
     @user = current_user
-    @users = User.all.collect { |user| [user.first_name, user.id] }
+    @users = User.all.collect { |user| [user.id, user.first_name, user.last_name]}
     @inventories = current_user.inventories.joins(:item).where(items: { category: "duel"})
   end
 
