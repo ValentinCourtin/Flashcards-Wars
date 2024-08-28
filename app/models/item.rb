@@ -7,4 +7,8 @@ class Item < ApplicationRecord
   def purge_photo
     photo.purge
   end
+
+  def class_name
+    name.split.join("_").downcase
+  end
 end

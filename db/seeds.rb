@@ -86,7 +86,7 @@ usertest2 = User.create!(
   password: "123456",
   first_name: "Lynn",
   last_name: "Telia",
-  gold_count: 20000,
+  gold_count: 400,
   experience: 999
 )
 
@@ -263,7 +263,7 @@ items = [
   },
   {
     name: "Ego Boost",
-    description: "Everyone has to give you a compliment!",
+    description: "Today, everyone has to give you a compliment!",
     probability: 0.4,
     image_name: "egoboost.png",
     category: "group"
@@ -277,7 +277,7 @@ items = [
   },
   {
     name: "Joker",
-    description: "Whatever happens, you've won, but the other player won't know until the end of the game!",
+    description: "Whatever happens, you've won, but the other won't know until the end of the game!",
     probability: 0.05,
     image_name: "joker.png",
     category: "duel"
@@ -290,7 +290,7 @@ items = [
     category: "duel"
   },
   {
-    name: "Day & night",
+    name: "Day and night",
     description: "For one round of a duel, the opponent's screen turns off and on every 5 seconds!",
     probability: 0.2,
     image_name: "daynight.png",

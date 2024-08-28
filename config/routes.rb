@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get 'replay' => 'trainings#replay'
   end
 
-  resources :duels, only: [:index, :show] do
+  resources :duels, only: [:index, :show, :create] do
     get 'duelplay' => 'duels#duelplay'
     get 'duelfinished' => 'duels#duelfinished'
     get 'duelresolve' => 'duels#duelresolve'
@@ -19,8 +19,6 @@ Rails.application.routes.draw do
       get :opponent_choice
     end
   end
-
-  post 'create' => "duels#create"
 
   resources :shops, only: [:index] do
     collection do

@@ -1,7 +1,8 @@
+
 .top_card_shop {
   background-color: #025470;
   width: 226px;
-  height: 101px;
+  height: 90px;
   border-radius: 0px 0px 8px 8px;
   border: 2px solid #025470;
   position: absolute;
@@ -9,43 +10,18 @@
   left: 50%;
   transform: translateX(-50%);
 
+  padding-top: 10px;
+  text-align: center;
+  color: white;
+
   p {
-    color: white;
     font-size: 24px;
   }
 
   h1{
     font-family: "Jersey 10", sans-serif;
-  }
-}
-
-.top-shop {
-  padding-top: 20px;
-  color: white;
-  font-size: 24px;
-  text-align: center;
-  border: 2px solid #025470;
-  h1 {
     margin-bottom: 0;
   }
-}
-
-
-.btn-launch {
-  background-color: #E66E04;
-  height: 53px;
-  width: 80vw;
-  border-radius: 8px;
-  border: 2px solid #025470;
-  padding: 8px;
-  // text-decoration: none; ne fonctionne pas.............
-  z-index: 10;
-  text-align: center;
-
-  position: absolute;
-  top: 675px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .btn-blue {
@@ -53,8 +29,56 @@
   width: 231px;
   border-radius: 8px;
   text-align: center;
-  // text-decoration: none; ne fonctionne tj pas.............
+  p {color: white;
+    font-family: "Bungee", sans-serif;
+  }
+  text-decoration: none; /* Supprime le soulignement doit être dans le lien a et pas p*/
 }
+
+
+.btn-blue-test {
+  background-color: #036D91;
+  width: 231px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: "Bungee", sans-serif;
+  text-decoration: none; /* Supprime le soulignement doit être dans le lien a et pas p*/
+}
+
+
+
+.btn-orange-shop {
+  background-color: #E66E04;
+  width: 231px;
+  border-radius: 8px;
+  text-align: center;
+  p {color: white;
+    font-family: "Bungee", sans-serif;
+
+  }
+  a {text-decoration: underline; /* Assure que le texte est souligné */
+  text-decoration-color: #ff6347; /* Couleur du soulignement */
+  }
+  text-decoration: none; /* Supprime le soulignement doit être dans le lien a et pas p*/
+
+}
+
+
+
+.btn-orange-test {
+  background-color: #E66E04;
+  width: 231px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: "Bungee", sans-serif;
+  text-decoration: none; /* Supprime le soulignement doit être dans le lien a et pas p*/
+}
+
+
 
 
 // .shop-card-top {
