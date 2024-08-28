@@ -5,6 +5,11 @@
   </div>
 
   <%= turbo_frame_tag :popup_opponent do %>
+    <%if @correct %>
+      <div class="image-validation"><%= image_tag "true.png", class:"img"%></div>
+    <%else%>
+      <div class="image-invalidation"><%= image_tag "false.png", class:"img"%></div>
+    <%end%>
 
     <% if @correct %>
       <div class="question" id="border-green">
