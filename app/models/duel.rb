@@ -19,6 +19,7 @@ class Duel < ApplicationRecord
         subcategory: subcategory
       )
     end
+    
     subcategory_opponent = User.find(opponent_id).trainings.sample.subcategory
     Round.create(
       duel: self,

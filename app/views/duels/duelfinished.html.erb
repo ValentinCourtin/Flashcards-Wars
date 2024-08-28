@@ -1,16 +1,14 @@
 <div class="background-first">
-
   <%= turbo_frame_tag :popup_opponent do %>
   <div>
     <%= link_to "< Back to duels", duels_path, class:"btn-back" %>
   </div>
 
       <h1>SCORE <%= @duel.user.first_name %> VS <%= @opponent.first_name %></h1>
-
-        <% @duel.rounds.each_with_index do |round, index| %>
+        <% @duel.rounds.sort.each_with_index do |round, index| %>
           <p>----------------------------------</p>
           <p>ROUND <%= index + 1 %></p>
-          <p><%= round.user_score %> - <%= round.opponent_score %> </p>
+          <p id="no_"><%= round.user_score %> - <%= round.opponent_score %> </p>
         <% end %>
     </div>
 

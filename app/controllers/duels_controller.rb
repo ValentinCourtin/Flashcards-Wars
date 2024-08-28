@@ -41,6 +41,25 @@ class DuelsController < ApplicationController
   end
 
   def duelplay
+    # Cherche le round qui n'a pas été fait par l'utilisateur
+    # => roundplay(round_id)
+      # Chercher la premiere question non répondu
+
+      # Si il y a une question non répondu :
+        # Afficher la question et lors de la réponse aller sur roundresolve(round_id, question_id)
+
+      # Si plus de question :
+        # Aller sur roundfinished(round_id)
+
+    # => roundresolve(round_id, question_id)
+      # Afficher la solution de la question
+      # Marquer la question comme répondu
+      # Retourner sur roundplay(round)
+
+    # => roundFinished(round)
+      # Marquer le round comme fini,
+      # Aller dans le show du duel showduel(duel)
+
     @duel = Duel.find(params[:duel_id])
     @round = Round.where(duel: @duel, finished: false).first
     @round_question_answers = RoundQuestionAnswer.where(user: current_user, round: @round, solved: false)
