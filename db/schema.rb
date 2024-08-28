@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_28_120628) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_28_171811) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -125,6 +125,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_28_120628) do
     t.boolean "finished", default: false
     t.string "user_score", default: "?"
     t.string "opponent_score", default: "?"
+    t.boolean "user_finished", default: false
+    t.boolean "opponent_finished", default: false
     t.index ["duel_id"], name: "index_rounds_on_duel_id"
     t.index ["subcategory_id"], name: "index_rounds_on_subcategory_id"
   end

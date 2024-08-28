@@ -88,6 +88,8 @@ class DuelsController < ApplicationController
     @opponent = @duel.opponent
     @user_solved = RoundQuestionAnswer.where(user: @user, round: @round, solved: true).count
     @opponent_solved = RoundQuestionAnswer.where(user: @opponent, round: @round, solved: true).count
+    @round.update(user_finished: true) if @user_solved == 3
+    @round.update(opponent_finished: true) if @opponent_solved == 3
     @round.update(finished: true) if @user_solved == 3 && @opponent_solved == 3
     @round.update(user_score: RoundQuestionAnswer.where(user: @user, round: @round, success: true).count) if current_user == @user
     @round.update(opponent_score: RoundQuestionAnswer.where(user: @opponent, round: @round, success: true).count) if current_user == @opponent

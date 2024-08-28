@@ -47,7 +47,7 @@
   justify-content: center;
   margin-top: 30px;
   animation: explode 2s ease-in-out forwards;
-  z-index: 0;
+  z-index: 3;
   /* transition: opacity 1s ease-in-out; */
 }
 
@@ -59,8 +59,12 @@
 
 
 .invisible-link {
-  visibility: hidden; /* Cache le lien mais garde son espace */
-  pointer-events: none; /* Désactive le clic */
-  text-decoration: none; /* Retire la décoration (soulignement) si visible */
-  color: transparent; /* Rendre le texte transparent */
+  visibility: hidden;
+  /* Cache le lien mais garde son espace */
+  pointer-events: none;
+  /* Désactive le clic */
+  text-decoration: none;
+  /* Retire la décoration (soulignement) si visible */
+  color: transparent;
+  /* Rendre le texte transparent */
 }
