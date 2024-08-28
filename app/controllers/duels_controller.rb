@@ -1,6 +1,14 @@
 class DuelsController < ApplicationController
   def index
-    @duels = current_user.duels
+    @duels = Duel.where(user: current_user) + Duel.where(opponent: current_user)
+    #on récupère toutes les trainings answers du current_user pour chaque duel, pour savoir combien sont solved -
+    #ça permet de savoir à quel round on est
+    @duels.each do |duel|
+      round_question_answers_solved = duel.round_question_answers.select do |rqa|
+        rqa.user == current_user && rqa.solved == true
+      end
+      @count = round_question_answers_solved.count
+    end
   end
 
   def show

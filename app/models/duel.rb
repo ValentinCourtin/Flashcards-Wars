@@ -1,6 +1,8 @@
 class Duel < ApplicationRecord
   belongs_to :user
   belongs_to :opponent, foreign_key: 'opponent_id', class_name: 'User'
+  has_many :rounds
+  has_many :round_question_answers, through: :rounds
 
   after_create :create_round
   after_create :create_round_question_answers

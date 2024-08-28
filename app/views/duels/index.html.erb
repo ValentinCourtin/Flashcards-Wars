@@ -31,8 +31,26 @@
         <% @duels.each_with_index do |duel, index| %>
           <%= link_to "#", class: "mission-todo" do %>
             <div class="mission-frame">
-              <h2>> Duel <%= (index + 1)%></h2>
-              <p>> Duel <%= duel.opponent_id %></p>
+              <h2>> Duel vs </h2>
+              <% if duel.user == current_user %>
+                <% if @count == 3 %>
+                  <p>> Waiting for the opponent - 1/3</p>
+                <% elsif @count == 6  %>
+                  <p>> Waiting for the opponent - 2/3</p>
+                <% elsif @count == 9 %>
+                  <p>> Waiting for the opponent - 3/3</p>
+                <% end %>
+              <% else duel.opponent == current_user%>
+                <% if @count == 0 %>
+                  <p>> My turn - 1/3</p>
+                <% elsif @count == 3  %>
+                  <p>> My turn - 2/3</p>
+                <% elsif @count == 6 %>
+                  <p>> My turn - 3/3</p>
+                <% elsif @count == 9 %>
+                  <p>> FINISHED</p>
+                <% end %>
+              <% end %>
             </div>
           <% end %>
         <% end %>
