@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   end
 
   resources :duels, only: [:index, :show] do
+    get 'duelplay' => 'duels#duelplay'
+    get 'duelfinished' => 'duels#duelfinished'
+    get 'duelresolve' => 'duels#duelresolve'
     collection do
       post :choice
       get :opponent_choice

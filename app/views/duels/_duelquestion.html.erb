@@ -1,0 +1,21 @@
+<%= turbo_frame_tag :popup_opponent do %>
+
+  <div class="question">
+    <h2> > QUESTION </h2>
+    <<p> > <%= @question.content%></p>
+  </div>
+
+    <div class="answers-container" >
+    <% @possibilities.each do |possibility| %>
+        <%= link_to duel_duelresolve_path(
+          round_question_answer_id: @round_question_answer.id,
+          possibility_id: possibility.id),
+          data: { turbo: false },
+          class: "text-blue" do %>
+          <div class="answer">
+            <p  class="text-blue"><%= possibility.content %></p>
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+<% end %>

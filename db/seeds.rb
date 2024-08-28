@@ -4,14 +4,11 @@ puts ""
 puts "-------- STEP 1 : DESTROYING ALL 💀 --------"
 puts ""
 
-puts "Destroying rounds... :crâne:"
+
+puts "Destroying rounds... 💀"
 Round.destroy_all
-puts "Destroying duels... :crâne:"
+puts "Destroying duels... 💀"
 Duel.destroy_all
-puts "Destroying trainings... :crâne:"
-Training.destroy_all
-puts "Destroying trainingsAnswers... :crâne:"
-TrainingAnswer.destroy_all
 puts "Destroying trainings... 💀"
 Training.destroy_all
 puts "Destroying trainingsAnswers... 💀"
@@ -978,29 +975,6 @@ questions = [
     ]
   },
   {
-    content: "What is the difference between while and until?",
-    explication: "While executes a block as long as a condition is true, while until executes a block as long as a condition is false.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "while checks if a condition is true, until checks if it is false.",
-        correct: true
-      },
-      {
-        content: "while is used for infinite loops, until is not.",
-        correct: false
-      },
-      {
-        content: "until checks if a condition is true, while checks if it is false.",
-        correct: false
-      },
-      {
-        content: "There is no difference.",
-        correct: false
-      }
-    ]
-  },
-  {
     content: "How do you replace an element in an array in Ruby?",
     explication: "You can replace an element in an array by assigning a new value to a specific index, such as array[index] = value.",
     subcategory: "Flow, Conditionals & Arrays",
@@ -1093,29 +1067,6 @@ questions = [
     ]
   },
   {
-    content: "What does the map method do when used on an array?",
-    explication: "Map applies the block of code to each element and returns a new array with the results.",
-    subcategory: "Iterators & Blocks",
-    possibilities: [
-      {
-        content: "It returns an array with the same elements.",
-        correct: false
-      },
-      {
-        content: "It modifies each element of the array in place.",
-        correct: false
-      },
-      {
-        content: "It returns a new array with the results of the block of code applied to each element.",
-        correct: true
-      },
-      {
-        content: "It does nothing.",
-        correct: false
-      }
-    ]
-  },
-  {
     content: "How do you pass a block of code to a method in Ruby?",
     explication: "Blocks of code in Ruby are passed to a method with {} for short blocks or do...end for longer blocks.",
     subcategory: "Iterators & Blocks",
@@ -1134,29 +1085,6 @@ questions = [
       },
       {
         content: "Use the block keyword.",
-        correct: false
-      }
-    ]
-  },
-  {
-    content: "What does the yield keyword do in a method?",
-    explication: "Yield executes the block of code passed to the method, allowing external code to be inserted into the method's body.",
-    subcategory: "Iterators & Blocks",
-    possibilities: [
-      {
-        content: "It stops the method execution.",
-        correct: false
-      },
-      {
-        content: "It executes the block of code passed to the method.",
-        correct: true
-      },
-      {
-        content: "It raises an exception.",
-        correct: false
-      },
-      {
-        content: "It returns a default value.",
         correct: false
       }
     ]
@@ -1185,29 +1113,6 @@ questions = [
     ]
   },
   {
-    content: "What is the difference between map and each?",
-    explication: "Map transforms each element and returns a new array, while each simply iterates without returning a new array.",
-    subcategory: "Iterators & Blocks",
-    possibilities: [
-      {
-        content: "each modifies the array elements in place, map leaves them intact.",
-        correct: false
-      },
-      {
-        content: "map returns a new array, each returns nothing.",
-        correct: true
-      },
-      {
-        content: "map only works with strings.",
-        correct: false
-      },
-      {
-        content: "There is no difference.",
-        correct: false
-      }
-    ]
-  },
-  {
     content: "Which method returns an array with the elements that do not satisfy the block's condition?",
     explication: "Reject does the opposite of select, it returns the elements for which the condition is false.",
     subcategory: "Iterators & Blocks",
@@ -1226,29 +1131,6 @@ questions = [
       },
       {
         content: "map",
-        correct: false
-      }
-    ]
-  },
-  {
-    content: "How do you specify the parameters of a block in Ruby?",
-    explication: "The parameters of a block are placed between | | and represent the elements passed to the block by the iterator.",
-    subcategory: "Iterators & Blocks",
-    possibilities: [
-      {
-        content: "By using yield.",
-        correct: false
-      },
-      {
-        content: "By passing them directly after do.",
-        correct: false
-      },
-      {
-        content: "By placing them between | | in the block.",
-        correct: true
-      },
-      {
-        content: "By declaring them in the method.",
         correct: false
       }
     ]
@@ -1461,29 +1343,6 @@ questions = [
     ]
   },
   {
-    content: "What does the map method do when used on an array?",
-    explication: "Map applies the block of code to each element and returns a new array with the results.",
-    subcategory: "Hash & Symbols",
-    possibilities: [
-      {
-        content: "It returns an array with the same elements.",
-        correct: false
-      },
-      {
-        content: "It modifies each element of the array in place.",
-        correct: false
-      },
-      {
-        content: "It returns a new array with the results of the block of code applied to each element.",
-        correct: true
-      },
-      {
-        content: "It does nothing.",
-        correct: false
-      }
-    ]
-  },
-  {
     content: "How do you pass a block of code to a method in Ruby?",
     explication: "Blocks of code in Ruby are passed to a method with {} for short blocks or do...end for longer blocks.",
     subcategory: "Hash & Symbols",
@@ -1525,29 +1384,6 @@ questions = [
       },
       {
         content: "It returns a default value.",
-        correct: false
-      }
-    ]
-  },
-  {
-    content: "What does the select method return when used on an array?",
-    explication: "Select returns a new array containing only the elements for which the block of code returned true.",
-    subcategory: "Hash & Symbols",
-    possibilities: [
-      {
-        content: "The elements for which the block returns false.",
-        correct: false
-      },
-      {
-        content: "The elements for which the block returns true.",
-        correct: true
-      },
-      {
-        content: "A reversed array.",
-        correct: false
-      },
-      {
-        content: "The original array without changes.",
         correct: false
       }
     ]
