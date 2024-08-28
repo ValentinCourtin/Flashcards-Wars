@@ -49,9 +49,16 @@
   }
 
   &.day_and_night {
-    animation: hideScreen 5s infinite;
+    animation: hideScreen 4s infinite;
+  }
+
+  &.rainbow {
+    .text-blue {
+      animation: rainbowText 2s linear infinite;
+    }
   }
 }
+
 
 .text-blue {
   color: #A9DBFB;
@@ -102,6 +109,15 @@
 }
 
 @keyframes hideScreen {
-  0%, 80%, 100% { opacity: 1; }
-  90% { opacity: 0; }
+  0%, 100% { opacity: 1; }
+  60% { opacity: 0; }
+}
+
+@keyframes rainbowText {
+  0% { color: red; }
+  20% { color: orange; }
+  40% { color: yellow; }
+  60% { color: green; }
+  80% { color: blue; }
+  100% { color: violet; }
 }

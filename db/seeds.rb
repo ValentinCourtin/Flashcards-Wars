@@ -90,14 +90,14 @@ usertest2 = User.create!(
   experience: 999
 )
 
-# usertest3 = User.create!(
-#   email: "chloe@test.com",
-#   password: "123456",
-#   first_name: "Chloe",
-#   last_name: "test",
-#   gold_count: 50,
-#   experience: 500
-# )
+usertest3 = User.create!(
+  email: "chloe@test.com",
+  password: "123456",
+  first_name: "Chloe",
+  last_name: "test",
+  gold_count: 50,
+  experience: 500
+)
 
 
 # ////////////////////////
