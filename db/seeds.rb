@@ -4,7 +4,8 @@ puts ""
 puts "-------- STEP 1 : DESTROYING ALL 💀 --------"
 puts ""
 
-
+puts "Destroying roundsQuestionAnswers... 💀"
+RoundQuestionAnswer.destroy_all
 puts "Destroying rounds... 💀"
 Round.destroy_all
 puts "Destroying duels... 💀"
@@ -289,7 +290,7 @@ items = [
     category: "duel"
   },
   {
-    name: "Day & night",
+    name: "Day and night",
     description: "For one round of a duel, the opponent's screen turns off and on every 5 seconds!",
     probability: 0.2,
     image_name: "daynight.png",
