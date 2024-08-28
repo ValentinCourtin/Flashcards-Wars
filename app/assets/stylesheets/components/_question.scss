@@ -49,6 +49,11 @@
     content:"_";
   }
 
+  p#no_:last-child:after {
+    content: "";
+    animation: none;
+  }
+
   h2,
   p,
   h1 {
