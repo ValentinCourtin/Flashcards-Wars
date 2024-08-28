@@ -1,6 +1,6 @@
 class DuelsController < ApplicationController
   def index
-    @duels = current_user.duels
+    @duels = Duel.where(user: current_user) + Duel.where(opponent: current_user)
   end
 
   def show
@@ -52,7 +52,8 @@ class DuelsController < ApplicationController
   def duelfinished
     @user = current_user
     @duel = Duel.find(params[:duel_id])
+    @round = Round.where(duel: @duel).first
     @opponent = @duel.opponent
-    @current_user_score = RoundQuestionAnswer.where(user: @user, success: true).count
+    @current_user_score = RoundQuestionAnswer.where(user: @user, round: @round, success: true).count
   end
 end
