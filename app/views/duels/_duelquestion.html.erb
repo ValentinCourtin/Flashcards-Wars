@@ -2,10 +2,10 @@
 
   <div class="question">
     <h2> > QUESTION </h2>
-    <<p> > <%= @question.content%></p>
+    <p> > <%= @question.content%></p>
   </div>
 
-    <div class="answers-container" >
+    <div class="answers-container">
     <% @possibilities.each do |possibility| %>
         <%= link_to duel_duelresolve_path(
           round_question_answer_id: @round_question_answer.id,
