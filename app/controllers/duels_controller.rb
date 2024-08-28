@@ -16,13 +16,17 @@ class DuelsController < ApplicationController
   def opponent_choice
     @user = current_user
     @users = User.all.collect { |user| [user.first_name, user.id] }
+    @inventories = current_user.inventories.joins(:item).where(items: { category: "duel"})
   end
 
   def create
+    params[:inventory_id].present? ? @inventory = Inventory.find(params[:inventory_id]) : @inventory = nil
     @opponent = User.find(params[:user_id])
+
     @duel = Duel.create(
       user: current_user,
-      opponent: @opponent
+      opponent: @opponent,
+      inventory: @inventory
     )
     redirect_to duel_path(@duel)
   end
@@ -55,4 +59,24 @@ class DuelsController < ApplicationController
     @opponent = @duel.opponent
     @current_user_score = RoundQuestionAnswer.where(user: @user, success: true).count
   end
+
+  private
+
+  def apply_malus
+    case @training.malus_type
+    when 'Tornade'
+      apply_tornade_malus
+    when 'Hide'
+      apply_hide_malus
+    when 'Rainbow'
+      apply_rainbow_malus
+    when 'Return'
+      apply_return_malus
+    when 'Timer'
+      apply_timer_malus
+    when 'Joker'
+      apply_joker_malus
+    end
+  end
+
 end
