@@ -1,5 +1,9 @@
 <%= turbo_frame_tag "popup_opponent" do %>
-  <h1>Dual VS <%= @duel.opponent.first_name %></h1>
+  <% if @duel.user == current_user %>
+    <h2>> Duel vs <%= @duel.opponent.first_name%> </h2>
+  <% else %>
+    <h2>> Duel vs <%= @duel.user.first_name%> </h2>
+  <% end %>
   <h2> Subcategory : <%= @round.subcategory.name %></h2>
 
    <%= link_to duel_duelplay_path(duel_id: @duel.id), data: {turbo_frame: :popup_opponent}, class: "font-white-center" do %>

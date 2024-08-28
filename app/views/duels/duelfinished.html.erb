@@ -1,28 +1,24 @@
-
 <div class="background-first">
 
-   <div class="top_card d-flex justify-content-center align-items-end">
-    <p>DUEL</p>
-   </div>
-
-  <%= link_to "< Back to trainings", trainings_path, class:"btn-back" %>
-
   <%= turbo_frame_tag :popup_opponent do %>
+  <div>
+    <%= link_to "< Back to duels", duels_path, class:"btn-back" %>
+  </div>
     <div class="question">
       <h1>SCORE</h1>
       <p>
-        <%= @user.first_name %> VS <%= @opponent.first_name %> <br>
-      </p>
-      <p>----------------------------</p>
-      <p>ROUND 1</p>
-      <p><%= @current_user_score %> - ? </p>
-      <p>----------------------------</p>
-      <p>ROUND 2</p>
-      <p>? - ?</p>
-      <p>----------------------------</p>
-      <p>ROUND 3</p>
-      <p>? - ?</p>
-
+        <%= @duel.user.first_name %> VS <%= @opponent.first_name %> <br>
+        </p>
+        <p>----------------------------</p>
+        <%# <% @duel.rounds.each %> %>
+        <p>ROUND 1</p>
+        <p><%= @user_score %> - <%= @opponent_score %> </p>
+        <p>----------------------------</p>
+        <p>ROUND 2</p>
+        <p>? - ?</p>
+        <p>----------------------------</p>
+        <p>ROUND 3</p>
+        <p>? - ?</p>
     </div>
 
   <% end %>

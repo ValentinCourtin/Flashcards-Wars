@@ -38,7 +38,7 @@ class DuelsController < ApplicationController
 
   def duelplay
     @duel = Duel.find(params[:duel_id])
-    @round = Round.where(duel: @duel).first
+    @round = Round.where(duel: @duel, finished: false).first
     @round_question_answers = RoundQuestionAnswer.where(user: current_user, round: @round, solved: false)
     if @round_question_answers.empty?
       redirect_to duel_duelfinished_path(@duel)
@@ -59,10 +59,14 @@ class DuelsController < ApplicationController
   end
 
   def duelfinished
-    @user = current_user
     @duel = Duel.find(params[:duel_id])
-    @round = Round.where(duel: @duel).first
+    @round = Round.where(duel: @duel, finished: false).first
+    @user = @duel.user
     @opponent = @duel.opponent
-    @current_user_score = RoundQuestionAnswer.where(user: @user, round: @round, success: true).count
+    @user_solved = RoundQuestionAnswer.where(user: @user, round: @round, solved: true).count
+    @opponent_solved = RoundQuestionAnswer.where(user: @opponent, round: @round, solved: true).count
+    @round.update(finished: true) if @user_solved == 3 && @opponent_solved == 3
+    @round.update(user_score: RoundQuestionAnswer.where(user: @user, round: @round, success: true).count)
+    @round.update(opponent_score: RoundQuestionAnswer.where(user: @opponent, round: @round, success: true).count)
   end
 end
