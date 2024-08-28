@@ -5,6 +5,7 @@
       <div class="swiper" data-controller="carousel">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
+
         <!-- Slides -->
           <% @items.each do |item| %>
             <div class="swiper-slide">
@@ -27,9 +28,16 @@
 
                 <%# <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop }, class:"text-properties btn-orange-shop" %>
                 <div class="d-flex justify-content-center">
-                  <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice do %>
-                    <div class="btn-orange-shop"><p>USE IT</p></div>
+
+                  <%# <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice do %>
+                    <%# <div class="btn-orange-shop"><p>USE IT</p></div>
                   <%end%>
+
+                  <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice, class: 'btn-orange-test margin ' do %>
+                    USE IT
+                  <%end%>
+
+
                 </div>
 
 

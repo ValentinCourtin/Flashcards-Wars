@@ -263,7 +263,7 @@ items = [
   },
   {
     name: "Ego Boost",
-    description: "Everyone has to give you a compliment!",
+    description: "Today, everyone has to give you a compliment!",
     probability: 0.4,
     image_name: "egoboost.png",
     category: "group"
@@ -277,7 +277,7 @@ items = [
   },
   {
     name: "Joker",
-    description: "Whatever happens, you've won, but the other player won't know until the end of the game!",
+    description: "Whatever happens, you've won, but the other won't know until the end of the game!",
     probability: 0.05,
     image_name: "joker.png",
     category: "duel"
