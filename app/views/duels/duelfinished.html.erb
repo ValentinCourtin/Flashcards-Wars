@@ -4,16 +4,13 @@
   <div>
     <%= link_to "< Back to duels", duels_path, class:"btn-back" %>
   </div>
-    <div class="question">
-      <h1>SCORE</h1>
-      <p>
-        <%= @duel.user.first_name %> VS <%= @opponent.first_name %>
-        </p>
-        <p>----------------------------</p>
+
+      <h1>SCORE <%= @duel.user.first_name %> VS <%= @opponent.first_name %></h1>
+
         <% @duel.rounds.each_with_index do |round, index| %>
+          <p>----------------------------------</p>
           <p>ROUND <%= index + 1 %></p>
           <p><%= round.user_score %> - <%= round.opponent_score %> </p>
-          <p>----------------------------</p>
         <% end %>
     </div>
 
