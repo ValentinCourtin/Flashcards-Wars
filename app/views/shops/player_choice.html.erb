@@ -6,14 +6,13 @@
           controller: "modals"
           # action: "modals#close"
         }, class: "cancel-button" %>
-
         <br>
-        <h3> > Use : <br> <%=@item.name%></h3>
+        <br>
+        <h3> > Use : <%=@item.name%></h3>
         <%= cl_image_tag @item.photo.key, width: "142px", height: "142px", class:"img-center mb-3" %>
         <% if @item.category != "duel" %>
 
           <h3> > Select a player :</h3>
-
 
           <%= form_with url: choice_shops_path do |f| %>
             <%= f.hidden_field :item_id, value: @item.id %>
