@@ -2,7 +2,7 @@
 
     <div class="question question-fix screen" data-controller="typed" data-typed-strings-value='<%= ["<h2> > QUESTION </h2> <p>> #{@question.content}</p>"]%>'>
     </div>
-    <p id="avancement">Flashcard <%= @training.questions.count - @training_answers.count%>/<%= @training.questions.count %></p>
+    <p id="avancement">Flashcards : <%= @training.questions.count - @training_answers.count %>/<%= @training.questions.count %></p>
 
 
   <div class="answers-container" >
