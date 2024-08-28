@@ -54,7 +54,7 @@
 
   &.rainbow {
     .text-blue {
-      animation: rainbowText 2s linear infinite;
+      animation: rainbowText 4s linear infinite;
     }
   }
 }
@@ -115,9 +115,14 @@
 
 @keyframes rainbowText {
   0% { color: red; }
+  10% { color: black; }
   20% { color: orange; }
+  30% { color: black; }
   40% { color: yellow; }
+  50% { color: black; }
   60% { color: green; }
+  70% { color: black; }
   80% { color: blue; }
+  90% { color: black; }
   100% { color: violet; }
 }
