@@ -13,7 +13,9 @@
           <select name="user_id" class="form-select background-white mb-3" aria-label="Default select example" required>
             <option selected>...</option>
             <%@users.each do |user|%>
-              <option value="<%=user[1]%>"><%=user[0]%></option>
+              <% unless user[0] == current_user.id %>
+              <option value="<%=user[0]%>"><%=" #{user[1].capitalize} #{user[2][0].upcase}."%></option>
+              <%end%>
             <%end%>
           </select>
 
