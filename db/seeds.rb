@@ -86,7 +86,7 @@ usertest2 = User.create!(
   password: "123456",
   first_name: "Lynn",
   last_name: "Telia",
-  gold_count: 1500,
+  gold_count: 20000,
   experience: 699
 )
 

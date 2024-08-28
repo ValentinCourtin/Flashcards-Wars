@@ -3,7 +3,7 @@
   <div>
     <%= link_to "< Back to duels", duels_path, class:"btn-back" %>
   </div>
-    <div class="question question-score text-center">
+
       <h1>SCORE <%= @duel.user.first_name %> VS <%= @opponent.first_name %></h1>
         <% @duel.rounds.sort.each_with_index do |round, index| %>
           <p>----------------------------------</p>
