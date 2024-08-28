@@ -9,13 +9,24 @@
         <h3> > Select a player :</h3>
 
 
-        <%= form_with url: create_path do |f| %>
+        <%= form_with url: duels_path do |f| %>
           <select name="user_id" class="form-select background-white" aria-label="Default select example" required>
             <option selected>...</option>
             <%@users.each do |user|%>
               <option value="<%=user[1]%>"><%=user[0]%></option>
             <%end%>
           </select>
+
+          <% if @inventories.any? %>
+            <h3> > Use an item ?</h3>
+            <select name="inventory_id" class="form-select background-white" aria-label="Select ingame item">
+              <option selected disabled>...</option>
+              <% @inventories.each do |inventory| %>
+                <option value="<%= inventory.id %>"><%= inventory.item.name %></option>
+              <% end %>
+            </select>
+          <% end %>
+
           <h3> > Validate ?</h3>
           <%= f.submit "Yes, sure!", class:"background-white" %>
         <% end %>
