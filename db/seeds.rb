@@ -87,7 +87,7 @@ usertest2 = User.create!(
   first_name: "Lynn",
   last_name: "Telia",
   gold_count: 1500,
-  experience: 999
+  experience: 699
 )
 
 usertest3 = User.create!(
@@ -183,6 +183,23 @@ user8 = User.create!(
   experience: Faker::Number.number(digits: 3) #=> 100 to 999
 )
 
+user9 = User.create!(
+  email: "Benj@test.com",
+  password: "123456",
+  first_name: "Benjamin",
+  last_name: "Boisson",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
+user10 = User.create!(
+  email: "Yanis@test.com",
+  password: "123456",
+  first_name: "Yanis",
+  last_name: "Dahmane",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
 
 
 puts ""

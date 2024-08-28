@@ -43,9 +43,12 @@ class User < ApplicationRecord
       3
     when 400..699
       4
+    when 700..1099
+      5
     else
       # Calculer pour les niveaux supérieurs
-      4 + ((experience - 1099) / 500)
+      # 4 + ((experience - 1099) / 500)
+      5
     end
   end
 
@@ -87,14 +90,16 @@ class User < ApplicationRecord
   # barre d'experience
   def progress_percentage
     case experience
-    when 0..99
+    when 0..99 # 1 : beginner
       (experience - 0) * 100 / (99 - 0)
-    when 100..199
+    when 100..199 # 2 : learner
       (experience - 100) * 100 / (199 - 100)
-    when 200..399
+    when 200..399 # 3 : programmer
       (experience - 200) * 100 / (399 - 200)
-    when 400..699
+    when 400..699 # 4 : developper
       (experience - 400) * 100 / (699 - 400)
+    when 700..1099 # 5 : hacker
+      (experience - 700) * 100 / (1099 - 700)
     else
       99
     end
