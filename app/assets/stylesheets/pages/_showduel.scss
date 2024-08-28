@@ -6,8 +6,13 @@
   width: 100wh;
   height: 100vh;
   position: relative;
-
   h2 {
     color: #F98707;
   }
+}
+
+.duelcenter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
