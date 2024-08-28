@@ -9,7 +9,8 @@ class SendSlackMessageJob < ApplicationJob
     #           username: "Game Master"
     # end
 
-    notifier = Slack::Notifier.new "https://hooks.slack.com/services/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", username: "Game Master"
+    notifier = Slack::Notifier.new "https://hooks.slack.com/services/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
+", username: "Game Master"
 
 
     @username = " #{user.first_name.capitalize} #{user.last_name[0].upcase}."
