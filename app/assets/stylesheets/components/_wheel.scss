@@ -2,6 +2,7 @@
   animation: spin 1s linear infinite;
 }
 
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -54,3 +55,12 @@
   position: absolute;
   z-index: 4;
 } */
+
+
+
+.invisible-link {
+  visibility: hidden; /* Cache le lien mais garde son espace */
+  pointer-events: none; /* Désactive le clic */
+  text-decoration: none; /* Retire la décoration (soulignement) si visible */
+  color: transparent; /* Rendre le texte transparent */
+}

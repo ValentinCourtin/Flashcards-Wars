@@ -4,10 +4,20 @@ puts ""
 puts "-------- STEP 1 : DESTROYING ALL 💀 --------"
 puts ""
 
+puts "Destroying rounds... :crâne:"
+Round.destroy_all
+puts "Destroying duels... :crâne:"
+Duel.destroy_all
+puts "Destroying trainings... :crâne:"
+Training.destroy_all
+puts "Destroying trainingsAnswers... :crâne:"
+TrainingAnswer.destroy_all
 puts "Destroying trainings... 💀"
 Training.destroy_all
 puts "Destroying trainingsAnswers... 💀"
 TrainingAnswer.destroy_all
+
+
 puts "Destroying possibilities... 💀"
 Possibility.destroy_all
 puts "Destroying questions... 💀"
@@ -54,16 +64,16 @@ sub_db3 = Subcategory.create(name: "Associations & Validations", content:"Time t
 
 
 puts "Creating users... 🌱"
-10.times do
-  user = User.create!(
-        email: Faker::Internet.email,
-        password: Faker::Number.number(digits: 6), #=> 196835
-        first_name: Faker::JapaneseMedia::OnePiece.character,
-        last_name: Faker::JapaneseMedia::OnePiece.sea,
-        gold_count: Faker::Number.number(digits: 2), #=> 19
-        experience: Faker::Number.number(digits: 3) #=> 196
-      )
-end
+# 10.times do
+#   user = User.create!(
+#         email: Faker::Internet.email,
+#         password: Faker::Number.number(digits: 6), #=> 196835
+#         first_name: Faker::JapaneseMedia::OnePiece.character,
+#         last_name: Faker::JapaneseMedia::OnePiece.sea,
+#         gold_count: Faker::Number.number(digits: 2), #=> 19
+#         experience: Faker::Number.number(digits: 3) #=> 196
+#       )
+# end
 
 usertest1 = User.create!(
   email: "test@test.com",
@@ -79,17 +89,17 @@ usertest2 = User.create!(
   first_name: "Lynn",
   last_name: "Telia",
   gold_count: 20000,
-  experience: 10
+  experience: 999
 )
 
-usertest3 = User.create!(
-  email: "chloe@test.com",
-  password: "123456",
-  first_name: "Chloe",
-  last_name: "test",
-  gold_count: 50,
-  experience: 500
-)
+# usertest3 = User.create!(
+#   email: "chloe@test.com",
+#   password: "123456",
+#   first_name: "Chloe",
+#   last_name: "test",
+#   gold_count: 50,
+#   experience: 500
+# )
 
 
 # ////////////////////////
@@ -165,6 +175,16 @@ user7 = User.create!(
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
   experience: Faker::Number.number(digits: 3) #=> 100 to 999
 )
+
+user8 = User.create!(
+  email: "Nico@test.com",
+  password: "123456",
+  first_name: "Nicolas",
+  last_name: "Iniesta",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
 
 
 puts ""
@@ -319,8 +339,8 @@ end
 
 
 puts "Creating inventories... 🌱"
-usertest1.items << Item.all.sample(10)
-usertest2.items << Item.all.sample(15)
+usertest1.items << Item.all.sample(5)
+usertest2.items << Item.all.sample(18)
 usertest3.items << Item.all.sample(0)
 
 
