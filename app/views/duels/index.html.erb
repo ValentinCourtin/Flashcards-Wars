@@ -5,25 +5,27 @@
       <p>DUELS</p>
     </div>
 
-    <div class="duel-nav-bar-Bcontainer">
-      <div class="duel-nav-bar-container">
-        <%= link_to "#", class: "text-white" do %>
-              <div class="duel-nav-bar">
-                <p>Your turn</p>
-              </div>
-        <% end %>
-        <%= link_to "#", class: "text-white" do %>
-              <div class="duel-nav-bar">
-                <p>Pending</p>
-              </div>
-        <% end %>
-        <%= link_to "#", class: "text-white" do %>
-              <div class="duel-nav-bar">
-                <p>Finished</p>
-              </div>
-        <% end %>
+    <div class="scontainer">
+      <div class="duel-nav-bar-bcontainer">
+        <div class="duel-nav-bar-container">
+          <%= link_to "#", class: "text-white" do %>
+                <div class="duel-nav-bar">
+                  <p>Your turn</p>
+                </div>
+          <% end %>
+          <%= link_to "#", class: "text-white" do %>
+                <div class="duel-nav-bar">
+                  <p>Pending</p>
+                </div>
+          <% end %>
+          <%= link_to "#", class: "text-white" do %>
+                <div class="duel-nav-bar">
+                  <p>Finished</p>
+                </div>
+          <% end %>
+        </div>
       </div>
-    </div>
+
 
 
     <div class="mission-container">
@@ -31,7 +33,7 @@
         <% @duels.each_with_index do |duel, index| %>
           <%= link_to "#", class: "mission-todo" do %>
             <div class="mission-frame">
-              <h2>> Duel vs </h2>
+              <h2>> Duel vs <%= duel.user.first_name%> </h2>
               <% if duel.user == current_user %>
                 <% if @count == 3 %>
                   <p>> Waiting for the opponent - 1/3</p>
@@ -52,15 +54,16 @@
                 <% end %>
               <% end %>
             </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
 
-    <%= link_to opponent_choice_duels_path, data: {turbo_frame: :popup_opponent}, class: "font-white-center" do %>
-        <div class="btn-orange">
-          <p>NEW DUEL</p>
+          <% end %>
         </div>
-    <% end %>
+      </div>
+
+      <%= link_to opponent_choice_duels_path, data: {turbo_frame: :popup_opponent}, class: "font-white-center" do %>
+          <div class="btn-orange">
+            <p>NEW DUEL</p>
+          </div>
+      <% end %>
+    </div>
   </div>
 <% end %>

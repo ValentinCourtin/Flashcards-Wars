@@ -4,6 +4,7 @@ class Duel < ApplicationRecord
   has_many :rounds
   has_many :round_question_answers, through: :rounds
 
+
   after_create :create_round
   after_create :create_round_question_answers
 
