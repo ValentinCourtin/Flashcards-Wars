@@ -5,39 +5,89 @@
   </div>
 
   <div class="top-rank">
+
+    <% if @users_ordered.first(9).include?(@current_user) %>
       <% @users_ordered.each_with_index do |user, index| %>
-        <% if index < 8 %>
-            <% if index == 0 %>
-              <% class_name = "rank-first" %>
-            <% elsif index == 1 %>
-              <% class_name = "rank-second" %>
-            <% elsif index == 2 %>
-              <% class_name = "rank-third" %>
-            <% else %>
-              <% class_name = " " %>
-            <% end %>
+
+        <% if index < 9 %>
+
+          <% if index == 0 %>
+            <% class_name = "rank-first" %>
+          <% elsif index == 1 %>
+            <% class_name = "rank-second" %>
+          <% elsif index == 2 %>
+            <% class_name = "rank-third" %>
+          <% else %>
+            <% class_name = " " %>
+          <% end %>
+
           <div class="rank-frame <%= class_name %>">
             <div>
-              <%= "#{(index + 1)} - #{user.first_name.capitalize} #{user.last_name[0].upcase}." %>
+              <% if current_user == user %>
+                <%= "#{(index + 1)} - YOU" %>
+              <% else %>
+                <%= "#{(index + 1)} - #{user.first_name.capitalize} #{user.last_name[0].upcase}." %>
+              <% end %>
             </div>
             <div>
               <%= "#{user.experience} XP" %>
             </div>
           </div>
+
         <% end %>
       <% end %>
 
-      <div class="d-flex justify-content-center">
-        <% if !@users_ordered.first(8).include?(@current_user) %>
-          <div class="rank-frame bottom-rank">
+    <% else %>
+
+      <% @users_ordered.each_with_index do |user, index| %>
+
+        <% if index < 8 %>
+
+          <% if index == 0 %>
+            <% class_name = "rank-first" %>
+          <% elsif index == 1 %>
+            <% class_name = "rank-second" %>
+          <% elsif index == 2 %>
+            <% class_name = "rank-third" %>
+          <% else %>
+            <% class_name = " " %>
+          <% end %>
+
+          <div class="rank-frame <%= class_name %>">
             <div>
-              <%= "#{(@users_ordered.index(@current_user) + 1)} - YOU" %>
+              <% if current_user == user %>
+                <%= "#{(index + 1)} - YOU" %>
+              <% else %>
+                <%= "#{(index + 1)} - #{user.first_name.capitalize} #{user.last_name[0].upcase}." %>
+              <% end %>
             </div>
             <div>
-              <%= "#{@current_user.experience} XP" %>
+              <%= "#{user.experience} XP" %>
             </div>
           </div>
+
         <% end %>
+
+      <% end %>
+
+
+
+
+
+
+      <div class="d-flex justify-content-center">
+        <div class="rank-frame bottom-rank">
+          <div>
+            <%= "#{(@users_ordered.index(@current_user) + 1)} - YOU" %>
+          </div>
+          <div>
+            <%= "#{@current_user.experience} XP" %>
+          </div>
+        </div>
       </div>
+
+      
+    <% end %>
+
   </div>
 </div>

@@ -7,10 +7,15 @@
           }, class: "cancel-button" %>
           <br>
     <h3> > WELL DONE !</h3>
-    <p style="font-size: 24px;"> > You use <%=@item.name%> on <%=@target_user.first_name%> </p>
-    <p style="font-size: 24px;"> We've just send <%=@target_user.first_name%> a message on Slack ! </p>
-    <%= image_tag "alien.png", alt: "alien", class:"popup-image" %>
-    </div>
-
+    <% if @target_user == nil %>
+      <p style="font-size: 24px;"> > You use <%=@item.name%> on EVERYONE</p>
+      <p style="font-size: 24px;"> We've just send a message on Slack ! </p>
+      <%= image_tag "alien.png", alt: "alien", class:"popup-image" %>
+    <% else %>
+      <p style="font-size: 24px;"> > You use <%=@item.name%> on <%=@target_user.first_name%> </p>
+      <p style="font-size: 24px;"> We've just send <%=@target_user.first_name%> a message on Slack ! </p>
+      <%= image_tag "alien.png", alt: "alien", class:"popup-image" %>
+      </div>
+    <% end %>
   </div>
 <% end %>
