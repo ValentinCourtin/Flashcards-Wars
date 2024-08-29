@@ -87,7 +87,7 @@ usertest2 = User.create!(
   first_name: "Lynn",
   last_name: "Telia",
   gold_count: 20000,
-  experience: 699
+  experience: 99
 )
 
 usertest3 = User.create!(
@@ -355,7 +355,7 @@ end
 
 puts "Creating inventories... 🌱"
 usertest1.items << Item.all.sample(5)
-usertest2.items << Item.all.sample(0)
+usertest2.items << Item.all.sample(10)
 usertest3.items << Item.all.sample(0)
 
 
