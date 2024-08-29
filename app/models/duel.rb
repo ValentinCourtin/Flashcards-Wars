@@ -31,9 +31,9 @@ class Duel < ApplicationRecord
 
   def opponent_turn
     if current_round.opponent_finished
-      "Waiting for the opponent"
+      "> Waiting for the opponent"
     else
-      "Your turn"
+      "> Your turn"
     end
   end
 
