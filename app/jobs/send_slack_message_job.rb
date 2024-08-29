@@ -4,16 +4,12 @@ class SendSlackMessageJob < ApplicationJob
   def perform(target, item, user)
     # Do something later
 
-    # notifier = Slack::Notifier.new "https://hooks.slack.com/services/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" do
-    #   defaults channel: "#flashcards3",
-    #           username: "Game Master"
-    # end
-
     # le slack mis sur heroku et env. => flashcardS
-    # notifier = Slack::Notifier.new SLACK_URL, username: "Game Master"
+    notifier = Slack::Notifier.new ENV["SLACK_URL"], username: "Game Master"
 
     # le slack mis ici a ne pas mettre sur github => flashcard
-   
+
+
     @username = " #{user.first_name.capitalize} #{user.last_name[0].upcase}."
     @target_username = " #{target.first_name.capitalize} #{target.last_name[0].upcase}."
 
