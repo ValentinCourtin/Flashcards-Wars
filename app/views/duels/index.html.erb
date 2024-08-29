@@ -24,7 +24,7 @@
 
     <div class="duel-container">
       <div class="duel">
-        <% @duels.each_with_index do |duel, index| %>
+        <% @duels.reverse.each do |duel| %>
           <%= link_to duel_path(duel), class: "mission-todo" do %>
             <div class="mission-frame">
 

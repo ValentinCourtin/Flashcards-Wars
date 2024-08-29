@@ -1,7 +1,7 @@
 .duel-nav-bar-container {
   margin-top: 125px;
-  padding: 10px;
-  width: 325px;
+  /* padding: 10px; */
+  width: 300px;
   height: 30px;
   display: flex;
   justify-content: space-around;
@@ -12,16 +12,18 @@
 }
 
 .duel-nav-bar {
-  width: 99px;
+  width: 100px;
   height: 30px;
   display: flex;
   justify-content: center;
   color: white;
   text-decoration: none;
   padding-top: 3px;
+
   &.active {
     background-color: #0282AD;
     border-radius: 8px;
+    border: 3px solid #025470;
   }
 }
 
@@ -30,7 +32,7 @@
   text-decoration: none;
 }
 
-.scontainer{
+.scontainer {
   display: flex;
   flex-direction: column;
 }
@@ -41,7 +43,8 @@
   height: 54%;
   margin-top: 25px;
   padding-bottom: 52px;
-  h2{
-    font-family : "Jersey 10", sans-serif;
+
+  h2 {
+    font-family: "Jersey 10", sans-serif;
   }
 }

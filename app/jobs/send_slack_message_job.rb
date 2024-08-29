@@ -14,7 +14,6 @@ class SendSlackMessageJob < ApplicationJob
 
     # le slack mis ici a ne pas mettre sur github => flashcard
    
-
     @username = " #{user.first_name.capitalize} #{user.last_name[0].upcase}."
     @target_username = " #{target.first_name.capitalize} #{target.last_name[0].upcase}."
 
