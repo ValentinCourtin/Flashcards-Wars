@@ -14,23 +14,6 @@ class User < ApplicationRecord
 
   after_create :create_first_training
 
-  # def level
-  #   case experience
-  #   when 0..99
-  #     "1 : BEGINNER"
-  #   when 100..199
-  #     "2 : LEARNER"
-  #   when 200..399
-  #     "3 : PROGRAMMER"
-  #   when 400..699
-  #     "4 : DEVELOPPER"
-  #   when 700..1099
-  #     "5 : HACKER"
-  #   else
-  #     # Calculer pour les niveaux supérieurs
-  #     5 + ((experience - 1099) / 500)
-  #   end
-  # end
 
   #  calcul du level
   def level
@@ -104,6 +87,37 @@ class User < ApplicationRecord
       99
     end
   end
+
+
+
+  # def progress_percentage
+  #   # Déterminer les bornes de l'expérience pour le niveau actuel
+  #   case level
+  #   when 1
+  #     min_exp, max_exp = 0, 99
+  #   when 2
+  #     min_exp, max_exp = 100, 199
+  #   when 3
+  #     min_exp, max_exp = 200, 399
+  #   when 4
+  #     min_exp, max_exp = 400, 699
+  #   when 5
+  #     min_exp, max_exp = 700, 1099
+  #   else
+  #     # Pour les niveaux supérieurs, on peut utiliser un calcul générique
+  #     min_exp, max_exp = 1100, Float::INFINITY
+  #   end
+
+  #   # Calculer la progression en pourcentage
+  #   if experience < min_exp
+  #     0
+  #   elsif experience > max_exp
+  #     100
+  #   else
+  #     ((experience - min_exp).to_f / (max_exp - min_exp) * 100).round
+  #   end
+  # end
+
 
   private
 
