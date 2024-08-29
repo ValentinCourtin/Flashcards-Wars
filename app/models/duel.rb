@@ -25,6 +25,10 @@ class Duel < ApplicationRecord
     end
   end
 
+  def pending?
+    current_round.user_finished
+  end
+
   def opponent_turn
     if current_round.opponent_finished
       "Waiting for the opponent"

@@ -8,20 +8,14 @@
     <div class="scontainer">
       <div class="duel-nav-bar-bcontainer">
         <div class="duel-nav-bar-container">
-          <%= link_to "#", class: "text-white" do %>
-                <div class="duel-nav-bar">
-                  <p>Your turn</p>
-                </div>
+          <%= link_to request.params.merge(status: "your_turn"), data: { turbo: true }, class: " duel-nav-bar #{'active' if params[:status] == 'your_turn' || !params[:status].present?}" do %>
+            Your turn
           <% end %>
-          <%= link_to "#", class: "text-white" do %>
-                <div class="duel-nav-bar">
-                  <p>Pending</p>
-                </div>
+          <%= link_to request.params.merge(status: "pending"), data: { turbo: true }, class: "duel-nav-bar #{'active' if params[:status] == 'pending'}" do %>
+            Pending
           <% end %>
-          <%= link_to "#", class: "text-white" do %>
-                <div class="duel-nav-bar">
-                  <p>Finished</p>
-                </div>
+          <%= link_to request.params.merge(status: "finished"), data: { turbo: true }, class: "duel-nav-bar #{'active' if params[:status] == 'finished'}" do %>
+            Finished
           <% end %>
         </div>
       </div>
