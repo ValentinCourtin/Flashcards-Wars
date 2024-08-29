@@ -6,3 +6,5 @@
 //= link bootstrap.min.js
 // app/assets/config/manifest.json.erb
 //= link manifest.json
+//= link_tree ../audios
+//= link win_sound.mp3

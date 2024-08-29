@@ -1,5 +1,5 @@
 <%= turbo_frame_tag "popup_shop" do %>
-  <div class="blur" data-controller="modals">
+  <div class="blur" data-controller="modals" data-modals-audio-url-value="<%= audio_path("win_sound.mp3") %>">
 
     <div class="modal-pop-up" id="small" >
       <div data-modals-target="explosion" class="explosion <%# d-flex justify-content-center %>"><%= image_tag "explosion.png", class: "mb-", alt: "explosion", width: "200px", height: "200px" %></div>

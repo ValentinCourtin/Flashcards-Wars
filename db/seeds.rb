@@ -206,6 +206,7 @@ puts ""
 puts "Finished! 🌱"
 puts ""
 
+
 puts ""
 puts "---- STEP 3 : CREATING ITEMS & INVENTORIES 🌱 ----"
 puts ""
