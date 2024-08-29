@@ -3,26 +3,32 @@
     <p>DUEL</p>
   </div>
 
-  <%= turbo_frame_tag :popup_opponent do %>
+    <%= turbo_frame_tag :popup_opponent do %>
 
-    <div class="question question-fix">
-      <h2> > QUESTION </h2>
-      <p> > <%= @question.content%></p>
-    </div>
+    <div class="question question-fix question-duel screen" data-controller="typed" data-typed-strings-value='<%= ["<h2> > QUESTION </h2> <p>> #{@question.content}</p>"]%>'>
+      </div> 
 
-      <div class="answers-container <%= @duel.item&.class_name %>">
-      <% @possibilities.each do |possibility| %>
-          <%= link_to duel_duelresolve_path(
-            round_question_answer_id: @round_question_answer.id,
-            possibility_id: possibility.id),
-            data: { turbo: false },
-            class: "text-blue" do %>
-            <div class="answer">
-              <p  class="text-blue"><%= possibility.content %></p>
-            </div>
-          <% end %>
-      <% end %>
-    </div>
-  <% end %>
+        <div id="hacked-msg">
+            <% if @duel.item && current_user == @duel.opponent %>
+              <p><%= @duel.item.name.upcase %> HACK DETECTED</p>
+            <% else %>
+            <p> NO HACK DETECTED</p>
+            <% end %>
+        </div>
 
-</div>
+
+        <div class="answers-container <%= @duel.item&.class_name if current_user == @duel.opponent %>">
+        <% @possibilities.each do |possibility| %>
+            <%= link_to duel_duelresolve_path(
+              round_question_answer_id: @round_question_answer.id,
+              possibility_id: possibility.id),
+              data: { turbo: false },
+              class: "text-blue" do %>
+              <div class="answer">
+                <p  class="text-blue"><%= possibility.content %></p>
+              </div>
+            <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>

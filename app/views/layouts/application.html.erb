@@ -31,7 +31,7 @@
   </head>
 
   <body>
-    <% unless current_page?(profil_users_path) || current_page?(welcome_path) %>
+    <% unless current_page?(profil_users_path) || current_page?(welcome_path) || (@duel.present? && current_page?(duel_path(@duel))) %>
       <%= render "shared/navbar" %>
     <% end %>
     <%= render "shared/flashes" %>

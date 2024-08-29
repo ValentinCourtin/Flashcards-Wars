@@ -124,3 +124,39 @@
     font-size: 24px;
   }
 }
+
+.question-duel{
+  top: 110px;
+}
+
+#hacked-msg {
+  display: flex;
+  justify-content: center; /* Centering Horizantly */
+  align-items: center;
+  p{
+    position: absolute;
+    top: 420px;
+    font-size: 36px;
+    font-family: "Jersey 10", sans-serif;
+    text-align: center;
+    color: rgba(16,231,17,0.4);
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+    color: rgba(16,231,17,0.5);
+	}
+
+	50% {
+		transform: scale(0.98);
+    color: rgba(16,231,17,0.2);
+	}
+
+	100% {
+		transform: scale(1);
+    color: rgba(16,231,17,0.5);
+	}
+}
