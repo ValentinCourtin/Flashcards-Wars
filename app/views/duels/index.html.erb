@@ -37,32 +37,19 @@
 
               <% if duel.user == current_user %>
                 <h2>> Duel vs <%= duel.opponent.first_name%> </h2>
+                <% if duel.finished? %>
+                  <p>FINISHED - <%= duel.user_winner %></p>
+                <% else %>
+                  <p><%= duel.user_turn %> - <%= duel.progess %></p>
+                <% end %>
               <% else %>
                 <h2>> Duel vs <%= duel.user.first_name%> </h2>
-              <% end %>
-
-
-
-              <% if duel.user == current_user %>
-                <% if @count == 3 %>
-                  <p>> Waiting for the opponent - 1/3</p>
-                <% elsif @count == 6  %>
-                  <p>> Waiting for the opponent - 2/3</p>
-                <% elsif @count == 9 %>
-                  <p>> Waiting for the opponent - 3/3</p>
-                <% end %>
-              <% else duel.opponent == current_user%>
-                <% if @count == 0 %>
-                  <p>> My turn - 1/3</p>
-                <% elsif @count == 3  %>
-                  <p>> My turn - 2/3</p>
-                <% elsif @count == 6 %>
-                  <p>> My turn - 3/3</p>
-                <% elsif @count == 9 %>
-                  <p>> FINISHED</p>
+                <% if duel.finished? %>
+                  <p>FINISHED - <%= duel.opponent_winner %></p>
+                <% else %>
+                  <p><%= duel.opponent_turn %> - <%= duel.progess %></p>
                 <% end %>
               <% end %>
-
 
 
             </div>
