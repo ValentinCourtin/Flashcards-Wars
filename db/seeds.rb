@@ -699,29 +699,29 @@ questions = [
       }
     ]
   },
-  {
-    content: "Which structure do you use to execute code only if a condition is true?",
-    explication: "The if structure is used to execute code only if a given condition is true.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "if",
-        correct: true
-      },
-      {
-        content: "while",
-        correct: false
-      },
-      {
-        content: "for",
-        correct: false
-      },
-      {
-        content: "loop",
-        correct: false
-      }
-    ]
-  },
+  # {
+  #   content: "Which structure do you use to execute code only if a condition is true?",
+  #   explication: "The if structure is used to execute code only if a given condition is true.",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "if",
+  #       correct: true
+  #     },
+  #     {
+  #       content: "while",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "for",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "loop",
+  #       correct: false
+  #     }
+  #   ]
+  # },
   {
     content: "What Ruby keyword allows you to test a condition after executing a block of code, i.e., execute the block as long as the condition is false?",
     explication: "Until executes a block of code as long as the specified condition is false.",
@@ -746,8 +746,8 @@ questions = [
     ]
   },
   {
-    content: "What is the value of arr = [1, 2, 3]; arr[2]?",
-    explication: "Array indices in Ruby start at 0, so arr[2] returns the third element of the array, which is 3.",
+    content: "What is the value of arr = [1, 2, 3]; arr[1]?",
+    explication: "Array indices in Ruby start at 0, so arr[1] returns the second element of the array, which is 2.",
     subcategory: "Flow, Conditionals & Arrays",
     possibilities: [
       {
@@ -756,11 +756,11 @@ questions = [
       },
       {
         content: "2",
-        correct: false
+        correct: true
       },
       {
         content: "3",
-        correct: true
+        correct: false
       },
       {
         content: "nil",
@@ -768,75 +768,75 @@ questions = [
       }
     ]
   },
-  {
-    content: "What keyword is used to prematurely exit a loop?",
-    explication: "Break is used to immediately exit a loop, regardless of the remaining conditions.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "exit",
-        correct: false
-      },
-      {
-        content: "stop",
-        correct: false
-      },
-      {
-        content: "break",
-        correct: true
-      },
-      {
-        content: "end",
-        correct: false
-      }
-    ]
-  },
-  {
-    content: "Which method adds an element to the end of an array?",
-    explication: "The push method adds a new element to the end of an array.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "push",
-        correct: true
-      },
-      {
-        content: "pop",
-        correct: false
-      },
-      {
-        content: "shift",
-        correct: false
-      },
-      {
-        content: "unshift",
-        correct: false
-      }
-    ]
-  },
-  {
-    content: "How do you call a block of code that repeats as long as a condition remains true?",
-    explication: "The while loop continues to execute as long as the specified condition remains true.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "for",
-        correct: false
-      },
-      {
-        content: "while",
-        correct: true
-      },
-      {
-        content: "if",
-        correct: false
-      },
-      {
-        content: "case",
-        correct: false
-      }
-    ]
-  },
+  # {
+  #   content: "What keyword is used to prematurely exit a loop?",
+  #   explication: "Break is used to immediately exit a loop, regardless of the remaining conditions.",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "exit",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "stop",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "break",
+  #       correct: true
+  #     },
+  #     {
+  #       content: "end",
+  #       correct: false
+  #     }
+  #   ]
+  # },
+  # {
+  #   content: "Which method adds an element to the end of an array?",
+  #   explication: "The push method adds a new element to the end of an array.",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "push",
+  #       correct: true
+  #     },
+  #     {
+  #       content: "pop",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "shift",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "unshift",
+  #       correct: false
+  #     }
+  #   ]
+  # },
+  # {
+  #   content: "How do you call a block of code that repeats as long as a condition remains true?",
+  #   explication: "The while loop continues to execute as long as the specified condition remains true.",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "for",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "while",
+  #       correct: true
+  #     },
+  #     {
+  #       content: "if",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "case",
+  #       correct: false
+  #     }
+  #   ]
+  # },
   {
     content: "What is the output of the following expression: arr = [1, 2, 3]; arr.pop?",
     explication: "The pop method removes and returns the last element of the array, here 3.",
@@ -883,167 +883,167 @@ questions = [
       }
     ]
   },
-  {
-    content: "What keyword do you use to handle multiple conditions in Ruby?",
-    explication: "The case keyword in Ruby is used to evaluate a variable against multiple values.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "switch",
-        correct: false
-      },
-      {
-        content: "case",
-        correct: true
-      },
-      {
-        content: "if",
-        correct: false
-      },
-      {
-        content: "elsif",
-        correct: false
-      }
-    ]
-  },
-  {
-    content: "Which loop is best suited to execute a block of code a specific number of times?",
-    explication: "The for loop is ideal for executing a block of code a specific number of times, usually over a range or collection.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "for",
-        correct: true
-      },
-      {
-        content: "while",
-        correct: false
-      },
-      {
-        content: "until",
-        correct: false
-      },
-      {
-        content: "loop",
-        correct: false
-      }
-    ]
-  },
-  {
-    content: "How do you access the first element of an array called arr?",
-    explication: "The first element of an array is accessed via index 0, so arr[0].",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "arr[1]",
-        correct: false
-      },
-      {
-        content: "arr.first",
-        correct: false
-      },
-      {
-        content: "arr.last",
-        correct: false
-      },
-      {
-        content: "arr[0]",
-        correct: true
-      }
-    ]
-  },
-  {
-    content: "Which control structure executes a block of code if a condition is false?",
-    explication: "Unless executes a block of code only if the specified condition is false.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "unless",
-        correct: true
-      },
-      {
-        content: "if",
-        correct: false
-      },
-      {
-        content: "case",
-        correct: false
-      },
-      {
-        content: "while",
-        correct: false
-      }
-    ]
-  },
-  {
-    content: "How do you replace an element in an array in Ruby?",
-    explication: "You can replace an element in an array by assigning a new value to a specific index, such as array[index] = value.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "array.set(index, value)",
-        correct: false
-      },
-      {
-        content: "array[index] = value",
-        correct: true
-      },
-      {
-        content: "array.replace(index, value)",
-        correct: false
-      },
-      {
-        content: "array.change(index, value)",
-        correct: false
-      }
-    ]
-  },
-  {
-    content: "Which method removes and returns the first element of an array?",
-    explication: "The shift method removes and returns the first element of an array.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "pop",
-        correct: false
-      },
-      {
-        content: "shift",
-        correct: true
-      },
-      {
-        content: "unshift",
-        correct: false
-      },
-      {
-        content: "delete",
-        correct: false
-      }
-    ]
-  },
-  {
-    content: "How do you add an element to the beginning of an array?",
-    explication: "Unshift adds an element to the beginning of an array.",
-    subcategory: "Flow, Conditionals & Arrays",
-    possibilities: [
-      {
-        content: "push",
-        correct: false
-      },
-      {
-        content: "shift",
-        correct: false
-      },
-      {
-        content: "unshift",
-        correct: true
-      },
-      {
-        content: "prepend",
-        correct: false
-      }
-    ]
-  },
+  # {
+  #   content: "What keyword do you use to handle multiple conditions in Ruby?",
+  #   explication: "The case keyword in Ruby is used to evaluate a variable against multiple values.",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "switch",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "case",
+  #       correct: true
+  #     },
+  #     {
+  #       content: "if",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "elsif",
+  #       correct: false
+  #     }
+  #   ]
+  # },
+  # {
+  #   content: "Which loop is best suited to execute a block of code a specific number of times?",
+  #   explication: "The for loop is ideal for executing a block of code a specific number of times, usually over a range or collection.",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "for",
+  #       correct: true
+  #     },
+  #     {
+  #       content: "while",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "until",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "loop",
+  #       correct: false
+  #     }
+  #   ]
+  # },
+  # {
+  #   content: "How do you access the first element of an array called arr?",
+  #   explication: "The first element of an array is accessed via index 0, so arr[0].",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "arr[1]",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "arr.first",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "arr.last",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "arr[0]",
+  #       correct: true
+  #     }
+  #   ]
+  # },
+  # {
+  #   content: "Which control structure executes a block of code if a condition is false?",
+  #   explication: "Unless executes a block of code only if the specified condition is false.",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "unless",
+  #       correct: true
+  #     },
+  #     {
+  #       content: "if",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "case",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "while",
+  #       correct: false
+  #     }
+  #   ]
+  # },
+  # {
+  #   content: "How do you replace an element in an array in Ruby?",
+  #   explication: "You can replace an element in an array by assigning a new value to a specific index, such as array[index] = value.",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "array.set(index, value)",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "array[index] = value",
+  #       correct: true
+  #     },
+  #     {
+  #       content: "array.replace(index, value)",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "array.change(index, value)",
+  #       correct: false
+  #     }
+  #   ]
+  # },
+  # {
+  #   content: "Which method removes and returns the first element of an array?",
+  #   explication: "The shift method removes and returns the first element of an array.",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "pop",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "shift",
+  #       correct: true
+  #     },
+  #     {
+  #       content: "unshift",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "delete",
+  #       correct: false
+  #     }
+  #   ]
+  # },
+  # {
+  #   content: "How do you add an element to the beginning of an array?",
+  #   explication: "Unshift adds an element to the beginning of an array.",
+  #   subcategory: "Flow, Conditionals & Arrays",
+  #   possibilities: [
+  #     {
+  #       content: "push",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "shift",
+  #       correct: false
+  #     },
+  #     {
+  #       content: "unshift",
+  #       correct: true
+  #     },
+  #     {
+  #       content: "prepend",
+  #       correct: false
+  #     }
+  #   ]
+  # },
   {
     content: "Which method is used to iterate over each element of an array in Ruby?",
     explication: "Each is the most common iterator in Ruby to go through each element of an array or collection.",
