@@ -216,7 +216,7 @@ puts ""
 items = [
   {
     name: "Super croissant",
-    description: "The player selected has to bring croissant for next breakfast!",
+    description: "The player selected has to bring croissant for next day!",
     probability: 0.05,
     image_name: "supercroissant.png",
     category: "single"
@@ -244,7 +244,7 @@ items = [
   },
   {
     name: "Swap",
-    description: "You can give your place at the Livecode to whomever you wish!",
+    description: "You can give your place at next Livecode!",
     probability: 0.2,
     image_name: "swap.png",
     category: "single"
@@ -259,7 +259,7 @@ items = [
 
   {
     name: "Keyword",
-    description: "Every time you say your keyword, everyone has to stand up for 1 day!",
+    description: "When you say your keyword, everyone has to stand up for a day!",
     probability: 0.05,
     image_name: "keyword.png",
     category: "group"
@@ -273,7 +273,7 @@ items = [
   },
   {
     name: "Ola",
-    description: "For a day, every time you enter a room, everyone has to do an ola!",
+    description: "For a day, every time you enter a room, everyone do an ola!",
     probability: 0.15,
     image_name: "ola.png",
     category: "group"
@@ -294,42 +294,42 @@ items = [
   },
   {
     name: "Joker",
-    description: "Whatever happens, you've won, but the other won't know until the end of the game!",
+    description: "Whatever happens, you've won!",
     probability: 0.05,
     image_name: "joker.png",
     category: "duel"
   },
   {
     name: "Tornado",
-    description: "For one round of a duel and every 3 seconds, the opponent's answers are shuffled!",
+    description: "Every 3 seconds, the opponent's answers are shuffled!",
     probability: 0.2,
     image_name: "tornado.png",
     category: "duel"
   },
   {
     name: "Day and night",
-    description: "For one round of a duel, the opponent's screen turns off and on every 5 seconds!",
+    description: "The opponent's screen turns off and on every 5 seconds!",
     probability: 0.2,
     image_name: "daynight.png",
     category: "duel"
   },
   {
     name: "Rainbow",
-    description: "For one round of a duel, each letter of the opponent's answers has a different color!",
+    description: "Each letter of the opponent's answers has a different color!",
     probability: 0.6,
     image_name: "rainbow.png",
     category: "duel"
   },
   {
     name: "Reversed",
-    description: "For one round of a duel, the opponent's answers are reversed!",
+    description: "The opponent's answers are reversed!",
     probability: 0.6,
     image_name: "reversed.png",
     category: "duel"
   },
   {
     name: "Timer",
-    description: "For one round of a duel, the opponent has only 8 seconds to respond!",
+    description: "The opponent has only 8 seconds to respond!",
     probability: 0.6,
     image_name: "timer.png",
     category: "duel"
