@@ -1,55 +1,55 @@
 <%= turbo_frame_tag "popup_opponent" do %>
   <div class="blur">
     <div class="modal-pop-up">
-      <div >
+      <div class="w-100">
         <%= link_to "X", "#", data: {
           controller: "modals"
     # action: "modals#close"
         }, class: "cancel-button" %>
         <br>
         <br>
-        <h3> > Select a player :</h3>
 
-        <%= form_with url: duels_path do |f| %>
-          <select name="user_id" class="form-select background-black mb-3" aria-label="Default select example" required>
-            <option selected>...</option>
-            <%@users.each do |user|%>
-              <% unless user[0] == current_user.id %>
-              <option value="<%=user[0]%>"><%=" #{user[1].capitalize} #{user[2][0].upcase}."%></option>
+          <h3> > Select a player :</h3>
+
+          <%= form_with url: duels_path do |f| %>
+            <select name="user_id" class="form-select background-black mb-3" aria-label="Default select example" required>
+              <option selected>...</option>
+              <%@users.each do |user|%>
+                <% unless user[0] == current_user.id %>
+                <option value="<%=user[0]%>"><%=" #{user[1].capitalize} #{user[2][0].upcase}."%></option>
+                <%end%>
               <%end%>
-            <%end%>
-          </select>
-
-          <% if @unique_inventories.any? %>
-            <h3> > Use an item ?</h3>
-            <select name="inventory_id" class="form-select background-black mb-3" aria-label="Select ingame item">
-              <option selected disabled>...</option>
-              <% @unique_inventories.each do |inventory| %>
-                <option value="<%= inventory.id %>"><%= inventory.item.name %></option>
-              <% end %>
             </select>
-          <% end %>
 
-          <h3> > Validate ?</h3>
+            <% if @unique_inventories.any? %>
+              <h3> > Use an item ?</h3>
+              <select name="inventory_id" class="form-select background-black mb-3" aria-label="Select ingame item">
+                <option selected disabled>...</option>
+                <% @unique_inventories.each do |inventory| %>
+                  <option value="<%= inventory.id %>"><%= inventory.item.name %></option>
+                <% end %>
+              </select>
+            <% end %>
 
-          <%# <%= f.submit "Yes, sure!", class:"background-black" %>
-        <%# <% end %>
+            <h3> > Validate ?</h3>
 
-  <div class="container">
-              <div class="row">
-                <div class="col-6 ps-0 ">
-                  <%= f.submit "Yes", class:"background-black", action: :slack %>
-                                <% end %>
-                </div>
-                <div class="col-6 pe-0">
-                  <%= link_to "No", "#", data: {
-                      controller: "modals"
-                      # action: "modals#close"
-                  }, class: "background-black w-100 d-flex align-items-center justify-content-center" %>
+            <%# <%= f.submit "Yes, sure!", class:"background-black" %>
+          <%# <% end %>
+
+    <div class="container">
+                <div class="row">
+                  <div class="col-6 ps-0 ">
+                    <%= f.submit "Yes", class:"background-black", action: :slack %>
+                                  <% end %>
+                  </div>
+                  <div class="col-6 pe-0">
+                    <%= link_to "No", "#", data: {
+                        controller: "modals"
+                        # action: "modals#close"
+                    }, class: "background-black w-100 d-flex align-items-center justify-content-center" %>
+                  </div>
                 </div>
               </div>
-            </div>
-
 
 
 
