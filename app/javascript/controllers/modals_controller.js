@@ -3,8 +3,12 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="modals"
 export default class extends Controller {
   static targets = ["wheel", "win", "background", "selection", "choice", "explosion"]
+  static values = {
+    audioUrl: String
+  }
 
   connect() {
+    console.log(this.audioUrlValue);
 
     setTimeout(() => {
       this.createExplosion();
@@ -23,7 +27,16 @@ export default class extends Controller {
   }
   showWin() {
     this.winTarget.style.display = "block"
+    const audio = new Audio(this.audioUrlValue)
+    console.log(audio);
+
+    audio.play()
+      .catch(error => {
+        console.log(error);
+
+      })
   }
+
 
   changeContent(event) {
     this.selectionTarget.style.display = "none"
@@ -35,6 +48,8 @@ export default class extends Controller {
     this.explosionTarget.classList.add("show-explosion")
 
   }
+
+
 
 
 }
