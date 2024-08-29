@@ -1,12 +1,14 @@
 .duel-nav-bar-container {
   margin-top: 125px;
-  padding-bottom: 52px;
+  padding: 10px;
   width: 325px;
   height: 30px;
   display: flex;
   justify-content: space-around;
   background-color: #025470;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .duel-nav-bar {
@@ -14,6 +16,13 @@
   height: 30px;
   display: flex;
   justify-content: center;
+  color: white;
+  text-decoration: none;
+  padding-top: 3px;
+  &.active {
+    background-color: #0282AD;
+    border-radius: 8px;
+  }
 }
 
 .text-white {

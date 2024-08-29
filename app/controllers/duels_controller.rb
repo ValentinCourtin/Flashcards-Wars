@@ -1,6 +1,29 @@
 class DuelsController < ApplicationController
   def index
     @duels = Duel.where(user: current_user) + Duel.where(opponent: current_user)
+    if params[:status] == 'finished'
+      @duels = @duels.select(&:finished?)
+    elsif params[:status] == 'pending'
+      @duels = @duels.select do |duel|
+        next if duel.finished?
+
+        if duel.user == current_user
+          duel.current_round.user_finished
+        else
+          duel.current_round.opponent_finished
+        end
+      end
+    elsif params[:status] == 'your_turn'
+      @duels = @duels.select do |duel|
+        next if duel.finished?
+
+        if duel.user == current_user
+          !duel.current_round.user_finished
+        else
+          !duel.current_round.opponent_finished
+        end
+      end
+    end
   end
 
   def show
