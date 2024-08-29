@@ -32,14 +32,14 @@
               <% if duel.user == current_user %>
                 <h2>> Duel vs <%= duel.opponent.first_name%> </h2>
                 <% if duel.finished? %>
-                  <p>FINISHED - <%= duel.user_winner %></p>
+                  <p>> FINISHED - <%= duel.user_winner %></p>
                 <% else %>
                   <p><%= duel.user_turn %> - <%= duel.progess %></p>
                 <% end %>
               <% else %>
                 <h2>> Duel vs <%= duel.user.first_name%> </h2>
                 <% if duel.finished? %>
-                  <p>FINISHED - <%= duel.opponent_winner %></p>
+                  <p>> FINISHED - <%= duel.opponent_winner %></p>
                 <% else %>
                   <p><%= duel.opponent_turn %> - <%= duel.progess %></p>
                 <% end %>
