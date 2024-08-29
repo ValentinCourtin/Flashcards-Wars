@@ -698,25 +698,6 @@ questions = [
     ]
   },
   {
-    content: "How do you stop an IRB session?",
-    explication: "You can exit IRB by typing exit, quit, or using Ctrl + D.",
-    subcategory: "Programming Basics",
-    possibilities: [
-      {
-        content: "exit",
-        correct: true
-      },
-      {
-        content: "quit",
-        correct: true
-      },
-      {
-        content: "Ctrl + D",
-        correct: true
-      }
-    ]
-  },
-  {
     content: "Which structure do you use to execute code only if a condition is true?",
     explication: "The if structure is used to execute code only if a given condition is true.",
     subcategory: "Flow, Conditionals & Arrays",
