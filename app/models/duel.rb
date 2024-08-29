@@ -9,6 +9,74 @@ class Duel < ApplicationRecord
   after_create :create_round
   after_create :create_round_question_answers
 
+  def current_round
+    rounds.where(finished: false).first
+  end
+
+  def progess
+    "#{rounds.where(finished: true).count + 1}  / 3"
+  end
+
+  def user_turn
+    if current_round.user_finished
+      "Waiting for the opponent"
+    else
+      "Your turn"
+    end
+  end
+
+  def opponent_turn
+    if current_round.opponent_finished
+      "Waiting for the opponent"
+    else
+      "Your turn"
+    end
+  end
+
+  def user_win
+    user_win = 0
+    rounds.each do |round|
+      user_win += 1 if round.user_score > round.opponent_score
+    end
+    return user_win
+  end
+
+  def opponent_win
+    opponent_win = 0
+    rounds.each do |round|
+      opponent_win += 1 if round.user_score < round.opponent_score
+    end
+    return opponent_win
+  end
+
+  def user_winner
+    if user_win < opponent_win
+      "YOU LOST"
+    elsif user_win > opponent_win
+      "YOU WON"
+    else
+      "DRAW"
+    end
+  end
+
+  def opponent_winner
+    if opponent_win < user_win
+      "YOU LOST"
+    elsif opponent_win > user_win
+      "YOU WON"
+    else
+      "DRAW"
+    end
+  end
+
+  def finished?
+    rounds.all?(&:finished)
+    # equivalent de la ligne au dessus
+    # rounds.all? do |round|
+    #   round.finished
+    # end
+  end
+
   private
 
   def create_round
@@ -19,7 +87,7 @@ class Duel < ApplicationRecord
         subcategory: subcategory
       )
     end
-    
+
     subcategory_opponent = User.find(opponent_id).trainings.sample.subcategory
     Round.create(
       duel: self,
@@ -48,4 +116,6 @@ class Duel < ApplicationRecord
       end
     end
   end
+
+
 end
