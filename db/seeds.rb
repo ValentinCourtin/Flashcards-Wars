@@ -358,7 +358,10 @@ puts "Creating inventories... 🌱"
 usertest1.items << Item.all.sample(5)
 usertest2.items << Item.all.sample(10)
 usertest3.items << Item.all.sample(0)
-user0.items << Item.all.sample(2)
+user0.items << Item.where(name: "Tornado").first
+user0.items << Item.where(name: "Day and night").first
+user0.items << Item.where(name: "Super croissant").first
+
 
 
 # inventory1 = Inventory.create!(user: usertest2, item: item1)
