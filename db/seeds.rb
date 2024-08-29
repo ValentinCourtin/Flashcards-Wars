@@ -87,7 +87,7 @@ usertest2 = User.create!(
   first_name: "Lynn",
   last_name: "Telia",
   gold_count: 20000,
-  experience: 99
+  experience: 75
 )
 
 usertest3 = User.create!(

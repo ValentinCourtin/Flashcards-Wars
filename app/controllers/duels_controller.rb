@@ -17,6 +17,7 @@ class DuelsController < ApplicationController
     @user = current_user
     @users = User.all.collect { |user| [user.id, user.first_name, user.last_name]}
     @inventories = current_user.inventories.joins(:item).where(items: { category: "duel"})
+    @unique_inventories = @inventories.uniq { |inventory| inventory.item.id }
   end
 
   def create

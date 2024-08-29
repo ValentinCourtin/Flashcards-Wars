@@ -6,11 +6,12 @@
           controller: "modals"
     # action: "modals#close"
         }, class: "cancel-button" %>
+        <br>
+        <br>
         <h3> > Select a player :</h3>
 
-
         <%= form_with url: duels_path do |f| %>
-          <select name="user_id" class="form-select background-white mb-3" aria-label="Default select example" required>
+          <select name="user_id" class="form-select background-black mb-3" aria-label="Default select example" required>
             <option selected>...</option>
             <%@users.each do |user|%>
               <% unless user[0] == current_user.id %>
@@ -19,20 +20,52 @@
             <%end%>
           </select>
 
-          <% if @inventories.any? %>
+          <% if @unique_inventories.any? %>
             <h3> > Use an item ?</h3>
-            <select name="inventory_id" class="form-select background-white mb-3" aria-label="Select ingame item">
+            <select name="inventory_id" class="form-select background-black mb-3" aria-label="Select ingame item">
               <option selected disabled>...</option>
-              <% @inventories.each do |inventory| %>
+              <% @unique_inventories.each do |inventory| %>
                 <option value="<%= inventory.id %>"><%= inventory.item.name %></option>
               <% end %>
             </select>
           <% end %>
 
           <h3> > Validate ?</h3>
-          <%= f.submit "Yes, sure!", class:"background-white" %>
-        <% end %>
+
+          <%# <%= f.submit "Yes, sure!", class:"background-black" %>
+        <%# <% end %>
+
+  <div class="container">
+              <div class="row">
+                <div class="col-6 ps-0 ">
+                  <%= f.submit "Yes", class:"background-black", action: :slack %>
+                                <% end %>
+                </div>
+                <div class="col-6 pe-0">
+                  <%= link_to "No", "#", data: {
+                      controller: "modals"
+                      # action: "modals#close"
+                  }, class: "background-black w-100 d-flex align-items-center justify-content-center" %>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
         </div>
+
+
+
+
+
+
       </div>
   </div>
 <% end %>

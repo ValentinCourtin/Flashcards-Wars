@@ -6,43 +6,30 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
 
-        <!-- Slides -->
-          <% @items.each do |item| %>
+          <!-- Slides -->
+          <% grouped_items = @items.group_by(&:name) %> <!-- Regrouper les items par `name` -->
+
+          <% grouped_items.each do |name, items| %> <!-- Itérer sur chaque groupe -->
             <div class="swiper-slide">
               <div class="d-flex justify-content-center">
-                <%= cl_image_tag item.photo.key, width: "142px", height: "142px", class:"img-center"%>
+                <!-- Afficher l'image du premier item dans le groupe -->
+                <%= cl_image_tag items.first.photo.key, width: "142px", height: "142px", class:"img-center" %>
               </div>
-              <%# <p> --------------------------------------</p> %>
-              <h3>> Object : <%= item.name %></h3>
-              <p><%= item.description %></p>
+              <h3>Object: <%= name %></h3>
+              <p><%= items.first.description %></p> <!-- Afficher la description du premier item -->
 
-              <%# btn, path = l'action choice dans le controller shop, data = quelle turbo frame va afficher la popup %>
+              <!-- Afficher le compteur d'items identiques -->
+              <p>Quantity: <%= items.count %></p>
 
-              <%# <div class="btn-blue">
-              <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop } %>
-              <%# </div> %>
-
-              <%# <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice do %>
-                <%# <div class="btn-blue"><h2>USE IT</h2></div>
-              <%end%>
-
-                <%# <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop }, class:"text-properties btn-orange-shop" %>
-                <div class="d-flex justify-content-center">
-
-                  <%# <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice do %>
-                    <%# <div class="btn-orange-shop"><p>USE IT</p></div>
-                  <%end%>
-
-                  <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice, class: 'btn-orange-test margin ' do %>
-                    USE IT
-                  <%end%>
-
-
-                </div>
-
-
+              <!-- Bouton "USE IT" avec Turbo Frame -->
+              <div class="d-flex justify-content-center">
+                <%= link_to player_choice_shops_path(item_id: items.first.id), data: { turbo_frame: :popup_shop }, action: :choice, class: 'btn-orange-test margin' do %>
+                  USE IT
+                <% end %>
+              </div>
             </div>
           <% end %>
+
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
@@ -68,3 +55,45 @@
     <% end %>
 
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%# btn, path = l'action choice dans le controller shop, data = quelle turbo frame va afficher la popup %>
+
+              <%# <div class="btn-blue">
+              <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop } %>
+              <%# </div> %>
+
+              <%# <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice do %>
+                <%# <div class="btn-blue"><h2>USE IT</h2></div>
+              <%end%>
+
+                <%# <%= link_to "USE IT", player_choice_shops_path(item_id: item.id), data:  { turbo_frame: :popup_shop }, class:"text-properties btn-orange-shop" %>
+
+
+
+
+ <%# <%= link_to player_choice_shops_path(item_id: item.id), data: {turbo_frame: :popup_shop }, action: :choice do %>
+                    <%# <div class="btn-orange-shop"><p>USE IT</p></div>
+                  <%end%>
