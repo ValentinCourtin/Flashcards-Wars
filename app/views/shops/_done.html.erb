@@ -1,6 +1,8 @@
 <%= turbo_frame_tag "popup_shop" do %>
   <div class="blur">
     <div class="modal-pop-up">
+      <div class="mb-toto">
+
             <%= link_to "X", "#", data: {
             controller: "modals"
             # action: "modals#close"
@@ -16,6 +18,8 @@
       <p style="font-size: 24px;"> We've just send <%=@target_user.first_name%> a message on Slack ! </p>
       <%= image_tag "alien.png", alt: "alien", class:"popup-image" %>
       </div>
+
+    </div>
     <% end %>
   </div>
 <% end %>

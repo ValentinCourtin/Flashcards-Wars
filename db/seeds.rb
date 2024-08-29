@@ -295,7 +295,7 @@ items = [
   },
   {
     name: "Joker",
-    description: "Whatever happens, you've won!",
+    description: "Whatever happens, you've won, good gaaaaaame!",
     probability: 0.05,
     image_name: "joker.png",
     category: "duel"
