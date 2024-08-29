@@ -5,8 +5,8 @@
 
     <%= turbo_frame_tag :popup_opponent do %>
 
-    <div class="question question-fix question-duel screen" data-controller="typed" data-typed-strings-value='<%= ["<h2> > QUESTION </h2> <p>> #{@question.content}</p>"]%>'>
-      </div> 
+    <div class="question question-fix question-duel screen" data-controller="typed" data-typed-type-speed-value="15" data-typed-strings-value='<%= ["<h2> > QUESTION </h2> <p>> #{@question.content}</p>"]%>'>
+      </div>
 
         <div id="hacked-msg">
             <% if @duel.item && current_user == @duel.opponent %>

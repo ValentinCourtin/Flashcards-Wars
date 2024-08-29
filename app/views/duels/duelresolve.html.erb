@@ -12,11 +12,11 @@
     <%end%>
 
     <%if @correct %>
-      <div class="question question-answer" id="border-green" data-controller="typed" data-typed-strings-value='<%= ["<h2> > CORRECT ANSWER </h2> <p>> #{@question.explication}</p>"]%>'>
+      <div class="question question-answer" id="border-green" data-controller="typed" data-typed-type-speed-value="5" data-typed-strings-value='<%= ["<h2> > CORRECT ANSWER </h2> <p>> #{@question.explication}</p>"]%>'>
        <%#  <p>Tu as <%= @correct ? 'bon' : 'faux' %><%# </p>  %>
       </div>
     <%else%>
-      <div class="question question-answer" id="border-red" data-controller="typed" data-typed-strings-value='<%= ["<h2> > INCORRECT ANSWER</h2> <p>-------------------------------------</p> <p>> RIGHT ANSWER : #{@question.solution.content}</p> <p>-------------------------------------</p> <p>> DETAILS : #{@question.explication}</p>"]%>'>
+      <div class="question question-answer" id="border-red" data-controller="typed" data-typed-type-speed-value="5" data-typed-strings-value='<%= ["<h2> > INCORRECT ANSWER</h2> <p>-------------------------------------</p> <p>> RIGHT ANSWER : #{@question.solution.content}</p> <p>-------------------------------------</p> <p>> DETAILS : #{@question.explication}</p>"]%>'>
       </div>
     <%end%>
 
