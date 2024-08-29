@@ -24,7 +24,7 @@
           <div class="rank-frame <%= class_name %>">
             <div>
               <% if current_user == user %>
-                <%= "#{(index + 1)} - YOU" %>
+                <%= "#{(index + 1)} - YOUR RANK" %>
               <% else %>
                 <%= "#{(index + 1)} - #{user.first_name.capitalize} #{user.last_name[0].upcase}." %>
               <% end %>
@@ -56,7 +56,7 @@
           <div class="rank-frame <%= class_name %>">
             <div>
               <% if current_user == user %>
-                <%= "#{(index + 1)} - YOU" %>
+                <%= "#{(index + 1)} - YOUR RANK" %>
               <% else %>
                 <%= "#{(index + 1)} - #{user.first_name.capitalize} #{user.last_name[0].upcase}." %>
               <% end %>
@@ -86,7 +86,7 @@
         </div>
       </div>
 
-      
+
     <% end %>
 
   </div>
