@@ -13,13 +13,13 @@
             <div class="swiper-slide">
               <div class="d-flex justify-content-center">
                 <!-- Afficher l'image du premier item dans le groupe -->
-                <%= cl_image_tag items.first.photo.key, width: "142px", height: "142px", class:"img-center" %>
+                <%= cl_image_tag items.first.photo.key, width: "142px", height: "142px", class:"img-center mb-3" %>
               </div>
-              <h3>Object: <%= name %></h3>
-              <p><%= items.first.description %></p> <!-- Afficher la description du premier item -->
+              <h3>&gt Object: <%= name %></h3>
+              <p class="mb-1">&gt <%= items.first.description %></p> <!-- Afficher la description du premier item -->
 
               <!-- Afficher le compteur d'items identiques -->
-              <p>Quantity: <%= items.count %></p>
+              <p>&gt Quantity: <%= items.count %></p>
 
               <!-- Bouton "USE IT" avec Turbo Frame -->
               <div class="d-flex justify-content-center">
