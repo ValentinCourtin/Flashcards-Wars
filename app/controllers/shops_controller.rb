@@ -11,7 +11,10 @@ class ShopsController < ApplicationController
 
     @item = Item.find(params[:item_id])
     @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)
-    @target_user = User.find(params[:user_id])
+    
+    # @target_user = User.find(params[:user_id])
+    @target_user = User.find_by(id: params[:user_id])
+    # => find_by renvoi nil si pas de params ( donc facultatif)
 
     # @item => USE IT, ENVOI MESSAGE SLACK !!!!!!!!!!!!!!!!!!!
     @inventory.destroy # => bug prob avec find
@@ -33,7 +36,7 @@ class ShopsController < ApplicationController
     @item = Item.find(params[:item_id])
     @inventory = Inventory.find_by(user_id: @user.id, item_id: @item.id)
 
-    
+
   end
 
   def wheel
