@@ -1,20 +1,20 @@
 <%= turbo_frame_tag "popup_opponent" do %>
-  <div class="background-style">
+  <div class="background-style" data-controller="hidenav">
     <div class="duelcenter">
       <div>
         <% if @duel.user == current_user %>
-          <h2>> Duel vs <%= @duel.opponent.first_name%> </h2>
+          <h2>Duel vs <%= @duel.opponent.first_name%> </h2>
         <% else %>
-          <h2>> Duel vs <%= @duel.user.first_name%> </h2>
+          <h2>Duel vs <%= @duel.user.first_name%> </h2>
         <% end %>
       </div>
       <div class="mt-4">
-        <h2> > Subcategory : <%= @round.subcategory.name %></h2>
+        <h2>Subcategory : <%= @round.subcategory.name %></h2>
       </div>
     </div>
 
     <%= link_to duel_duelplay_path(duel_id: @duel.id), data: {turbo_frame: :popup_opponent}, class: "font-white-center" do %>
-          <div class="btn-orange">
+          <div class="btn-orange" id="btn-bottom">
             <p>Start</p>
           </div>
       <% end %>

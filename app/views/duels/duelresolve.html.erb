@@ -11,22 +11,14 @@
       <div class="image-invalidation"><%= image_tag "false.png", class:"img"%></div>
     <%end%>
 
-    <% if @correct %>
-      <div class="question question-answer" id="border-green">
-        <h2>> CORRECT ANSWER</h2>
-        <p class="mt-3">> <%= @question.explication %></p>
+    <%if @correct %>
+      <div class="question question-answer" id="border-green" data-controller="typed" data-typed-strings-value='<%= ["<h2> > CORRECT ANSWER </h2> <p>> #{@question.explication}</p>"]%>'>
        <%#  <p>Tu as <%= @correct ? 'bon' : 'faux' %><%# </p>  %>
       </div>
-    <% else %>
-      <div class="question question-answer" id="border-red">
-        <h2>> INCORRECT ANSWER</h2>
-        <p class="text-center">-------------------------------------</p>
-        <p class="mb-1 mt-3"> > RIGHT ANSWER : "<%= @question.solution.content %>" </p>
-        <p class="text-center">-------------------------------------</p>
-        <p>> DETAILS : <%= @question.explication %></p>
-       <%#  <p>Tu as <%= @correct ? 'bon' : 'faux' %><%# </p>  %>
+    <%else%>
+      <div class="question question-answer" id="border-red" data-controller="typed" data-typed-strings-value='<%= ["<h2> > INCORRECT ANSWER</h2> <p>-------------------------------------</p> <p>> RIGHT ANSWER : #{@question.solution.content}</p> <p>-------------------------------------</p> <p>> DETAILS : #{@question.explication}</p>"]%>'>
       </div>
-    <% end %>
+    <%end%>
 
 
     <%= link_to duel_duelplay_path(@round_question_answer.round.duel.id), class: "font-white-center" do %>
