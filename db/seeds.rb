@@ -107,8 +107,8 @@ user0 = User.create!(
   password: "123456",
   first_name: "Valentin",
   last_name: "Courtin",
-  gold_count: 500,
-  experience: 170
+  gold_count: 1100,
+  experience: 320
 )
 
 user1 = User.create!(
@@ -125,8 +125,8 @@ user2 = User.create!(
   password: "123456",
   first_name: "Clarisse",
   last_name: "Fabreges",
-  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  gold_count: 1350,
+  experience: 50
 )
 
 user3 = User.create!(
@@ -357,6 +357,7 @@ puts "Creating inventories... 🌱"
 usertest1.items << Item.all.sample(5)
 usertest2.items << Item.all.sample(10)
 usertest3.items << Item.all.sample(0)
+user0.items << Item.all.sample(2)
 
 
 # inventory1 = Inventory.create!(user: usertest2, item: item1)
