@@ -85,14 +85,14 @@ class Duel < ApplicationRecord
 
   def create_round
     2.times do
-      subcategory = User.find(user_id).trainings.sample.subcategory
+      subcategory = User.find(user_id).trainings.first.subcategory
       Round.create(
         duel: self,
         subcategory: subcategory
       )
     end
 
-    subcategory_opponent = User.find(opponent_id).trainings.sample.subcategory
+    subcategory_opponent = User.find(opponent_id).trainings.first.subcategory
     Round.create(
       duel: self,
       subcategory: subcategory_opponent

@@ -117,7 +117,7 @@ user1 = User.create!(
   first_name: "Chloé",
   last_name: "Bourgeois",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: (0..810).to_a.sample #=> 100 to 810
 )
 
 user2 = User.create!(
@@ -126,7 +126,7 @@ user2 = User.create!(
   first_name: "Clarisse",
   last_name: "Fabreges",
   gold_count: 850,
-  experience: 50
+  experience: (0..810).to_a.sample
 )
 
 user3 = User.create!(
@@ -135,7 +135,7 @@ user3 = User.create!(
   first_name: "Pierre",
   last_name: "Libran",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: (0..810).to_a.sample #=> 100 to 810
 )
 
 user4 = User.create!(
@@ -144,7 +144,7 @@ user4 = User.create!(
   first_name: "Kévin",
   last_name: "Rossi",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: (0..810).to_a.sample #=> 100 to 810
 )
 
 user5 = User.create!(
@@ -153,7 +153,7 @@ user5 = User.create!(
   first_name: "Amandine",
   last_name: "Porte",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: (0..810).to_a.sample #=> 100 to 810
 )
 
 user6 = User.create!(
@@ -162,7 +162,7 @@ user6 = User.create!(
   first_name: "Santino",
   last_name: "Doucet",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: (0..810).to_a.sample #=> 100 to 810
 )
 
 user7 = User.create!(
@@ -171,7 +171,7 @@ user7 = User.create!(
   first_name: "Ji-Fang",
   last_name: "Lo",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: (0..810).to_a.sample #=> 100 to 810
 )
 
 user8 = User.create!(
@@ -180,7 +180,7 @@ user8 = User.create!(
   first_name: "Nicolas",
   last_name: "Iniesta",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: (0..810).to_a.sample #=> 100 to 810
 )
 
 user9 = User.create!(
@@ -189,7 +189,7 @@ user9 = User.create!(
   first_name: "Benjamin",
   last_name: "Boisson",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: 854 #=> 100 to 810
 )
 
 user10 = User.create!(
@@ -198,7 +198,7 @@ user10 = User.create!(
   first_name: "Yanis",
   last_name: "Dahmane",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: 897 #=> 100 to 810
 )
 
 user11 = User.create!(
@@ -207,7 +207,7 @@ user11 = User.create!(
   first_name: "Toto",
   last_name: "Tata",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: (0..810).to_a.sample #=> 100 to 810
 )
 
 user12 = User.create!(
@@ -216,7 +216,7 @@ user12 = User.create!(
   first_name: "Samuel",
   last_name: "Boulery",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: (0..810).to_a.sample #=> 100 to 810
 )
 
 user13 = User.create!(
@@ -225,7 +225,7 @@ user13 = User.create!(
   first_name: "Romain",
   last_name: "Stanke",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
-  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+  experience: (0..810).to_a.sample #=> 100 to 810
 )
 
 
