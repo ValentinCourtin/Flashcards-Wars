@@ -388,6 +388,7 @@ puts "Creating inventories... 🌱"
 user2.items << Item.where(name: "Tornado").first
 user0.items << Item.where(name: "Day and night").first
 user0.items << Item.where(name: "Super croissant").first
+user0.items << Item.where(name: "Rainbow").first
 
 
 
