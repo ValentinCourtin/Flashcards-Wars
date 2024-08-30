@@ -126,7 +126,7 @@ user2 = User.create!(
   first_name: "Clarisse",
   last_name: "Fabreges",
   gold_count: 850,
-  experience: (0..810).to_a.sample
+  experience: 50
 )
 
 user3 = User.create!(
