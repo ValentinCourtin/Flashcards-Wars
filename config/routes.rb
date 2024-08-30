@@ -54,9 +54,8 @@ Rails.application.routes.draw do
 
   # creation de routes pour USERS/show
   get "home", to: "users#show"
-  root to: "users#show"
   get "welcome", to: "pages#welcome"
-
+  root to: "pages#welcome"
 
   get "up" => "rails/health#show", as: :rails_health_check
 end

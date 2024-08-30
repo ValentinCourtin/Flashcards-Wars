@@ -13,7 +13,7 @@ class DuelsController < ApplicationController
           duel.current_round.opponent_finished
         end
       end
-    elsif params[:status] == 'your_turn'
+    else
       @duels = @duels.select do |duel|
         next if duel.finished?
 
