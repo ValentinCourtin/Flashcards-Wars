@@ -166,7 +166,7 @@ user6 = User.create!(
 )
 
 user7 = User.create!(
-  email: "Ji-fang@test.com",
+  email: "jifang@test.com",
   password: "123456",
   first_name: "Ji-Fang",
   last_name: "Lo",
@@ -175,7 +175,7 @@ user7 = User.create!(
 )
 
 user8 = User.create!(
-  email: "Nico@test.com",
+  email: "nicolas@test.com",
   password: "123456",
   first_name: "Nicolas",
   last_name: "Iniesta",
@@ -184,7 +184,7 @@ user8 = User.create!(
 )
 
 user9 = User.create!(
-  email: "Benj@test.com",
+  email: "benjamin@test.com",
   password: "123456",
   first_name: "Benjamin",
   last_name: "Boisson",
@@ -193,7 +193,7 @@ user9 = User.create!(
 )
 
 user10 = User.create!(
-  email: "Yanis@test.com",
+  email: "yanis@test.com",
   password: "123456",
   first_name: "Yanis",
   last_name: "Dahmane",
@@ -211,7 +211,7 @@ user11 = User.create!(
 )
 
 user12 = User.create!(
-  email: "Samuel@test.com",
+  email: "samuel@test.com",
   password: "123456",
   first_name: "Samuel",
   last_name: "Boulery",
@@ -382,9 +382,9 @@ end
 
 
 puts "Creating inventories... 🌱"
-usertest1.items << Item.all.sample(5)
-usertest2.items << Item.all.sample(10)
-usertest3.items << Item.all.sample(0)
+# usertest1.items << Item.all.sample(5)
+# usertest2.items << Item.all.sample(10)
+# usertest3.items << Item.all.sample(0)
 user2.items << Item.where(name: "Tornado").first
 user0.items << Item.where(name: "Day and night").first
 user0.items << Item.where(name: "Super croissant").first
