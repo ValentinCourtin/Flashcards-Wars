@@ -101,8 +101,8 @@ class Duel < ApplicationRecord
 
   def create_round_question_answers
     Round.where(duel: self).each do |round|
-      3.times do
-        question = round.subcategory.questions.sample
+      questions = round.subcategory.questions.sample(3)
+      questions.each do |question|
         RoundQuestionAnswer.create(
           user: User.find(user_id),
           question: question,
@@ -120,6 +120,4 @@ class Duel < ApplicationRecord
       end
     end
   end
-
-
 end
