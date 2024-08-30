@@ -73,31 +73,31 @@ puts "Creating users... 🌱"
 #       )
 # end
 
-usertest1 = User.create!(
-  email: "test@test.com",
-  password: "123456",
-  first_name: "Toto",
-  last_name: "Lezozo",
-  gold_count: 10,
-  experience: 50
-)
-usertest2 = User.create!(
-  email: "lynn@test.com",
-  password: "123456",
-  first_name: "Lynn",
-  last_name: "Telia",
-  gold_count: 20000,
-  experience: 75
-)
+# usertest1 = User.create!(
+#   email: "test@test.com",
+#   password: "123456",
+#   first_name: "Toto",
+#   last_name: "Lezozo",
+#   gold_count: 10,
+#   experience: 50
+# )
+# usertest2 = User.create!(
+#   email: "lynn@test.com",
+#   password: "123456",
+#   first_name: "Lynn",
+#   last_name: "Telia",
+#   gold_count: 20000,
+#   experience: 75
+# )
 
-usertest3 = User.create!(
-  email: "chloe@test.com",
-  password: "123456",
-  first_name: "Chloe",
-  last_name: "test",
-  gold_count: 50,
-  experience: 500
-)
+# usertest3 = User.create!(
+#   email: "chloe@test.com",
+#   password: "123456",
+#   first_name: "Chloe",
+#   last_name: "test",
+#   gold_count: 50,
+#   experience: 500
+# )
 
 
 # ////////////////////////
@@ -107,8 +107,8 @@ user0 = User.create!(
   password: "123456",
   first_name: "Valentin",
   last_name: "Courtin",
-  gold_count: 1100,
-  experience: 320
+  gold_count: 1450,
+  experience: 820
 )
 
 user1 = User.create!(
@@ -125,7 +125,7 @@ user2 = User.create!(
   password: "123456",
   first_name: "Clarisse",
   last_name: "Fabreges",
-  gold_count: 1350,
+  gold_count: 850,
   experience: 50
 )
 
@@ -197,6 +197,33 @@ user10 = User.create!(
   password: "123456",
   first_name: "Yanis",
   last_name: "Dahmane",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
+user11 = User.create!(
+  email: "toto@test.com",
+  password: "123456",
+  first_name: "Toto",
+  last_name: "Tata",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
+user12 = User.create!(
+  email: "Samuel@test.com",
+  password: "123456",
+  first_name: "Samuel",
+  last_name: "Boulery",
+  gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
+  experience: Faker::Number.number(digits: 3) #=> 100 to 999
+)
+
+user13 = User.create!(
+  email: "romain@test.com",
+  password: "123456",
+  first_name: "Romain",
+  last_name: "Stanke",
   gold_count: Faker::Number.number(digits: 2), #=> 0 to 99
   experience: Faker::Number.number(digits: 3) #=> 100 to 999
 )
@@ -358,7 +385,7 @@ puts "Creating inventories... 🌱"
 usertest1.items << Item.all.sample(5)
 usertest2.items << Item.all.sample(10)
 usertest3.items << Item.all.sample(0)
-user0.items << Item.where(name: "Tornado").first
+user2.items << Item.where(name: "Tornado").first
 user0.items << Item.where(name: "Day and night").first
 user0.items << Item.where(name: "Super croissant").first
 
